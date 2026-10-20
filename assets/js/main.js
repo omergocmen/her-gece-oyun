@@ -10,7 +10,7 @@
     return e;
   }
 
-  // Oyunlar eklenme sırasıyla numaralanır: ilk oyun No. 001.
+  // Oyunlar games.json'daki sırayla numaralanır: ilk oyun No. 001 (Katalog.numaralar).
   function numara(n) { return 'No. ' + String(n).padStart(3, '0'); }
 
   function tarihYazisi(iso) {
@@ -78,8 +78,9 @@
         return;
       }
       document.getElementById('oyun-sayisi').textContent = sirali.length + ' oyun';
-      buGeceninOyunu(sirali[0], sirali.length);
-      sirali.forEach(function (oyun, i) { liste.append(kart(oyun, sirali.length - i)); });
+      var no = Katalog.numaralar(oyunlar);
+      buGeceninOyunu(sirali[0], no[sirali[0].slug]);
+      sirali.forEach(function (oyun) { liste.append(kart(oyun, no[oyun.slug])); });
     })
     .catch(function () {
       buGece.append(el('p', 'bos-durum', 'Oyun listesi yüklenemedi. Bağlantını kontrol edip sayfayı yenile.'));
