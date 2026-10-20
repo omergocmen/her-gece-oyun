@@ -77,10 +77,17 @@
       <li>İnternetsiz</li>
     </ul>
     <p>Bir oyunu bir kez açman yeter, sonra internet olmadan da oynarsın. İlerlemen yalnızca bu cihazda saklanır.</p>
+    <div class="yedek">
+      <button type="button" id="yedek-indir">İlerlememi yedekle</button>
+      <button type="button" id="yedek-yukle">Yedeği yükle</button>
+      <input type="file" id="yedek-dosya" accept=".json,application/json" hidden>
+      <p id="yedek-mesaj" role="status" aria-live="polite"></p>
+    </div>
   </footer>
   <script src="assets/js/depo.js"></script>
   <script src="assets/js/katalog.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/yedek.js"></script>
   <script src="assets/js/sw-kayit.js"></script>
 </body>
 </html>

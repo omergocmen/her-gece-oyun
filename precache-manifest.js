@@ -1,6 +1,6 @@
 // Bu dosya otomatik üretilir: npm run precache
 self.PRECACHE = {
-  "surum": "76aa5684fb42",
+  "surum": "2f5797f2936d",
   "dosyalar": [
     "./",
     "index.html",
@@ -12,6 +12,7 @@ self.PRECACHE = {
     "assets/js/katalog.js",
     "assets/js/depo.js",
     "assets/js/main.js",
+    "assets/js/yedek.js",
     "assets/js/sw-kayit.js",
     "assets/icons/icon.svg",
     "assets/icons/icon-192.png",
@@ -121,16 +122,17 @@ self.PRECACHE = {
     "games/sudoku/kapak.svg"
   ],
   "ozetler": {
-    "./": "f1abc35a14d7",
-    "index.html": "f1abc35a14d7",
+    "./": "afa753c9ac6a",
+    "index.html": "afa753c9ac6a",
     "games.json": "fd66907eeedc",
     "manifest.webmanifest": "402a1b3b6849",
-    "assets/css/style.css": "7d1d3d464ca4",
+    "assets/css/style.css": "520e04a78852",
     "assets/fonts/bricolage-latin.woff2": "a756882d8a78",
     "assets/fonts/bricolage-latin-ext.woff2": "e1a04c169c02",
     "assets/js/katalog.js": "ce20062b6f06",
     "assets/js/depo.js": "74b2fbdbd42b",
     "assets/js/main.js": "9a7339e2adc8",
+    "assets/js/yedek.js": "dcfd8ffdf053",
     "assets/js/sw-kayit.js": "2ed7e56cb07e",
     "assets/icons/icon.svg": "a40ef20ade23",
     "assets/icons/icon-192.png": "a9a1e71d8e38",
