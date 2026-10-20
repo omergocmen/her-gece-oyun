@@ -128,5 +128,23 @@
       "games/cam-ustasi/kapak.svg",
       "assets/vendor/three/three.module.min.js"
     ]
+  },
+  {
+    "slug": "kapadokya-yollari",
+    "ad": "Kapadokya Yolları",
+    "aciklama": "Gün batımında peribacaları arasında 3D sürüş. Sonsuz serbest yol, günlük ralli parkuru, kontrol noktaları ve kendi rekorunla yarışan hayalet araba.",
+    "kategori": "Yarış",
+    "eklenme": "2026-10-20",
+    "gorsel": "games/kapadokya-yollari/kapak.svg",
+    "dosyalar": [
+      "games/kapadokya-yollari/",
+      "games/kapadokya-yollari/stil.css",
+      "games/kapadokya-yollari/mantik.js",
+      "games/kapadokya-yollari/sahne.js",
+      "games/kapadokya-yollari/ses.js",
+      "games/kapadokya-yollari/oyun.js",
+      "games/kapadokya-yollari/kapak.svg",
+      "assets/vendor/three/three.module.min.js"
+    ]
   }
 ]
