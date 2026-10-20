@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="site-kok" content="../../">
+  <!-- SEO:BASLA -->
+  <title>Tavla Oyna – Ücretsiz, İndirmeden | Her Gece Oyun</title>
+  <meta name="description" content="Bilgisayara karşı Türk usulü tavla: kapı, kırık, zorunlu hamle, toplama ve mars. Üç zorluk, 3 ya da 5 puanlık maç. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <link rel="canonical" href="https://her-gece-oyun-a52g.vercel.app/games/tavla/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Her Gece Oyun">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:title" content="Tavla Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta property="og:description" content="Bilgisayara karşı Türk usulü tavla: kapı, kırık, zorunlu hamle, toplama ve mars. Üç zorluk, 3 ya da 5 puanlık maç. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta property="og:url" content="https://her-gece-oyun-a52g.vercel.app/games/tavla/">
+  <meta property="og:image" content="https://her-gece-oyun-a52g.vercel.app/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tavla Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta name="twitter:description" content="Bilgisayara karşı Türk usulü tavla: kapı, kırık, zorunlu hamle, toplama ve mars. Üç zorluk, 3 ya da 5 puanlık maç. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta name="twitter:image" content="https://her-gece-oyun-a52g.vercel.app/assets/og.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Tavla","description":"Bilgisayara karşı Türk usulü tavla: kapı, kırık, zorunlu hamle, toplama ve mars. Üç zorluk, 3 ya da 5 puanlık maç.","url":"https://her-gece-oyun-a52g.vercel.app/games/tavla/","image":"https://her-gece-oyun-a52g.vercel.app/assets/og.png","genre":"Masa oyunu","inLanguage":"tr","datePublished":"2026-10-20","gamePlatform":"Web tarayıcısı","applicationCategory":"Game","operatingSystem":"Tüm işletim sistemleri","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"},"isPartOf":{"@type":"WebSite","name":"Her Gece Oyun","url":"https://her-gece-oyun-a52g.vercel.app/"}}</script>
+  <!-- SEO:BITIS -->
+  <meta name="theme-color" content="#110f0d">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="../../"><span>Her Gece <em>Oyun</em></span></a>
+    <div class="sag">
+      <button id="ses" class="ikon-buton" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor" stroke="none"/><path class="ses-dalga" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/><path class="ses-kapali" d="M16 9l6 6M22 9l-6 6"/></svg>
+      </button>
+      <button id="istatistik-ac" class="ikon-buton" type="button" aria-label="İstatistikler"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4 20h3V11H4zm6.5 0h3V4h-3zM17 20h3v-6h-3z"/></svg></button>
+      <button id="ayar-ac" class="ikon-buton" type="button" aria-label="Yeni maç ayarları"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></button>
+      <a class="geri" href="../../" aria-label="Tüm oyunlar">←<span class="uzun"> Tüm oyunlar</span></a>
+    </div>
+  </header>
+  <main class="container oyun-sayfasi tavla-oyunu">
+    <span class="ust-baslik">Masa oyunu</span>
+    <h1>Tavla</h1>
+    <p id="mac-bilgi" class="mac-bilgi">Sen <strong id="skor-sen" class="skor">0</strong> – <strong id="skor-pc" class="skor">0</strong> Bilgisayar · <span id="mac-tur">5'lik maç</span> · <span id="mac-seviye">Orta</span></p>
+    <p id="devam-bilgi" class="devam-bilgi" hidden>Kaldığın yerden devam ediyorsun</p>
+
+    <section class="oyun-alani tavla-alani" aria-label="Oyun alanı">
+      <div class="tahta-kutu">
+        <svg id="tahta" class="tahta" viewBox="0 0 800 500" role="img" aria-label="Tavla tahtası"></svg>
+      </div>
+      <div class="zar-alani">
+        <div class="zar-satiri">
+          <div id="zarlar" class="zarlar" aria-hidden="true"></div>
+          <p id="zar-adi" class="zar-adi"></p>
+        </div>
+        <p id="durum" class="durum" role="status" aria-live="polite"></p>
+        <div class="eylemler">
+          <button id="ana-dugme" class="buton" type="button">Zar at</button>
+          <button id="geri-al" class="buton ikincil" type="button" disabled>Geri al</button>
+        </div>
+        <p class="pip-satiri">Kalan yol · sen <strong id="pip-sen">167</strong> · bilgisayar <strong id="pip-pc">167</strong></p>
+      </div>
+    </section>
+
+    <h2>Nasıl oynanır?</h2>
+    <p>Tavla iki kişiyle, 15'er taşla ve iki zarla oynanır. Sen kemik taşlarla oynarsın: taşların sağ üstten başlayıp tahtanın etrafında saat yönünün tersine dolaşır ve sağ alttaki evine (1–6. haneler) gelir. Bilgisayarın koyu taşları aynı yolu ters yönde gider. Sıra sendeyken <strong>Zar at</strong>'a bas, sonra oynatmak istediğin taşa dokun: gidebileceği haneler sodyum noktayla işaretlenir. Hedefe dokun ya da taşı sürükle. İki zarı aynı taşla oynamak istersen doğrudan toplam hedefe dokunabilirsin. Tur bitmeden <strong>Geri al</strong> ile hamleni değiştirebilir, bitince <strong>Sırayı ver</strong>'e basarsın.</p>
+    <p><strong>Kapı ve kırık:</strong> Rakibin iki ya da daha fazla taşı olan haneye (kapıya) taş koyamazsın. Rakibin tek taşı duran haneye gelirsen o taşı kırarsın; kırılan taş ortadaki bara gider. Barda taşın varsa önce onu rakibin evinden içeri sokmalısın; giriş hanesi kapalıysa o zarı oynayamazsın.</p>
+    <p><strong>Zorunlu hamle:</strong> Zarları oynayabildiğin kadar oynamak zorundasın. İki zarı birden kullanmanın bir yolu varsa onu seçmelisin; yalnızca biri oynanabiliyorsa ve ikisi de tek başına mümkünse büyük zarı oynarsın. Çift atınca (Hep yek, Dubara, Dü-se, Dört-cihar, Dü-beş, Dü-şeş) o sayıyı dört kez oynarsın. Kurala aykırı hamleler tahtada hiç gösterilmez.</p>
+    <p><strong>Toplama ve mars:</strong> Bütün taşların evine girince taş toplamaya başlarsın: zar kaç gelirse o hanedeki taşı çıkarırsın; zar en uzak taşından büyükse en uzaktaki taşı toplarsın. Taşlarını önce toplayan oyunu kazanır ve 1 puan alır. Rakip hiç taş toplayamadan bitirirsen bu <strong>mars</strong> olur ve 2 puan sayılır. Maç 3 ya da 5 puana kadar sürer; yeni oyuna bir önceki oyunu kazanan başlar. İlk oyunda iki taraf birer zar atar, büyük atan zarları yeniden atarak başlar.</p>
+    <p>Bilgisayarın üç seviyesi var: Kolay rastgele oynar, Orta açık taşlara, kapılara ve ilerlemeye bakar, Zor ise senin olası bütün zarlarını hesaba katar. Seviyeyi ve maç uzunluğunu sağ üstteki ayar düğmesinden değiştirip yeni maç başlatabilirsin. Yarım kalan oyun ve istatistiklerin yalnızca bu cihazda saklanır; sayfayı kapatsan da kaldığın yerden devam edersin. Oyun internetsiz de çalışır.</p>
+  </main>
+
+  <dialog id="ayarlar" class="tavla-pencere">
+    <h2>Yeni maç</h2>
+    <fieldset class="secim">
+      <legend>Bilgisayarın seviyesi</legend>
+      <div class="secim-dugmeleri" id="seviye-secimi">
+        <button type="button" class="buton ikincil" data-seviye="kolay">Kolay</button>
+        <button type="button" class="buton ikincil" data-seviye="orta">Orta</button>
+        <button type="button" class="buton ikincil" data-seviye="zor">Zor</button>
+      </div>
+    </fieldset>
+    <fieldset class="secim">
+      <legend>Maç uzunluğu</legend>
+      <div class="secim-dugmeleri" id="mac-secimi">
+        <button type="button" class="buton ikincil" data-mac="3">3 puan</button>
+        <button type="button" class="buton ikincil" data-mac="5">5 puan</button>
+      </div>
+    </fieldset>
+    <p id="ayar-not" class="pencere-not">Süren maç bırakılır ve yeni maç başlar.</p>
+    <div class="pencere-eylemler">
+      <button id="yeni-mac-baslat" class="buton" type="button">Yeni maçı başlat</button>
+      <form method="dialog"><button class="buton ikincil" type="submit">Vazgeç</button></form>
+    </div>
+  </dialog>
+
+  <dialog id="sonuc" class="tavla-pencere sonuc-pencere">
+    <p id="sonuc-ust" class="pencere-ust">Oyun bitti</p>
+    <h2 id="sonuc-baslik">Kazandın</h2>
+    <p id="mars-damga" class="mars-damga" hidden>MARS ×2</p>
+    <p id="sonuc-metin" class="sonuc-metin"></p>
+    <p class="sonuc-skor">Sen <strong id="sonuc-sen">0</strong> – <strong id="sonuc-pc">0</strong> Bilgisayar</p>
+    <div id="sonuc-ist" class="ist-sayilar" hidden>
+      <div><strong id="s-mac">0</strong><span>Oynanan maç</span></div>
+      <div><strong id="s-kazanilan">0</strong><span>Kazanılan</span></div>
+      <div><strong id="s-mars">0</strong><span>Mars</span></div>
+    </div>
+    <div class="pencere-eylemler">
+      <button id="sonraki-oyun" class="buton" type="button">Sonraki oyun</button>
+      <button id="sonuc-yeni-mac" class="buton ikincil" type="button">Yeni maç</button>
+    </div>
+  </dialog>
+
+  <dialog id="istatistik" class="tavla-pencere">
+    <h2>İstatistikler</h2>
+    <div class="ist-sayilar">
+      <div><strong id="i-mac">0</strong><span>Oynanan maç</span></div>
+      <div><strong id="i-mac-k">0</strong><span>Kazanılan maç</span></div>
+      <div><strong id="i-oyun">0</strong><span>Oynanan oyun</span></div>
+      <div><strong id="i-oyun-k">0</strong><span>Kazanılan oyun</span></div>
+      <div><strong id="i-mars">0</strong><span>Yaptığın mars</span></div>
+      <div><strong id="i-mars-y">0</strong><span>Yediğin mars</span></div>
+    </div>
+    <form method="dialog"><button class="buton ikincil" type="submit">Kapat</button></form>
+  </dialog>
+
+  <script src="../../assets/js/depo.js"></script>
+  <script src="mantik.js"></script>
+  <script src="oyun.js"></script>
+  <script src="../../assets/js/sw-kayit.js"></script>
+</body>
+</html>
