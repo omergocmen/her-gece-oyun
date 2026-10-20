@@ -28,3 +28,5 @@ python3 -m http.server 8000
 ```
 
 Ardından http://localhost:8000 adresini açın.
+
+Service worker yeni sürümde yalnızca içerik özeti değişen dosyaları indirir; özetler `npm run precache` ile `precache-manifest.js` içine yazılır. Güncelleme akışını (yalnızca değişen dosyaların inmesi, "Yenile" bildirimi, uçak modu) tarayıcıda denemek için Playwright kuruluyken `node scripts/sw-guncelleme-incele.js` çalıştırın.

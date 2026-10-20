@@ -200,3 +200,13 @@ test('depolama kapalıyken depo.js hata vermez, son oynananlar boş döner', () 
   assert.deepEqual([...Depo.sonOynananlar()], []);
   assert.equal(Depo.ozetOku('tavla'), null);
 });
+
+test('precache her dosyanın içerik özetini taşır (service worker yalnızca değişenleri indirir)', () => {
+  const metin = manifestUret();
+  const m = JSON.parse(metin.slice(metin.indexOf('{'), metin.lastIndexOf('}') + 1));
+  const { dosyaOzeti } = require('../scripts/precache-olustur.js');
+  assert.deepEqual(Object.keys(m.ozetler), m.dosyalar);
+  for (const url of m.dosyalar) assert.equal(m.ozetler[url], dosyaOzeti(fs.readFileSync(diskYolu(url))), url);
+  const sw = fs.readFileSync(path.join(KOK, 'sw.js'), 'utf8');
+  assert.ok(!/addEventListener\('install'[\s\S]*?skipWaiting[\s\S]*?addEventListener\('message'/.test(sw), 'install aşaması zorla skipWaiting yapmamalı');
+});
