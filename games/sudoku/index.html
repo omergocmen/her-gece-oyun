@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="site-kok" content="../../">
+  <!-- SEO:BASLA -->
+  <title>Sudoku Oyna – Ücretsiz, İndirmeden | Her Gece Oyun</title>
+  <meta name="description" content="Kalem notlu, 4 seviyeli Sudoku: Türkçe adım adım ipucu, her gün herkese aynı günlük bulmaca ve seri. Her bulmaca tek çözümlü. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <link rel="canonical" href="https://her-gece-oyun-a52g.vercel.app/games/sudoku/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Her Gece Oyun">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:title" content="Sudoku Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta property="og:description" content="Kalem notlu, 4 seviyeli Sudoku: Türkçe adım adım ipucu, her gün herkese aynı günlük bulmaca ve seri. Her bulmaca tek çözümlü. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta property="og:url" content="https://her-gece-oyun-a52g.vercel.app/games/sudoku/">
+  <meta property="og:image" content="https://her-gece-oyun-a52g.vercel.app/games/sudoku/paylasim.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sudoku Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta name="twitter:description" content="Kalem notlu, 4 seviyeli Sudoku: Türkçe adım adım ipucu, her gün herkese aynı günlük bulmaca ve seri. Her bulmaca tek çözümlü. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta name="twitter:image" content="https://her-gece-oyun-a52g.vercel.app/games/sudoku/paylasim.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Sudoku","description":"Kalem notlu, 4 seviyeli Sudoku: Türkçe adım adım ipucu, her gün herkese aynı günlük bulmaca ve seri. Her bulmaca tek çözümlü.","url":"https://her-gece-oyun-a52g.vercel.app/games/sudoku/","image":"https://her-gece-oyun-a52g.vercel.app/games/sudoku/paylasim.png","genre":"Bulmaca","inLanguage":"tr","datePublished":"2026-10-20","gamePlatform":"Web tarayıcısı","applicationCategory":"Game","operatingSystem":"Tüm işletim sistemleri","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"},"isPartOf":{"@type":"WebSite","name":"Her Gece Oyun","url":"https://her-gece-oyun-a52g.vercel.app/"}}</script>
+  <!-- SEO:BITIS -->
+  <meta name="theme-color" content="#110f0d">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="../../"><span>Her Gece <em>Oyun</em></span></a>
+    <div class="sag">
+      <button id="istatistik-ac" class="ikon-buton" type="button" aria-label="İstatistikler"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4 20h3V11H4zm6.500 0h3V4h-3zM17 20h3v-6h-3z"/></svg></button>
+      <button id="ayar-ac" class="ikon-buton" type="button" aria-label="Yeni oyun"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></button>
+      <a class="geri" href="../../" aria-label="Tüm oyunlar">←<span class="uzun"> Tüm oyunlar</span></a>
+    </div>
+  </header>
+  <main class="container oyun-sayfasi sudoku-oyunu">
+    <span class="ust-baslik">Sayı bulmacası</span>
+    <h1>Sudoku</h1>
+
+    <section class="oyun-alani sudoku-alani" aria-label="Oyun alanı">
+      <div class="izgara-sutun">
+        <div class="durum-satiri">
+          <span id="seviye-rozet" class="eyebrow">Hazırlanıyor</span>
+          <span id="hata-sayi" class="hata-sayi" hidden>Hata 0</span>
+          <span id="sure" class="sure" aria-label="Geçen süre">00:00</span>
+        </div>
+        <div id="devam" class="panel devam" hidden>
+          <p id="devam-metin">Yarım oyunun var.</p>
+          <div class="devam-dugmeleri">
+            <button id="devam-et" class="buton" type="button">Devam et</button>
+            <button id="devam-yeni" class="buton ikincil" type="button">Yeni oyun</button>
+          </div>
+        </div>
+        <div class="izgara-kutu">
+          <div id="izgara" class="izgara" role="group" aria-label="Sudoku ızgarası"></div>
+        </div>
+        <div id="ipucu-kutu" class="panel ipucu-kutu" role="status" aria-live="polite" hidden></div>
+        <p id="durum" class="durum" role="status" aria-live="polite"></p>
+      </div>
+
+      <aside class="yan">
+        <div id="tuslar" class="tuslar" role="group" aria-label="Rakam tuşları"></div>
+        <div class="eylemler">
+          <button id="geri-al" class="buton ikincil" type="button" disabled><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14L4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-3"/></svg><span>Geri al</span></button>
+          <button id="yinele" class="buton ikincil" type="button" disabled><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14l5-5-5-5"/><path d="M20 9H10a6 6 0 0 0 0 12h3"/></svg><span>Yinele</span></button>
+          <button id="sil" class="buton ikincil" type="button"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20H9L4 15l9-9 7 7-5 5"/><path d="M8 11l5 5"/></svg><span>Sil</span></button>
+          <button id="kalem" class="buton ikincil" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="M14 7l3 3"/></svg><span>Kalem</span></button>
+          <button id="ipucu" class="buton ikincil" type="button"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.500 10.900c.6.500 1 1.300 1 2.100h5c0-.8.400-1.600 1-2.100A6 6 0 0 0 12 3z"/></svg><span id="ipucu-etiket">İpucu</span></button>
+        </div>
+        <div class="panel bilgi">
+          <p class="bilgi-baslik">Kısa kurallar</p>
+          <p>Her satır, her sütun ve her kalın çizgili 3×3 blokta 1'den 9'a kadar rakamlar birer kez bulunur.</p>
+        </div>
+      </aside>
+    </section>
+
+    <h2>Nasıl oynanır?</h2>
+    <p>Sudoku 9×9'luk bir ızgarayı rakamlarla doldurma bulmacasıdır. Kural tek cümle: <strong>her satırda, her sütunda ve her kalın çizgili 3×3 blokta 1'den 9'a kadar rakamların her biri tam bir kez bulunmalı.</strong> Başlangıçta bazı kutular krem renkle verilmiştir; onlar değişmez. Boş bir kutuya dokunup alttaki rakam tuşlarından birine bas. Seçtiğin kutunun satırı, sütunu ve bloğu hafifçe aydınlanır; aynı rakamın bulunduğu kutuların altı sodyum çizgiyle işaretlenir, böylece o rakamın nerede olamayacağını kolayca görürsün.</p>
+    <p><strong>Kalem:</strong> Emin değilsen <strong>Kalem</strong>'i aç; rakamlar kutuya küçük not olarak yazılır (aday rakamlar). Bir rakamı kesinleştirince aynı satırdaki, sütundaki ve bloktaki notlardan otomatik silinir. <strong>Sil</strong> kutuyu boşaltır, <strong>Geri al</strong> ve <strong>Yinele</strong> hamlelerin arasında gezdirir. Klavyeyle 1–9 rakamı yazar, ok tuşlarıyla kutu değiştirir, Boşluk ya da N ile kalemi açıp kapatırsın.</p>
+    <p><strong>İpucu:</strong> İpucu düğmesi iki aşamalıdır. İlk dokunuşta bir sonraki mantıksal adımı Türkçe açıklar (“Bu kutuda tek aday var: 7” ya da “Bu satırda 5'in yeri tek bir kutu”) ve ilgili kutuyu gösterir; ikinci dokunuşta rakam yerleşir. İpucu sayısı seviyeye göre sınırlıdır. Rakamın yanlışsa ipucu önce hatayı gösterir. Ayarlardan <strong>Hataları göster</strong> açıksa kural çakışmaları kırmızı zeminde ve köşede “×” ile belirir.</p>
+    <p><strong>Seviyeler:</strong> <em>Kolay</em> bulmacalar yalnızca “tek aday” bulmayı gerektirir. <em>Orta</em> bulmacalar “gizli tek” (bir birimde rakamın tek yeri) ister. <em>Zor</em> bulmacalar çıplak çift ve kutu-çizgi gibi eleme teknikleri, <em>Uzman</em> bulmacalar gizli çift, X-Wing ya da daha ileri düşünme ister. Her bulmacanın tek bir çözümü vardır, tahmin yürütmek gerekmez. <strong>Günlük</strong> bulmaca her gün herkese aynıdır; haftanın günlerine göre zorluğu değişir, bitirdiğin günlerin serisi sayılır. Yarım oyunun ve en iyi sürelerin yalnızca bu cihazda saklanır; oyun internetsiz de çalışır.</p>
+
+    <!-- BENZER:BASLA -->
+    <section class="benzer" aria-labelledby="benzer-baslik">
+      <h2 id="benzer-baslik">Benzer oyunlar</h2>
+      <ul class="benzer-izgara">
+        <li><a class="oyun-karti" href="../sayi-tahmin/" aria-label="Sayı Bulmaca, Bulmaca, 2D, No. 002">
+          <div class="kapak"><img src="../sayi-tahmin/kapak.svg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="damga-kart" aria-hidden="true">No. 002</span><span class="damga-kart boyut" aria-hidden="true">2D</span></div>
+          <div class="metin"><span class="kategori">Bulmaca</span><h3>Sayı Bulmaca</h3><p class="aciklama">Rakamları farklı gizli sayıyı +/− ipuçlarıyla mantık yürüterek bul. Günlük bulmaca, 3-5 hane zorluk ve rakam eleme paneli.</p></div>
+        </a></li>
+        <li><a class="oyun-karti" href="../cini-blok/" aria-label="Çini Blok, Bulmaca, 2D, No. 004">
+          <div class="kapak"><img src="../cini-blok/kapak.svg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="damga-kart" aria-hidden="true">No. 004</span><span class="damga-kart boyut" aria-hidden="true">2D</span></div>
+          <div class="metin"><span class="kategori">Bulmaca</span><h3>Çini Blok</h3><p class="aciklama">İznik motifli blok parçalarını 8×8 tahtaya sürükle, satır ve sütun doldurup kombo yap. Günlük meydan okuma ve sonsuz klasik mod.</p></div>
+        </a></li>
+        <li><a class="oyun-karti" href="../zeka-kupu/" aria-label="Zekâ Küpü, Bulmaca, 3D, No. 003">
+          <div class="kapak"><img src="../zeka-kupu/kapak.svg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="damga-kart" aria-hidden="true">No. 003</span><span class="damga-kart boyut uc-boyut" aria-hidden="true">3D</span></div>
+          <div class="metin"><span class="kategori">Bulmaca</span><h3>Zekâ Küpü</h3><p class="aciklama">Parmağınla döndürülen 3D zekâ küpü. 2×2, 3×3 ve 4×4 boyutları, günlük karıştırma, kronometre ve adım adım Türkçe çözüm rehberi.</p></div>
+        </a></li>
+      </ul>
+    </section>
+    <!-- BENZER:BITIS -->
+  </main>
+
+  <dialog id="ayarlar" class="sudoku-pencere">
+    <h2>Yeni oyun</h2>
+    <fieldset class="secim">
+      <legend>Seviye</legend>
+      <div class="secim-dugmeleri" id="seviye-secimi">
+        <button type="button" class="buton ikincil" data-seviye="kolay">Kolay</button>
+        <button type="button" class="buton ikincil" data-seviye="orta">Orta</button>
+        <button type="button" class="buton ikincil" data-seviye="zor">Zor</button>
+        <button type="button" class="buton ikincil" data-seviye="uzman">Uzman</button>
+      </div>
+    </fieldset>
+    <label class="onay"><input type="checkbox" id="hata-goster"> Hataları göster (çakışma ve yanlış rakam)</label>
+    <p class="pencere-not">Süren oyun saklanır; seviye oyununa ya da günlüğe sonra dönebilirsin.</p>
+    <div class="pencere-eylemler">
+      <button id="oyunu-baslat" class="buton" type="button">Oyunu başlat</button>
+      <button id="gunluk-baslat" class="buton ikincil" type="button">Günlük bulmaca</button>
+      <form method="dialog"><button class="buton ikincil" type="submit">Vazgeç</button></form>
+    </div>
+  </dialog>
+
+  <dialog id="sonuc" class="sudoku-pencere sonuc-pencere">
+    <p id="sonuc-ust" class="pencere-ust">Bitti</p>
+    <h2 id="sonuc-baslik">Çözdün!</h2>
+    <p id="sonuc-metin" class="sonuc-metin"></p>
+    <div class="ist-sayilar">
+      <div><strong id="s-sure">00:00</strong><span>Süre</span></div>
+      <div><strong id="s-hata">0</strong><span>Hata</span></div>
+      <div><strong id="s-seri">–</strong><span>Günlük seri</span></div>
+    </div>
+    <div class="pencere-eylemler">
+      <button id="paylas" class="buton" type="button">Paylaş</button>
+      <button id="sonuc-yeni" class="buton ikincil" type="button">Yeni oyun</button>
+      <form method="dialog"><button class="buton ikincil" type="submit">Kapat</button></form>
+    </div>
+  </dialog>
+
+  <dialog id="istatistik" class="sudoku-pencere">
+    <h2>İstatistikler</h2>
+    <div class="ist-sayilar">
+      <div><strong id="i-oyun">0</strong><span>Başlanan</span></div>
+      <div><strong id="i-bitti">0</strong><span>Bitirilen</span></div>
+      <div><strong id="i-seri">0</strong><span>Günlük seri</span></div>
+    </div>
+    <h3 class="en-iyi-baslik">En iyi süreler</h3>
+    <ul class="en-iyi" id="en-iyi"></ul>
+    <form method="dialog"><button class="buton ikincil" type="submit">Kapat</button></form>
+  </dialog>
+
+  <script src="../../assets/js/depo.js"></script>
+  <script src="mantik.js"></script>
+  <script src="oyun.js"></script>
+  <script src="../../assets/js/sw-kayit.js"></script>
+</body>
+</html>

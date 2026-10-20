@@ -262,5 +262,23 @@
       "assets/vendor/three/three.module.min.js",
       "assets/js/kalite.js"
     ]
+  },
+  {
+    "slug": "sudoku",
+    "ad": "Sudoku",
+    "aciklama": "Kalem notlu, 4 seviyeli Sudoku: Türkçe adım adım ipucu, her gün herkese aynı günlük bulmaca ve seri. Her bulmaca tek çözümlü.",
+    "kategori": "Bulmaca",
+    "boyut": "2D",
+    "eklenme": "2026-10-20",
+    "gorsel": "games/sudoku/kapak.svg",
+    "gunluk": true,
+    "dosyalar": [
+      "games/sudoku/",
+      "games/sudoku/stil.css",
+      "games/sudoku/mantik.js",
+      "games/sudoku/isci.js",
+      "games/sudoku/oyun.js",
+      "games/sudoku/kapak.svg"
+    ]
   }
 ]
