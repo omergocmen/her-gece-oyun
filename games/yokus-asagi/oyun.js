@@ -357,6 +357,7 @@ function olum() {
   const rekor = m > onceki;
   if (mod === 'gunluk') { if (rekor) gunluk.enIyi = m; Depo.yaz('yokus:gunluk', gunluk); }
   else if (rekor) { enIyi = m; Depo.yaz('yokus:enIyi', enIyi); }
+  if (enIyi > 0) Depo.ozetYaz('yokus-asagi', 'En iyi ' + enIyi + ' m');
   setTimeout(() => {
     $('sonuc-mesafe').textContent = m + ' m';
     $('sonuc-eniyi').textContent = Math.max(m, onceki) + ' m';

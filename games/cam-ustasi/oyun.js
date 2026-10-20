@@ -545,6 +545,7 @@ function oyunBitti() {
   const rekor = m > onceki;
   if (rekor) ilerleme.enIyi[durum.mod] = m;
   kaydet();
+  Depo.ozetYaz('cam-ustasi', 'En iyi ' + Math.max(ilerleme.enIyi.oda, ilerleme.enIyi.sonsuz) + ' m');
   $('son-baslik').textContent = durum.kazandi ? 'Atölye tamam!' : 'Bilyeler bitti';
   $('son-mesafe').textContent = m + ' m';
   $('son-oda').textContent = String(durum.oda);

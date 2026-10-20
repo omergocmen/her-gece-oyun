@@ -305,6 +305,7 @@ function bitir() {
   M.hayaletEkle(hayaletKayit, arac.x, arac.z, arac.yon);
   const sonuc = M.rekorIsle(kayitlar(), String(tohum), sure, ralli.araSureler, hayaletKayit, Date.now());
   Depo.yaz(ANAHTAR.ralli, sonuc.kayitlar);
+  Depo.ozetYaz('kapadokya-yollari', 'Rekor ' + M.sureYaz(sonuc.kayitlar[String(tohum)].sure));
   ses.bitis(sonuc.rekor);
   mesajYaz(M.sureYaz(sure), false, true, 0);
   bitisBekle = 1.6;

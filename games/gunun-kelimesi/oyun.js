@@ -101,6 +101,7 @@
     if (durum.mod === 'gunluk') {
       var ist = M.istatistikIsle(Depo.oku('kelime:istatistik', null), no, kazandi, durum.tahminler.length);
       Depo.yaz('kelime:istatistik', ist);
+      Depo.ozetYaz('gunun-kelimesi', ist.seri ? 'Seri ' + ist.seri : ist.kazanilan + '/' + ist.oynanan + ' gün');
       setTimeout(istatistikGoster, 1200);
     }
   }

@@ -446,6 +446,7 @@ function sonucGoster() {
   const sonuc = M.turuIsle(kayit, Object.assign({ skor }, tur.ist), bugun());
   kayit = sonuc.kayit;
   kaydet();
+  Depo.ozetYaz('marmaray-kosusu', 'En iyi ' + kayit.enIyi);
   ogeler.sonucPuan.textContent = skor;
   ogeler.sonucMesafe.textContent = Math.floor(tur.p);
   ogeler.sonucEnIyi.textContent = kayit.enIyi;
