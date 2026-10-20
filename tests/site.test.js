@@ -76,6 +76,31 @@ test('katalog en yeni oyunu başa alır', () => {
   assert.equal(Katalog.oyunAdresi({ slug: 'yeni' }), 'games/yeni/');
 });
 
+test('aynı gün eklenenlerde games.json\'da sonra gelen oyun daha yenidir', () => {
+  const oyunlar = [
+    { slug: 'ilk', eklenme: '2026-10-20' },
+    { slug: 'ikinci', eklenme: '2026-10-20' },
+    { slug: 'eski', eklenme: '2026-10-01' },
+    { slug: 'son', eklenme: '2026-10-20' }
+  ];
+  assert.deepEqual(Katalog.sirala(oyunlar).map((o) => o.slug), ['son', 'ikinci', 'ilk', 'eski']);
+  assert.deepEqual(oyunlar.map((o) => o.slug), ['ilk', 'ikinci', 'eski', 'son'], 'girdi değişmemeli');
+});
+
+test('numara games.json sırasıdır ve yeni oyun eklenince kaymaz', () => {
+  const oyunlar = [{ slug: 'a' }, { slug: 'b' }, { slug: 'c' }];
+  assert.deepEqual(Katalog.numaralar(oyunlar), { a: 1, b: 2, c: 3 });
+  assert.deepEqual(Katalog.numaralar(oyunlar.concat([{ slug: 'd' }])), { a: 1, b: 2, c: 3, d: 4 });
+});
+
+test('gerçek katalogda manşet son eklenen oyun, ilk oyun No. 001', () => {
+  const sirali = Katalog.sirala(oyunlar);
+  const no = Katalog.numaralar(oyunlar);
+  assert.equal(sirali[0].slug, oyunlar[oyunlar.length - 1].slug);
+  assert.equal(no[oyunlar[0].slug], 1);
+  assert.equal(no[sirali[0].slug], oyunlar.length);
+});
+
 test('oyun kartı son 7 günde eklenen oyunu "Yeni" sayar', () => {
   const bugun = new Date(2026, 9, 20, 23, 30);
   assert.equal(Katalog.yeniMi({ eklenme: '2026-10-20' }, bugun), true);
