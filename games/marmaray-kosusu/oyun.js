@@ -615,6 +615,7 @@ const dongu = (() => {
   let id = 0, son = 0, kareSayisi = 0, kareToplam = 0, isToplam = 0, enKotu = 0;
   function kare(zaman) {
     id = requestAnimationFrame(kare);
+    sahne.kalite.kare(zaman);
     const dt = son ? Math.min(0.05, (zaman - son) / 1000) : 0.016;
     if (son) { kareToplam += zaman - son; kareSayisi++; enKotu = Math.max(enKotu, zaman - son); }
     son = zaman;
@@ -629,7 +630,6 @@ const dongu = (() => {
       alan.dataset.ms = (isToplam / kareSayisi).toFixed(1);
       alan.dataset.enKotu = Math.round(enKotu);
       alan.dataset.cizim = sahne.renderer.info.render.calls;
-      sahne.kaliteAyarla(ort);
       kareToplam = 0; kareSayisi = 0; isToplam = 0; enKotu = 0;
     }
   }
@@ -655,6 +655,7 @@ if (TEST) {
 // ---------- Başlat ----------
 const onizleme = (() => { try { return sahne.onizlemeler(M.KARAKTERLER.map((k) => k.id), 128); } catch (e) { return {}; } })();
 sesDugmesiniCiz();
+Kalite.dugmeEkle(ogeler.sesDugme, sahne.kalite);
 yeniTur();
 baslangicGoster(true);
 dongu.basla();

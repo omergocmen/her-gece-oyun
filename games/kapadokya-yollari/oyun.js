@@ -480,7 +480,7 @@ function tozSac(dt, x, y, z) {
 
 // ---------- Ana döngü ----------
 let son = performance.now(), rafNo = 0, calisiyor = false;
-const olcum = { kare: 0, toplam: 0, fps: 0, dusurme: 0, isMs: 0 };
+const olcum = { kare: 0, toplam: 0, fps: 0, isMs: 0 };
 
 function kare(simdi) {
   rafNo = requestAnimationFrame(kare);
@@ -497,11 +497,9 @@ function kareIsle(simdi) {
 
   // Ölçüm ve uyarlanır çözünürlük: yavaş cihazda piksel oranı düşer, 30 fps altına inmesin
   olcum.kare++; olcum.toplam += gercekDt;
+  sahne.kalite.kare(simdi);
   if (olcum.toplam >= 2) {
     olcum.fps = olcum.kare / olcum.toplam;
-    const ms = 1000 / olcum.fps;
-    if (ms > 22 && sahne.oran > 0.61) { sahne.kaliteAyarla(sahne.oran - 0.15); olcum.dusurme = simdi; }
-    else if (ms < 13 && sahne.oran < sahne.azamiOran && simdi - olcum.dusurme > 15000) sahne.kaliteAyarla(sahne.oran + 0.1);
     olcum.kare = 0; olcum.toplam = 0;
   }
 
@@ -588,11 +586,12 @@ new ResizeObserver(() => sahne.boyutla(el.sahne.clientWidth, el.sahne.clientHeig
 sahne.boyutla(el.sahne.clientWidth, el.sahne.clientHeight);
 
 // Test ve hata ayıklama için küçük bir pencere (oyun durumunu değiştirmez)
-window.kapadokyaIzle = () => Object.assign({ faz, mod, fps: Math.round(olcum.fps), jsMs: Math.round(olcum.isMs * 100) / 100, oran: sahne.oran, km, zaman, kn: ralli ? ralli.sonraki : null, x: arac && arac.x, z: arac && arac.z, yon: arac && arac.yon, tohum: dunya && dunya.tohum, hiz: arac && arac.ileriHiz }, sahne.bilgi());
+window.kapadokyaIzle = () => Object.assign({ faz, mod, fps: Math.round(olcum.fps), jsMs: Math.round(olcum.isMs * 100) / 100, oran: sahne.kalite.oran, km, zaman, kn: ralli ? ralli.sonraki : null, x: arac && arac.x, z: arac && arac.z, yon: arac && arac.yon, tohum: dunya && dunya.tohum, hiz: arac && arac.ileriHiz }, sahne.bilgi());
 
 // ---------- Başlangıç ----------
 el.tohum.value = String(gunlukTohum);
 sesDugmesiYaz();
+Kalite.dugmeEkle(el.sesDugme, sahne.kalite);
 menuYaz();
 sahne.gokAyarla(RALLI_GECE);
 requestAnimationFrame(() => {

@@ -135,11 +135,8 @@ void main() {
 export class Sahne {
   constructor(tuval, secenek) {
     this.azHareket = !!(secenek && secenek.azHareket);
-    const dpr = window.devicePixelRatio || 1;
-    this.renderer = new THREE.WebGLRenderer({ canvas: tuval, antialias: dpr < 1.5, powerPreference: 'high-performance' });
-    this.azamiOran = Math.min(dpr, 1.75);
-    this.oran = Math.min(dpr, 1.5);
-    this.renderer.setPixelRatio(this.oran);
+    this.renderer = new THREE.WebGLRenderer(Kalite.rendererSecenek({ canvas: tuval, powerPreference: 'high-performance' }));
+    this.kalite = Kalite.kur(this.renderer, { azami: 1.75, boyutla: () => this.renderer.setSize(this.en, this.boy, false) });
     this.sahne = new THREE.Scene();
     this.sahne.fog = new THREE.Fog(P.kagit2, SIS_YAKIN, SIS_UZAK);
     this.kamera = new THREE.PerspectiveCamera(62, 1, 0.3, 1400);
@@ -723,14 +720,6 @@ export class Sahne {
     this.en = en; this.boy = boy;
   }
 
-  kaliteAyarla(oran) {
-    const yeni = Math.round(Math.max(0.6, Math.min(this.azamiOran, oran)) * 100) / 100;
-    if (yeni === this.oran) return;
-    this.oran = yeni;
-    this.renderer.setPixelRatio(this.oran);
-    this.renderer.setSize(this.en, this.boy, false);
-  }
-
   gokAyarla(gece) {
     this.gece = gece;
     const u = this.gokU;
@@ -793,7 +782,7 @@ export class Sahne {
     this.ay.position.copy(AY_YON).multiplyScalar(880).add(k);
     this.ay.lookAt(k);
     this.ayHale.position.copy(this.ay.position);
-    this.tozU.olcek.value = this.boy * this.oran / (2 * Math.tan(this.kamera.fov * Math.PI / 360));
+    this.tozU.olcek.value = this.boy * this.kalite.oran / (2 * Math.tan(this.kamera.fov * Math.PI / 360));
   }
 
   _kamera(d, dt) {

@@ -46,8 +46,8 @@ let rehberAcik = false;
 let sembolModu = Depo.oku('kup:sembol', false);
 
 // ---------- Sahne ----------
-const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
-renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+const renderer = new THREE.WebGLRenderer(Kalite.rendererSecenek({ powerPreference: 'high-performance' }));
+const kalite = Kalite.kur(renderer, { azami: 2, boyutla: boyutlandir });
 renderer.setClearColor(MUREKKEP);
 kap.prepend(renderer.domElement);
 const canvas = renderer.domElement;
@@ -431,6 +431,7 @@ function iste() {
 }
 
 function dongu(simdi) {
+  kalite.kare(simdi);
   let devam = false;
   devam = kuyruguIslet(simdi) || devam;
   devam = kutlamaIslet(simdi) || devam;
@@ -945,6 +946,9 @@ function rehberDegistir(acik) {
   boyutlandir();
   ipucuGuncelle();
 }
+const dusukGrafik = $('dusuk-grafik');
+dusukGrafik.checked = kalite.dusuk;
+dusukGrafik.addEventListener('change', () => { kalite.dusukAyarla(dusukGrafik.checked); iste(); });
 $('rehber-ac').addEventListener('click', () => rehberDegistir(!rehberAcik));
 $('rehber-kapat').addEventListener('click', () => rehberDegistir(false));
 

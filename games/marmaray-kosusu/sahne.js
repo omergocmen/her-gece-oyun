@@ -330,10 +330,9 @@ const GUC_TARIF = {
 // ---------- Sahne ----------
 export function sahneOlustur(tuval, ayar) {
   const hareketAz = !!ayar.hareketAz;
-  const renderer = new THREE.WebGLRenderer({ canvas: tuval, antialias: true, powerPreference: 'high-performance' });
+  const renderer = new THREE.WebGLRenderer(Kalite.rendererSecenek({ canvas: tuval, powerPreference: 'high-performance' }));
   renderer.setClearColor(RENK.murekkep, 1);
-  let pikselOrani = Math.min(window.devicePixelRatio || 1, 2);
-  renderer.setPixelRatio(pikselOrani);
+  const kalite = Kalite.kur(renderer, { azami: 2, boyutla: () => boyutla() });
 
   const sahne = new THREE.Scene();
   const SIS_SON = ayar.gorus || 95;
@@ -983,16 +982,6 @@ export function sahneOlustur(tuval, ayar) {
     return sonuc;
   }
 
-  function kaliteAyarla(ortalamaKare) {
-    if (ortalamaKare > 24 && pikselOrani > 1) {
-      pikselOrani = Math.max(1, pikselOrani - 0.25);
-      renderer.setPixelRatio(pikselOrani);
-      boyutla();
-      return true;
-    }
-    return false;
-  }
-
   function temizle() {
     for (let i = 0; i < PARCACIK; i++) { pOmur[i] = 0; pPoz[i * 3 + 1] = -50; pRenk[i * 3] = pRenk[i * 3 + 1] = pRenk[i * 3 + 2] = 0; }
     sonP = 0; korTon = 0; tekme = 0; tekmeHiz = 0;
@@ -1000,10 +989,10 @@ export function sahneOlustur(tuval, ayar) {
 
   boyutla();
   return {
-    renderer, kamera, boyutla, kare, ciz, karakterAyarla, parcacikSac, ekranKonumu, onizlemeler, kaliteAyarla, temizle,
+    renderer, kamera, boyutla, kare, ciz, karakterAyarla, parcacikSac, ekranKonumu, onizlemeler, kalite, temizle,
     tekme(guc) { if (!hareketAz) tekmeHiz += guc; },
     korTonu() { if (!hareketAz) korTon = 1; },
     sifirla(p) { sonP = p; },
-    pikselOrani: () => pikselOrani
+    kalite
   };
 }

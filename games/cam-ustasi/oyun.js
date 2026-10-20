@@ -28,8 +28,8 @@ const kaydet = () => Depo.yaz('cam:ilerleme', ilerleme);
 let sesAcik = Depo.oku('cam:ses', true);
 
 // ---------- Sahne ----------
-const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
-renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
+const renderer = new THREE.WebGLRenderer(Kalite.rendererSecenek({ powerPreference: 'high-performance' }));
+const kalite = Kalite.kur(renderer, { azami: 1.75, boyutla: boyutlandir });
 renderer.setClearColor(R.murekkep);
 kap.prepend(renderer.domElement);
 const canvas = renderer.domElement;
@@ -711,6 +711,7 @@ new ResizeObserver(boyutlandir).observe(kap);
 // ---------- Döngü ----------
 let onceki = performance.now();
 function kare(simdi) {
+  kalite.kare(simdi);
   const dt = Math.min(0.1, (simdi - onceki) / 1000);
   onceki = simdi;
   if (calisiyor && durum && !durum.bitti) {
@@ -838,6 +839,7 @@ $('oda-sec').addEventListener('click', () => {
 });
 
 sesDugmesi();
+Kalite.dugmeEkle(document.getElementById('ses'), kalite);
 modDugmeleri();
 odaCipleriniCiz();
 boyutlandir();

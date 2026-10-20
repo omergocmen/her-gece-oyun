@@ -30,8 +30,8 @@ const kaydet = () => Depo.yaz('golf:ilerleme', ilerleme);
 let sesAcik = Depo.oku('golf:ses', true);
 
 // ---------- Sahne ----------
-const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
-renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
+const renderer = new THREE.WebGLRenderer(Kalite.rendererSecenek({ powerPreference: 'high-performance' }));
+const kalite = Kalite.kur(renderer, { azami: 1.75, boyutla: boyutlandir });
 renderer.setClearColor(R.murekkep);
 kap.prepend(renderer.domElement);
 const canvas = renderer.domElement;
@@ -1011,7 +1011,9 @@ $('haritaya').addEventListener('click', () => {
 
 // ---------- Döngü ----------
 let onceki = performance.now();
+let atla = false;
 function dongu(simdi) {
+  kalite.kare(simdi);
   const dt = Math.min(0.1, (simdi - onceki) / 1000);
   onceki = simdi;
   if (D) {
@@ -1037,12 +1039,15 @@ function dongu(simdi) {
     izGuncelle(dt);
     kameraGuncelle(dt, false);
   }
-  renderer.render(sahne, kamera);
+  // Top durgunken sahnede yalnızca süs hareketi var (bayrak, vapur, balon): 30 fps yeter, maliyet yarıya iner.
+  atla = !!durum && !durum.hareket && !nisanAl ? !atla : false;
+  if (!atla) renderer.render(sahne, kamera);
   requestAnimationFrame(dongu);
 }
 
 // ---------- Başlangıç ----------
 sesDugmesi();
+Kalite.dugmeEkle($('ses'), kalite);
 boyutlandir();
 const baslangic = Math.min(Math.max(1, ilerleme.tur.delik || 1), ilerleme.acik, DELIK_SAYISI);
 delikYukle(baslangic);
