@@ -29,5 +29,20 @@
       "games/sayi-tahmin/oyun.js",
       "games/sayi-tahmin/kapak.svg"
     ]
+  },
+  {
+    "slug": "cini-blok",
+    "ad": "Çini Blok",
+    "aciklama": "İznik motifli blok parçalarını 8×8 tahtaya sürükle, satır ve sütun doldurup kombo yap. Günlük meydan okuma ve sonsuz klasik mod.",
+    "kategori": "Bulmaca",
+    "eklenme": "2026-10-20",
+    "gorsel": "games/cini-blok/kapak.svg",
+    "dosyalar": [
+      "games/cini-blok/",
+      "games/cini-blok/stil.css",
+      "games/cini-blok/mantik.js",
+      "games/cini-blok/oyun.js",
+      "games/cini-blok/kapak.svg"
+    ]
   }
 ]
