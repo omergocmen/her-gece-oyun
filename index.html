@@ -39,11 +39,17 @@
   </header>
   <main class="container">
     <section id="bu-gece" class="bu-gece" aria-live="polite"></section>
+    <section id="kaldigin-yer" class="kaldigin-yer" aria-labelledby="kaldigin-baslik" hidden>
+      <h2 id="kaldigin-baslik" class="serit-baslik">Kaldığın yerden</h2>
+      <ol id="son-oynananlar" class="kompakt-serit"></ol>
+    </section>
     <section class="tum-oyunlar" aria-labelledby="oyunlar-baslik">
       <div class="bolum-baslik">
         <h2 id="oyunlar-baslik">Tüm oyunlar</h2>
-        <span id="oyun-sayisi"></span>
+        <span id="oyun-sayisi" aria-live="polite"></span>
       </div>
+      <div id="suzgec" class="suzgec" role="group" aria-label="Kategoriye göre süz" hidden></div>
+      <p id="suzgec-bos" class="suzgec-bos" hidden>Bu kategoride henüz oyun yok.</p>
       <ol id="oyun-listesi" class="oyun-izgarasi"></ol>
     </section>
     <noscript><p>Oyunları görmek için JavaScript'i açın.</p></noscript>

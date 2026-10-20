@@ -3,6 +3,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('fs');
 const path = require('path');
+const vm = require('vm');
 const { manifestUret, diskYolu, KOK } = require('../scripts/precache-olustur.js');
 const Katalog = require('../assets/js/katalog.js');
 
@@ -117,4 +118,85 @@ test('ana sayfa kartları depo.js özetini okuyabilir ve her oyun özet yazar', 
       .map((d) => fs.readFileSync(diskYolu(d), 'utf8')).join('\n');
     assert.ok(kodlar.includes(`Depo.ozetYaz('${oyun.slug}'`), `${oyun.slug}: Depo.ozetYaz ile kart özeti yazmıyor`);
   }
+});
+
+test('kategori süzgeci games.json\'dan türetilir; 3D düğmesi boyut alanından gelir', () => {
+  const kategoriler = Katalog.kategoriler(Katalog.sirala(oyunlar));
+  const anahtarlar = kategoriler.map((k) => k.anahtar);
+  assert.equal(anahtarlar[0], 'tumu');
+  assert.equal(anahtarlar[anahtarlar.length - 1], '3d');
+  assert.equal(new Set(anahtarlar).size, anahtarlar.length, 'süzgeç anahtarları tekrar etmemeli');
+  for (const oyun of oyunlar) {
+    assert.ok(anahtarlar.includes(Katalog.kategoriAnahtari(oyun.kategori)), `${oyun.slug}: kategorisi süzgeçte yok`);
+  }
+  // Her oyun "Tümü" dışında en az bir süzgeçte görünür.
+  const gorunen = new Set();
+  for (const k of kategoriler.slice(1)) Katalog.suz(oyunlar, k.anahtar).forEach((o) => gorunen.add(o.slug));
+  assert.equal(gorunen.size, oyunlar.length);
+});
+
+test('süzgeç mantığı: anahtar, süzme ve geçersiz URL', () => {
+  assert.equal(Katalog.kategoriAnahtari('Masa oyunu'), 'masa-oyunu');
+  assert.equal(Katalog.kategoriAnahtari('Yarış'), 'yaris');
+  assert.equal(Katalog.kategoriAnahtari('Çocuk & Aile'), 'cocuk-aile');
+  assert.equal(Katalog.kategoriAnahtari('İstanbul Işıkları'), 'istanbul-isiklari');
+  const ornek = [
+    { slug: 'a', kategori: 'Bulmaca', boyut: '2D' },
+    { slug: 'b', kategori: 'Masa oyunu', boyut: '2D' },
+    { slug: 'c', kategori: 'Bulmaca', boyut: '3D' },
+    { slug: 'd', kategori: 'Aksiyon', boyut: '3D' }
+  ];
+  assert.deepEqual(Katalog.kategoriler(ornek).map((k) => k.ad), ['Tümü', 'Bulmaca', 'Masa oyunu', 'Aksiyon', '3D']);
+  assert.deepEqual(Katalog.suz(ornek, 'bulmaca').map((o) => o.slug), ['a', 'c']);
+  assert.deepEqual(Katalog.suz(ornek, 'masa-oyunu').map((o) => o.slug), ['b']);
+  assert.deepEqual(Katalog.suz(ornek, '3d').map((o) => o.slug), ['c', 'd']);
+  assert.deepEqual(Katalog.suz(ornek, 'tumu').map((o) => o.slug), ['a', 'b', 'c', 'd']);
+  assert.deepEqual(Katalog.suz(ornek, 'spor'), []);
+  assert.equal(Katalog.gecerliAnahtar(ornek, 'aksiyon'), 'aksiyon');
+  assert.equal(Katalog.gecerliAnahtar(ornek, 'yok-boyle'), 'tumu');
+  assert.equal(Katalog.gecerliAnahtar(ornek, null), 'tumu');
+  // 3D oyun yoksa 3D düğmesi de yok.
+  assert.ok(!Katalog.kategoriler(ornek.slice(0, 2)).some((k) => k.anahtar === '3d'));
+});
+
+test('"Kaldığın yerden" en fazla 4 oyunu en yeniden eskiye, bilinmeyenleri atlayarak verir', () => {
+  const sonuc = Katalog.sonOynananlar(['tavla', 'silinmis-oyun', 'mini-golf', 'tavla', 'cini-blok', 'zeka-kupu', 'cam-ustasi'], oyunlar, 4);
+  assert.deepEqual(sonuc.map((o) => o.slug), ['tavla', 'mini-golf', 'cini-blok', 'zeka-kupu']);
+  assert.deepEqual(Katalog.sonOynananlar(null, oyunlar, 4), []);
+  assert.deepEqual(Katalog.sonOynananlar([], oyunlar, 4), []);
+});
+
+// depo.js'yi sahte bir tarayıcı ortamında çalıştırır (yol: sayfa adresi, depo: localStorage ya da null = kapalı).
+function depoCalistir(yol, depo) {
+  const ortam = { location: { pathname: yol } };
+  if (depo) ortam.localStorage = depo;
+  else Object.defineProperty(ortam, 'localStorage', { get() { throw new Error('depolama kapalı'); } });
+  vm.runInNewContext(fs.readFileSync(path.join(KOK, 'assets/js/depo.js'), 'utf8'), ortam);
+  return ortam.Depo;
+}
+function sahteDepo() {
+  const veri = {};
+  return { veri, getItem: (k) => (k in veri ? veri[k] : null), setItem: (k, v) => { veri[k] = String(v); } };
+}
+
+test('oyun sayfası açılınca depo.js onu son oynananların başına yazar', () => {
+  const depo = sahteDepo();
+  depoCalistir('/games/tavla/', depo);
+  depoCalistir('/games/mini-golf/index.html', depo);
+  depoCalistir('/games/tavla/', depo);
+  const Depo = depoCalistir('/', depo); // ana sayfa listeye bir şey eklemez
+  assert.deepEqual([...Depo.sonOynananlar()], ['tavla', 'mini-golf']);
+  for (let i = 0; i < 20; i++) Depo.oynandi('oyun-' + i);
+  assert.equal(Depo.sonOynananlar().length, 12, 'liste sınırlı kalmalı');
+  Depo.ozetYaz('tavla', '');
+  assert.equal(Depo.ozetOku('tavla'), null, 'boş özet yazılmaz');
+  Depo.ozetYaz('tavla', '3/5 maç');
+  assert.equal(Depo.ozetOku('tavla'), '3/5 maç');
+  assert.equal(depo.veri['hgo:ozet:tavla'], '"3/5 maç"');
+});
+
+test('depolama kapalıyken depo.js hata vermez, son oynananlar boş döner', () => {
+  const Depo = depoCalistir('/games/tavla/', null);
+  assert.deepEqual([...Depo.sonOynananlar()], []);
+  assert.equal(Depo.ozetOku('tavla'), null);
 });
