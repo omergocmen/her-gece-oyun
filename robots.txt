@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hergeceoyun.netlify.app/sitemap.xml
+Sitemap: https://her-gece-oyun-a52g.vercel.app/sitemap.xml
