@@ -1,6 +1,6 @@
 // Bu dosya otomatik üretilir: npm run precache
 self.PRECACHE = {
-  "surum": "14209aa5da4e",
+  "surum": "995fad282206",
   "dosyalar": [
     "./",
     "index.html",
@@ -69,6 +69,11 @@ self.PRECACHE = {
     "games/kapadokya-yollari/sahne.js",
     "games/kapadokya-yollari/ses.js",
     "games/kapadokya-yollari/oyun.js",
-    "games/kapadokya-yollari/kapak.svg"
+    "games/kapadokya-yollari/kapak.svg",
+    "games/yokus-asagi/",
+    "games/yokus-asagi/stil.css",
+    "games/yokus-asagi/mantik.js",
+    "games/yokus-asagi/oyun.js",
+    "games/yokus-asagi/kapak.svg"
   ]
 };
