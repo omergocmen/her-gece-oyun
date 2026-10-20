@@ -103,6 +103,13 @@
     </image:image>
   </url>
   <url>
+    <loc>https://her-gece-oyun-a52g.vercel.app/games/okey/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <image:image>
+      <image:loc>https://her-gece-oyun-a52g.vercel.app/games/okey/paylasim.png</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://her-gece-oyun-a52g.vercel.app/games/sudoku/</loc>
     <lastmod>2026-10-20</lastmod>
     <image:image>

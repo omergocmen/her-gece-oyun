@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="site-kok" content="../../">
+  <!-- SEO:BASLA -->
+  <title>Okey Oyna – Ücretsiz, İndirmeden | Her Gece Oyun</title>
+  <meta name="description" content="Üç bilgisayar rakibe karşı klasik okey: gösterge, sahte okey, per ve seri kurma, çifte gitme. Üç zorluk, 3 ya da 5 elli maç ve her gün aynı dağıtımlı günün eli. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <link rel="canonical" href="https://her-gece-oyun-a52g.vercel.app/games/okey/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Her Gece Oyun">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:title" content="Okey Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta property="og:description" content="Üç bilgisayar rakibe karşı klasik okey: gösterge, sahte okey, per ve seri kurma, çifte gitme. Üç zorluk, 3 ya da 5 elli maç ve her gün aynı dağıtımlı günün eli. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta property="og:url" content="https://her-gece-oyun-a52g.vercel.app/games/okey/">
+  <meta property="og:image" content="https://her-gece-oyun-a52g.vercel.app/games/okey/paylasim.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Okey Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta name="twitter:description" content="Üç bilgisayar rakibe karşı klasik okey: gösterge, sahte okey, per ve seri kurma, çifte gitme. Üç zorluk, 3 ya da 5 elli maç ve her gün aynı dağıtımlı günün eli. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta name="twitter:image" content="https://her-gece-oyun-a52g.vercel.app/games/okey/paylasim.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Okey","description":"Üç bilgisayar rakibe karşı klasik okey: gösterge, sahte okey, per ve seri kurma, çifte gitme. Üç zorluk, 3 ya da 5 elli maç ve her gün aynı dağıtımlı günün eli.","url":"https://her-gece-oyun-a52g.vercel.app/games/okey/","image":"https://her-gece-oyun-a52g.vercel.app/games/okey/paylasim.png","genre":"Masa oyunu","inLanguage":"tr","datePublished":"2026-10-20","gamePlatform":"Web tarayıcısı","applicationCategory":"Game","operatingSystem":"Tüm işletim sistemleri","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"},"isPartOf":{"@type":"WebSite","name":"Her Gece Oyun","url":"https://her-gece-oyun-a52g.vercel.app/"}}</script>
+  <!-- SEO:BITIS -->
+  <meta name="theme-color" content="#110f0d">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="../../"><span>Her Gece <em>Oyun</em></span></a>
+    <div class="sag">
+      <button id="istatistik-ac" class="ikon-buton" type="button" aria-label="İstatistikler"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4 20h3V11H4zm6.5 0h3V4h-3zM17 20h3v-6h-3z"/></svg></button>
+      <button id="ayar-ac" class="ikon-buton" type="button" aria-label="Maç ayarları"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></button>
+      <a class="geri" href="../../" aria-label="Tüm oyunlar">←<span class="uzun"> Tüm oyunlar</span></a>
+    </div>
+  </header>
+  <main class="container oyun-sayfasi okey-oyunu">
+    <span class="ust-baslik">Masa oyunu</span>
+    <h1>Okey</h1>
+    <div class="mod-satiri" role="group" aria-label="Oyun türü">
+      <button id="mod-mac" class="mod-dugme" type="button" aria-pressed="true">Maç</button>
+      <button id="mod-gunluk" class="mod-dugme" type="button" aria-pressed="false">Günün eli</button>
+    </div>
+    <p id="mac-bilgi" class="mac-bilgi" aria-live="off"></p>
+    <p id="devam-bilgi" class="devam-bilgi" hidden>Kaldığın yerden devam ediyorsun</p>
+
+    <section class="oyun-alani okey-alani" aria-label="Oyun alanı">
+      <div class="masa-kutu">
+        <ul id="rakipler" class="rakipler" aria-label="Rakipler"></ul>
+        <div id="masa" class="masa">
+          <div class="masa-sol">
+            <div class="gosterge-satiri">
+              <div class="etiketli"><span class="etiket">Gösterge</span><div id="gosterge" class="mini-yer"></div></div>
+              <div class="etiketli"><span class="etiket">Okey</span><div id="okey-tasi" class="mini-yer"></div></div>
+            </div>
+            <button id="deste" class="deste" type="button" aria-label="Desteden taş çek">
+              <span class="deste-yigin" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="deste-yazi"><strong id="deste-sayi">48</strong><small>Deste</small></span>
+            </button>
+          </div>
+          <div id="iskartalar" class="iskartalar" aria-label="Iskarta yığınları"></div>
+        </div>
+      </div>
+
+      <div class="istaka-kutu">
+        <div id="istaka" class="istaka" role="group" aria-label="Istakan: 16 yuva, iki sıra"></div>
+      </div>
+      <p id="durum" class="durum" role="status" aria-live="polite"></p>
+      <p id="per-bilgi" class="per-bilgi"></p>
+      <div class="eylemler">
+        <button id="seri-diz" class="buton ikincil" type="button">Seri diz</button>
+        <button id="cift-diz" class="buton ikincil" type="button">Çift diz</button>
+        <button id="at-dugme" class="buton ikincil" type="button" disabled>Taşı at</button>
+        <button id="bitir" class="buton" type="button" disabled>Bitir</button>
+      </div>
+      <button id="sonuc-ac" class="metin-dugme" type="button" hidden>Eli bitiren sonucu göster</button>
+    </section>
+
+    <h2>Nasıl oynanır?</h2>
+    <p>Okey dört kişiyle oynanan, 106 taşlı bir masa oyunudur: dört renkte (kırmızı, sarı, mavi, siyah) 1'den 13'e ikişer taş ve iki <strong>sahte okey</strong>. Sen altta oturursun; üç bilgisayar rakip saat yönünde sırayla oynar. Her el, dağıtımda masaya çevrilen <strong>gösterge</strong> taşıyla başlar: göstergenin aynı renkteki bir fazlası <strong>okey</strong> olur (gösterge 13 ise okey 1'dir). İki okey taşı <strong>joker</strong>dir ve istediğin taşın yerine geçer; ıstakada üzerlerinde sodyum kenarlık görürsün. Sahte okey ise jokerin değil, okeyin yüzünü taşıyan sıradan bir taştır: yalnızca okeyin kendisi yerine geçer ve ortasında yıldız bulunur.</p>
+    <p><strong>Amaç:</strong> ıstakandaki 14 taşı tamamen <strong>per</strong> ve <strong>seri</strong>lere bölüp 15. taşı atarak eli bitirmek. Seri, aynı renkten en az üç ardışık taştır (5-6-7); 12-13-1 geçerlidir ama 13-1-2 geçerli değildir. Per, aynı sayıdan farklı renkte üç ya da dört taştır (8 kırmızı, 8 sarı, 8 mavi). Her taş yalnızca bir grupta kullanılır. Dört şekil işareti renkleri sayıdan bağımsız ayırt etmeni sağlar: kırmızı yuvarlak, sarı üçgen, mavi kare, siyah baklava.</p>
+    <p><strong>Sıra:</strong> eli başlatan 15 taşla başlar ve çekmeden bir taş atar. Diğerleri sırasıyla desteden bir taş çeker ya da kendisinden önceki oyuncunun (senin için sağ taraftaki rakibin) en son attığı taşı alır, sonra elindeki bir taşı kendi ıskartasına atar. Iskartadan aldığın taşı aynı turda geri atamazsın. Deste biterse el berabere kalır.</p>
+    <p><strong>Istaka:</strong> taşları sürükleyip bırakarak ya da bir taşa dokunup ardından boş yuvaya veya başka bir taşa dokunarak yerleştirirsin. <strong>Seri diz</strong> elindeki taşları en çok per ve seri oluşturacak biçimde, <strong>Çift diz</strong> ise çiftleri yan yana dizer. Taşı atmak için masaya sürükle, <strong>Taşı at</strong>'a bas ya da seçili taşa iki kez hızlıca dokun. Elin bittiğinde <strong>Bitir</strong> etkinleşir. Klavyeyle: ok tuşları yuvalar arasında gezdirir, Enter seçer ya da yerleştirir, <strong>C</strong> desteden çeker, <strong>I</strong> ıskartayı alır, <strong>A</strong> seçili taşı atar, <strong>B</strong> bitirir.</p>
+    <p><strong>Çifte gitme:</strong> açıkken yedi çiftle (iki aynı taş; okey her taşla çift olur) de bitirebilirsin ve puanı ikiye katlarsın. <strong>Okey atarak bitirme:</strong> açıkken son taş olarak okey atıp bitirirsen puan yine ikiye katlanır; ikisi birleşirse dört puan olur. Normal bitirme bir puandır. Maç 3 ya da 5 elden oluşur, en çok puan toplayan kazanır. Ayarlardan bu kuralları açıp kapatabilir, bilgisayarın seviyesini (Kolay, Orta, Zor) seçebilirsin.</p>
+    <p><strong>Rakipler:</strong> Rıza Amca temkinli oynar, attığın taşa göre sana taş vermemeye çalışır. Kâzım Abi saldırgandır, ıskartadan çabuk taş kapar. Nurten Teyze çiftecidir, el uygunsa yedi çifte gider. <strong>Günün eli</strong> her gün herkes için aynı dağıtımdır; tek elde bilgisayara karşı oynarsın. Yarım kalan el, maç puanları ve istatistikler yalnızca bu cihazda saklanır; sayfayı kapatsan da kaldığın yerden devam edersin. Oyun internetsiz de çalışır.</p>
+
+
+    <!-- BENZER:BASLA -->
+    <section class="benzer" aria-labelledby="benzer-baslik">
+      <h2 id="benzer-baslik">Benzer oyunlar</h2>
+      <ul class="benzer-izgara">
+        <li><a class="oyun-karti" href="../pasyans/" aria-label="Pasyans, Masa oyunu, 2D, No. 013">
+          <div class="kapak"><img src="../pasyans/kapak.svg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="damga-kart" aria-hidden="true">No. 013</span><span class="damga-kart boyut" aria-hidden="true">2D</span></div>
+          <div class="metin"><span class="kategori">Masa oyunu</span><h3>Pasyans</h3><p class="aciklama">Klondike pasyans: 1 ya da 3 kart çekiliş, sürükle-bırak ve dokunarak taşıma, geri al, ipucu. Çözücüyle kazanılabilir doğrulanmış günün destesi ve istatistikler.</p></div>
+        </a></li>
+        <li><a class="oyun-karti" href="../tavla/" aria-label="Tavla, Masa oyunu, 2D, No. 005">
+          <div class="kapak"><img src="../tavla/kapak.svg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="damga-kart" aria-hidden="true">No. 005</span><span class="damga-kart boyut" aria-hidden="true">2D</span></div>
+          <div class="metin"><span class="kategori">Masa oyunu</span><h3>Tavla</h3><p class="aciklama">Bilgisayara karşı Türk usulü tavla: kapı, kırık, zorunlu hamle, toplama ve mars. Üç zorluk, 3 ya da 5 puanlık maç.</p></div>
+        </a></li>
+        <li><a class="oyun-karti" href="../sudoku/" aria-label="Sudoku, Bulmaca, 2D, No. 016">
+          <div class="kapak"><img src="../sudoku/kapak.svg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="damga-kart" aria-hidden="true">No. 016</span><span class="damga-kart boyut" aria-hidden="true">2D</span></div>
+          <div class="metin"><span class="kategori">Bulmaca</span><h3>Sudoku</h3><p class="aciklama">Kalem notlu, 4 seviyeli Sudoku: Türkçe adım adım ipucu, her gün herkese aynı günlük bulmaca ve seri. Her bulmaca tek çözümlü.</p></div>
+        </a></li>
+      </ul>
+    </section>
+    <!-- BENZER:BITIS -->
+  </main>
+
+  <dialog id="ayarlar" class="okey-pencere">
+    <h2>Maç ayarları</h2>
+    <fieldset class="secim">
+      <legend>Bilgisayarın seviyesi</legend>
+      <div class="secim-dugmeleri" id="seviye-secimi">
+        <button type="button" class="buton ikincil" data-seviye="kolay">Kolay</button>
+        <button type="button" class="buton ikincil" data-seviye="orta">Orta</button>
+        <button type="button" class="buton ikincil" data-seviye="zor">Zor</button>
+      </div>
+    </fieldset>
+    <fieldset class="secim">
+      <legend>Maç uzunluğu</legend>
+      <div class="secim-dugmeleri" id="el-secimi">
+        <button type="button" class="buton ikincil" data-el="3">3 el</button>
+        <button type="button" class="buton ikincil" data-el="5">5 el</button>
+      </div>
+    </fieldset>
+    <fieldset class="secim">
+      <legend>Yerel kurallar</legend>
+      <label class="onay"><input type="checkbox" id="ayar-cifte"><span><strong>Çifte gitme</strong><small>Yedi çiftle bitirilebilir, puan ×2</small></span></label>
+      <label class="onay"><input type="checkbox" id="ayar-okey"><span><strong>Okey atarak bitirme</strong><small>Son taş okeyse puan ×2; kapalıyken okeyle bitilmez</small></span></label>
+    </fieldset>
+    <p class="pencere-not">Süren maç bırakılır ve yeni maç başlar. Günün eli bu ayarlardan etkilenmez.</p>
+    <div class="pencere-eylemler">
+      <button id="yeni-mac-baslat" class="buton" type="button">Yeni maçı başlat</button>
+      <form method="dialog"><button class="buton ikincil" type="submit">Vazgeç</button></form>
+    </div>
+  </dialog>
+
+  <dialog id="sonuc" class="okey-pencere sonuc-pencere">
+    <p id="sonuc-ust" class="pencere-ust">El bitti</p>
+    <p id="okey-damga" class="okey-damga" hidden>Okey!</p>
+    <h2 id="sonuc-baslik">Kazandın</h2>
+    <p id="sonuc-metin" class="sonuc-metin"></p>
+    <div id="sonuc-el" class="sonuc-el" aria-label="Kazanan eli"></div>
+    <div id="sonuc-tablo" class="panel puan-tablo"></div>
+    <div class="pencere-eylemler">
+      <button id="sonraki-el" class="buton" type="button">Sonraki el</button>
+      <button id="sonuc-yeni-mac" class="buton ikincil" type="button">Yeni maç</button>
+      <button id="sonuc-kapat" class="buton ikincil" type="button">Masaya bak</button>
+    </div>
+  </dialog>
+
+  <dialog id="istatistik" class="okey-pencere">
+    <h2>İstatistikler</h2>
+    <div class="ist-sayilar">
+      <div><strong id="i-mac">0</strong><span>Oynanan maç</span></div>
+      <div><strong id="i-mac-k">0</strong><span>Kazanılan maç</span></div>
+      <div><strong id="i-el">0</strong><span>Oynanan el</span></div>
+      <div><strong id="i-el-k">0</strong><span>Kazanılan el</span></div>
+      <div><strong id="i-cifte">0</strong><span>Çifteyle biten</span></div>
+      <div><strong id="i-okey">0</strong><span>Okey atarak biten</span></div>
+      <div><strong id="i-gun">0</strong><span>Günün eli</span></div>
+      <div><strong id="i-gun-k">0</strong><span>Günün eli kazanılan</span></div>
+    </div>
+    <form method="dialog"><button class="buton ikincil" type="submit">Kapat</button></form>
+  </dialog>
+
+  <script src="../../assets/js/depo.js"></script>
+  <script src="mantik.js"></script>
+  <script src="oyun.js"></script>
+  <script src="../../assets/js/sw-kayit.js"></script>
+</body>
+</html>
