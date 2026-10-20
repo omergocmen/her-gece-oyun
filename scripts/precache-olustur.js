@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 // precache-manifest.js dosyasını üretir: site kabuğu + games.json'daki tüm oyun dosyaları.
 // Sürüm, bu dosyaların içerik özetidir; herhangi biri değişince service worker yeni önbellek kurar.
+// Her dosyanın kendi özeti de yazılır: service worker yalnızca özeti değişen dosyaları ağdan indirir,
+// değişmeyenleri (three.js, fontlar...) eski önbellekten kopyalar.
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -29,6 +31,11 @@ function diskYolu(url) {
   return path.join(KOK, yol);
 }
 
+// sw.js aynı özeti indirdiği gövdeden crypto.subtle ile hesaplar (SHA-256, ilk 12 onaltılık hane).
+function dosyaOzeti(icerik) {
+  return crypto.createHash('sha256').update(icerik).digest('hex').slice(0, 12);
+}
+
 function manifestUret() {
   const oyunlar = JSON.parse(fs.readFileSync(path.join(KOK, 'games.json'), 'utf8'));
   const dosyalar = KABUK.slice();
@@ -36,16 +43,19 @@ function manifestUret() {
     for (const dosya of oyun.dosyalar) if (!dosyalar.includes(dosya)) dosyalar.push(dosya);
   }
   const ozet = crypto.createHash('sha256');
+  const ozetler = {};
   for (const dosya of dosyalar) {
+    const icerik = fs.readFileSync(diskYolu(dosya));
     ozet.update(dosya);
-    ozet.update(fs.readFileSync(diskYolu(dosya)));
+    ozet.update(icerik);
+    ozetler[dosya] = dosyaOzeti(icerik);
   }
   const surum = ozet.digest('hex').slice(0, 12);
   return '// Bu dosya otomatik üretilir: npm run precache\n' +
-    'self.PRECACHE = ' + JSON.stringify({ surum, dosyalar }, null, 2) + ';\n';
+    'self.PRECACHE = ' + JSON.stringify({ surum, dosyalar, ozetler }, null, 2) + ';\n';
 }
 
-module.exports = { manifestUret, diskYolu, KOK };
+module.exports = { manifestUret, dosyaOzeti, diskYolu, KOK };
 
 if (require.main === module) {
   fs.writeFileSync(path.join(KOK, 'precache-manifest.js'), manifestUret());
