@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="site-kok" content="../../">
+  <!-- SEO:BASLA -->
+  <title>Günün Kelimesi Oyna – Ücretsiz, İndirmeden | Her Gece Oyun</title>
+  <meta name="description" content="Beş harfli Türkçe kelimeyi altı tahminde bul. Her gün yeni bir kelime, Türkçe klavye ve serbest mod. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <link rel="canonical" href="https://omergocmen.github.io/her-gece-oyun/games/gunun-kelimesi/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Her Gece Oyun">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:title" content="Günün Kelimesi Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta property="og:description" content="Beş harfli Türkçe kelimeyi altı tahminde bul. Her gün yeni bir kelime, Türkçe klavye ve serbest mod. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta property="og:url" content="https://omergocmen.github.io/her-gece-oyun/games/gunun-kelimesi/">
+  <meta property="og:image" content="https://omergocmen.github.io/her-gece-oyun/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Günün Kelimesi Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta name="twitter:description" content="Beş harfli Türkçe kelimeyi altı tahminde bul. Her gün yeni bir kelime, Türkçe klavye ve serbest mod. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta name="twitter:image" content="https://omergocmen.github.io/her-gece-oyun/assets/og.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Günün Kelimesi","description":"Beş harfli Türkçe kelimeyi altı tahminde bul. Her gün yeni bir kelime, Türkçe klavye ve serbest mod.","url":"https://omergocmen.github.io/her-gece-oyun/games/gunun-kelimesi/","image":"https://omergocmen.github.io/her-gece-oyun/assets/og.png","genre":"Kelime","inLanguage":"tr","datePublished":"2026-10-20","gamePlatform":"Web tarayıcısı","applicationCategory":"Game","operatingSystem":"Tüm işletim sistemleri","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"},"isPartOf":{"@type":"WebSite","name":"Her Gece Oyun","url":"https://omergocmen.github.io/her-gece-oyun/"}}</script>
+  <!-- SEO:BITIS -->
+  <meta name="theme-color" content="#141836">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="../../">🌙 Her Gece Oyun</a>
+    <button id="istatistik-ac" class="ikon-buton" type="button" aria-label="İstatistikler">📊</button>
+  </header>
+  <main class="container kelime-oyunu">
+    <h1>Günün Kelimesi <span id="mod-etiketi" class="mod-etiketi"></span></h1>
+    <p id="mesaj" class="kelime-mesaj" role="status" aria-live="polite"></p>
+    <div id="izgara" class="izgara" aria-label="Tahmin tablosu"></div>
+    <div id="sonuc" class="kelime-sonuc" hidden>
+      <button id="paylas" class="buton" type="button">Sonucu kopyala</button>
+      <button id="serbest" class="buton ikincil" type="button">Serbest modda oyna</button>
+    </div>
+    <div id="klavye" class="klavye" aria-label="Ekran klavyesi"></div>
+
+    <h2>Nasıl oynanır?</h2>
+    <p>Gizli kelime beş harfli bir Türkçe sözcüktür ve bulmak için altı hakkın var. Her tahminden sonra harflerin rengi değişir: yeşil harf kelimede ve doğru yerde, sarı harf kelimede var ama başka yerde, gri harf ise kelimede yok demektir. Kelime her gece yarısı değişir ve o gün herkes aynı kelimeyi çözer. Günlük kelimeyi bitirdikten sonra serbest modda istediğin kadar rastgele kelimeyle oynayabilirsin. İstatistiklerin yalnızca bu cihazda saklanır, hesap gerekmez.</p>
+  </main>
+
+  <dialog id="istatistik" class="istatistik">
+    <h2>İstatistikler</h2>
+    <div class="ist-sayilar">
+      <div><strong id="ist-oynanan">0</strong><span>Oynanan</span></div>
+      <div><strong id="ist-oran">0</strong><span>Kazanma %</span></div>
+      <div><strong id="ist-seri">0</strong><span>Seri</span></div>
+      <div><strong id="ist-en-iyi">0</strong><span>En iyi seri</span></div>
+    </div>
+    <h3>Tahmin dağılımı</h3>
+    <ol id="ist-dagilim" class="ist-dagilim"></ol>
+    <form method="dialog"><button class="buton" type="submit">Kapat</button></form>
+  </dialog>
+
+  <script src="../../assets/js/depo.js"></script>
+  <script src="kelimeler.js"></script>
+  <script src="mantik.js"></script>
+  <script src="oyun.js"></script>
+  <script src="../../assets/js/sw-kayit.js"></script>
+</body>
+</html>

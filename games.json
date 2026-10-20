@@ -1,5 +1,21 @@
 [
   {
+    "slug": "gunun-kelimesi",
+    "ad": "Günün Kelimesi",
+    "aciklama": "Beş harfli Türkçe kelimeyi altı tahminde bul. Her gün yeni bir kelime, Türkçe klavye ve serbest mod.",
+    "kategori": "Kelime",
+    "eklenme": "2026-10-20",
+    "gorsel": "games/gunun-kelimesi/kapak.svg",
+    "dosyalar": [
+      "games/gunun-kelimesi/",
+      "games/gunun-kelimesi/stil.css",
+      "games/gunun-kelimesi/kelimeler.js",
+      "games/gunun-kelimesi/mantik.js",
+      "games/gunun-kelimesi/oyun.js",
+      "games/gunun-kelimesi/kapak.svg"
+    ]
+  },
+  {
     "slug": "sayi-tahmin",
     "ad": "Sayı Tahmin",
     "aciklama": "1 ile 100 arasında aklımdan tuttuğum sayıyı en az denemede bul.",
