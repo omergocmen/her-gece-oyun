@@ -1,6 +1,6 @@
 // Bu dosya otomatik üretilir: npm run precache
 self.PRECACHE = {
-  "surum": "e9211ac4ba70",
+  "surum": "f31158f353f9",
   "dosyalar": [
     "./",
     "index.html",
