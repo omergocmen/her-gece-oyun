@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="site-kok" content="../../">
+  <title>Sayı Tahmin Oyna – Ücretsiz, İndirmeden | Her Gece Oyun</title>
+  <meta name="description" content="1 ile 100 arasındaki gizli sayıyı en az denemede bulmaya çalış. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta name="theme-color" content="#141836">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="../../">🌙 Her Gece Oyun</a>
+  </header>
+  <main class="container">
+    <h1>Sayı Tahmin</h1>
+    <section class="oyun-alani">
+      <form id="tahmin-formu">
+        <label for="tahmin">Tahminin (1-100):</label>
+        <input id="tahmin" type="number" min="1" max="100" inputmode="numeric" required>
+        <button class="buton" type="submit">Tahmin et</button>
+      </form>
+      <p id="mesaj" aria-live="polite">Aklımdan 1 ile 100 arasında bir sayı tuttum.</p>
+      <p id="rekor"></p>
+      <button id="yeniden" class="buton" type="button" hidden>Yeniden oyna</button>
+    </section>
+    <h2>Nasıl oynanır?</h2>
+    <p>Oyun 1 ile 100 arasında rastgele bir sayı seçer. Her tahmininden sonra gizli sayının daha büyük mü yoksa daha küçük mü olduğunu söyler. Sayıyı ne kadar az denemede bulursan o kadar iyi; en iyi skorun bu cihazda saklanır.</p>
+  </main>
+  <script src="../../assets/js/depo.js"></script>
+  <script src="oyun.js"></script>
+  <script src="../../assets/js/sw-kayit.js"></script>
+</body>
+</html>

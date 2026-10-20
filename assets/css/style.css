@@ -1,0 +1,50 @@
+:root {
+  --bg: #141836;
+  --panel: #1f2550;
+  --text: #f4f4fb;
+  --muted: #b8bbd9;
+  --accent: #ffd166;
+  --radius: 14px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.5; }
+a { color: var(--accent); }
+.container { max-width: 960px; margin: 0 auto; padding: 0 16px 32px; }
+.site-header {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 960px; margin: 0 auto; padding: 16px;
+}
+.logo { font-size: 1.3rem; font-weight: 700; text-decoration: none; color: var(--text); }
+.baglanti { background: #c0392b; color: #fff; border-radius: 999px; padding: 2px 10px; font-size: .85rem; }
+.bu-gece {
+  background: linear-gradient(135deg, #2b3270, #4a2c6e);
+  border-radius: var(--radius); padding: 20px; margin: 8px 0 24px;
+}
+.bu-gece .etiket { color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: .8rem; letter-spacing: .05em; }
+.bu-gece h1 { margin: 4px 0 8px; font-size: 1.8rem; }
+.buton {
+  display: inline-block; background: var(--accent); color: #141836; font-weight: 700;
+  padding: 10px 18px; border-radius: 999px; text-decoration: none; border: 0; cursor: pointer; font-size: 1rem;
+}
+.oyun-listesi {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+.oyun-karti {
+  background: var(--panel); border-radius: var(--radius); overflow: hidden;
+  display: flex; flex-direction: column; height: 100%; text-decoration: none; color: var(--text);
+}
+.oyun-karti img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #2b3270; }
+.oyun-karti .icerik { padding: 12px 14px 16px; }
+.oyun-karti h3 { margin: 0 0 4px; }
+.oyun-karti p { margin: 0; color: var(--muted); font-size: .95rem; }
+.kategori { font-size: .8rem; color: var(--accent); }
+.site-footer { text-align: center; color: var(--muted); font-size: .9rem; padding: 24px 16px; }
+.oyun-alani { background: var(--panel); border-radius: var(--radius); padding: 20px; }
+.oyun-alani input {
+  font-size: 1.2rem; padding: 8px 12px; border-radius: 10px; border: 0; width: 8em; max-width: 100%;
+}
+@media (max-width: 480px) {
+  .bu-gece h1 { font-size: 1.4rem; }
+}
