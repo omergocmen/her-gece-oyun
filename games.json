@@ -226,5 +226,22 @@
       "assets/vendor/three/three.module.min.js",
       "assets/js/kalite.js"
     ]
+  },
+  {
+    "slug": "pasyans",
+    "ad": "Pasyans",
+    "aciklama": "Klondike pasyans: 1 ya da 3 kart çekiliş, sürükle-bırak ve dokunarak taşıma, geri al, ipucu. Çözücüyle kazanılabilir doğrulanmış günün destesi ve istatistikler.",
+    "kategori": "Masa oyunu",
+    "boyut": "2D",
+    "eklenme": "2026-10-20",
+    "gunluk": true,
+    "gorsel": "games/pasyans/kapak.svg",
+    "dosyalar": [
+      "games/pasyans/",
+      "games/pasyans/stil.css",
+      "games/pasyans/mantik.js",
+      "games/pasyans/oyun.js",
+      "games/pasyans/kapak.svg"
+    ]
   }
 ]

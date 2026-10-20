@@ -1,6 +1,6 @@
 // Bu dosya otomatik üretilir: npm run precache
 self.PRECACHE = {
-  "surum": "995b6aa26437",
+  "surum": "afdf06266d58",
   "dosyalar": [
     "./",
     "index.html",
@@ -89,12 +89,17 @@ self.PRECACHE = {
     "games/yokus-asagi/stil.css",
     "games/yokus-asagi/mantik.js",
     "games/yokus-asagi/oyun.js",
-    "games/yokus-asagi/kapak.svg"
+    "games/yokus-asagi/kapak.svg",
+    "games/pasyans/",
+    "games/pasyans/stil.css",
+    "games/pasyans/mantik.js",
+    "games/pasyans/oyun.js",
+    "games/pasyans/kapak.svg"
   ],
   "ozetler": {
-    "./": "acbb9312bbeb",
-    "index.html": "acbb9312bbeb",
-    "games.json": "ba237adcd7e5",
+    "./": "74a486d2ef0b",
+    "index.html": "74a486d2ef0b",
+    "games.json": "886cd8c24e97",
     "manifest.webmanifest": "402a1b3b6849",
     "assets/css/style.css": "7d1d3d464ca4",
     "assets/fonts/bricolage-latin.woff2": "a756882d8a78",
@@ -106,7 +111,7 @@ self.PRECACHE = {
     "assets/icons/icon.svg": "a40ef20ade23",
     "assets/icons/icon-192.png": "a9a1e71d8e38",
     "assets/icons/icon-512.png": "c19b5bf4f1c7",
-    "games/gunun-kelimesi/": "589ff4b82dc2",
+    "games/gunun-kelimesi/": "bc2d55a8959f",
     "games/gunun-kelimesi/stil.css": "4f9952b58aeb",
     "games/gunun-kelimesi/kelimeler.js": "9a63089d8b6a",
     "games/gunun-kelimesi/mantik.js": "438b7d2ce5dc",
@@ -130,7 +135,7 @@ self.PRECACHE = {
     "games/cini-blok/mantik.js": "48b91fecb578",
     "games/cini-blok/oyun.js": "55de05577508",
     "games/cini-blok/kapak.svg": "d4b1ec81ffa8",
-    "games/tavla/": "c871c8b7ca94",
+    "games/tavla/": "47ed4584b558",
     "games/tavla/stil.css": "79d593438ef7",
     "games/tavla/mantik.js": "48f5a0b9c4d6",
     "games/tavla/isci.js": "72bcf2660b63",
@@ -179,6 +184,11 @@ self.PRECACHE = {
     "games/yokus-asagi/stil.css": "177cde38eb30",
     "games/yokus-asagi/mantik.js": "427c912bc4d6",
     "games/yokus-asagi/oyun.js": "4670d9226e3d",
-    "games/yokus-asagi/kapak.svg": "ecf26cc6b6b9"
+    "games/yokus-asagi/kapak.svg": "ecf26cc6b6b9",
+    "games/pasyans/": "60a68a934880",
+    "games/pasyans/stil.css": "e1ecd633a8e3",
+    "games/pasyans/mantik.js": "641d47bc5bb9",
+    "games/pasyans/oyun.js": "ac0488d44384",
+    "games/pasyans/kapak.svg": "fbd69d40b3f4"
   }
 };
