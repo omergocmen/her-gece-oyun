@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="site-kok" content="../../">
+  <!-- SEO:BASLA -->
+  <title>Yokuş Aşağı Oyna – Ücretsiz, İndirmeden | Her Gece Oyun</title>
+  <meta name="description" content="Gece İstanbul yokuşlarında sodyum ışıklı 3D pistte yuvarlanan top. Sağa sola yönlendir, kor bloklardan kaç, rampalardan uç; günlük pist ve sonsuz mod. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <link rel="canonical" href="https://her-gece-oyun-a52g.vercel.app/games/yokus-asagi/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Her Gece Oyun">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:title" content="Yokuş Aşağı Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta property="og:description" content="Gece İstanbul yokuşlarında sodyum ışıklı 3D pistte yuvarlanan top. Sağa sola yönlendir, kor bloklardan kaç, rampalardan uç; günlük pist ve sonsuz mod. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta property="og:url" content="https://her-gece-oyun-a52g.vercel.app/games/yokus-asagi/">
+  <meta property="og:image" content="https://her-gece-oyun-a52g.vercel.app/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Yokuş Aşağı Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta name="twitter:description" content="Gece İstanbul yokuşlarında sodyum ışıklı 3D pistte yuvarlanan top. Sağa sola yönlendir, kor bloklardan kaç, rampalardan uç; günlük pist ve sonsuz mod. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta name="twitter:image" content="https://her-gece-oyun-a52g.vercel.app/assets/og.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Yokuş Aşağı","description":"Gece İstanbul yokuşlarında sodyum ışıklı 3D pistte yuvarlanan top. Sağa sola yönlendir, kor bloklardan kaç, rampalardan uç; günlük pist ve sonsuz mod.","url":"https://her-gece-oyun-a52g.vercel.app/games/yokus-asagi/","image":"https://her-gece-oyun-a52g.vercel.app/assets/og.png","genre":"Aksiyon","inLanguage":"tr","datePublished":"2026-10-20","gamePlatform":"Web tarayıcısı","applicationCategory":"Game","operatingSystem":"Tüm işletim sistemleri","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"},"isPartOf":{"@type":"WebSite","name":"Her Gece Oyun","url":"https://her-gece-oyun-a52g.vercel.app/"}}</script>
+  <!-- SEO:BITIS -->
+  <meta name="theme-color" content="#110f0d">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="stil.css">
+  <script type="importmap">{ "imports": { "three": "../../assets/vendor/three/three.module.min.js" } }</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="../../"><span>Her Gece <em>Oyun</em></span></a>
+    <div class="sag">
+      <a class="geri" href="../../" aria-label="Tüm oyunlar">←<span class="uzun"> Tüm oyunlar</span></a>
+    </div>
+  </header>
+  <main class="container oyun-sayfasi yokus-oyunu">
+    <span class="ust-baslik">Aksiyon · 3D</span>
+    <h1>Yokuş Aşağı</h1>
+    <div class="secimler">
+      <div class="segment" role="group" aria-label="Mod">
+        <button type="button" data-mod="sonsuz">Sonsuz</button>
+        <button type="button" data-mod="gunluk">Günlük</button>
+      </div>
+    </div>
+
+    <section class="oyun-alani yokus-alani">
+      <div id="sahne" class="yokus-sahne">
+        <div class="yokus-hud">
+          <strong id="mesafe" class="mesafe">0 m</strong>
+          <span id="en-iyi" class="hud-etiket">En iyi 0 m</span>
+        </div>
+        <div class="hud-dugmeler">
+          <button id="duraklat" class="ikon-buton" type="button" aria-label="Duraklat"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
+          <button id="ses" class="ikon-buton" type="button" aria-label="Sesi kapat" aria-pressed="true"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path class="ses-dalga" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/><path class="ses-kapali" d="M17 9l5 6M22 9l-5 6"/></svg></button>
+        </div>
+        <div id="oklar" class="yon-oklari" aria-hidden="true" hidden>
+          <span class="ok sol"><svg viewBox="0 0 24 24" width="40" height="40"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="ok sagok"><svg viewBox="0 0 24 24" width="40" height="40"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <p id="tabela" class="tabela-yazi" aria-live="polite"></p>
+        <div id="perde" class="yokus-perde">
+          <p id="perde-baslik" class="perde-baslik">Gece İstanbul yokuşları</p>
+          <p class="perde-metin">Ekranın sol ya da sağ yarısına basılı tut, topu pistte tut.</p>
+          <button id="basla" class="buton" type="button">Başla</button>
+        </div>
+        <div id="sonuc" class="sonuc-karti" hidden>
+          <div class="sonuc-satir">
+            <div><span class="hud-etiket">Mesafe</span><strong id="sonuc-mesafe">0 m</strong></div>
+            <div><span class="hud-etiket">En iyi</span><strong id="sonuc-eniyi">0 m</strong></div>
+          </div>
+          <span id="rekor" class="rekor-damga" hidden>Rekor</span>
+          <p class="tekrar">Dokun ve tekrar</p>
+          <button id="kopyala" class="buton ikincil" type="button" hidden>Sonucu kopyala</button>
+        </div>
+      </div>
+    </section>
+
+    <h2>Nasıl oynanır?</h2>
+    <p>Gece İstanbul'unun yokuşlarından aşağı yuvarlanan bir topu yönetiyorsun. Telefonda ekranın sol ya da sağ yarısına basılı tut; bilgisayarda sol ve sağ yön tuşlarını ya da A ve D tuşlarını kullan. Top her saniye biraz daha hızlanır. Pistin kenarından düşme, kor renkli bloklara çarpma, boşlukların üstünden geç. Sodyum oklu rampalar topu havaya fırlatır, kemik kenarlı platformlar sağa sola kayar. Her 500 metrede bir yokuşun adını taşıyan tabelayı geçersin. Düşünce ekrana bir kez dokunman yeterli, hemen yeniden başlarsın. Sonsuz modda her koşu farklı bir pistte geçer; Günlük modda o günün pisti herkes için aynıdır ve sonucunu kopyalayıp paylaşabilirsin. En iyi mesafen yalnızca bu cihazda saklanır.</p>
+  </main>
+
+  <script src="../../assets/js/depo.js"></script>
+  <script src="mantik.js"></script>
+  <script type="module" src="oyun.js"></script>
+  <script src="../../assets/js/sw-kayit.js"></script>
+</body>
+</html>
