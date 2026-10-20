@@ -262,5 +262,23 @@
       "assets/vendor/three/three.module.min.js",
       "assets/js/kalite.js"
     ]
+  },
+  {
+    "slug": "okey",
+    "ad": "Okey",
+    "aciklama": "Üç bilgisayar rakibe karşı klasik okey: gösterge, sahte okey, per ve seri kurma, çifte gitme. Üç zorluk, 3 ya da 5 elli maç ve her gün aynı dağıtımlı günün eli.",
+    "kategori": "Masa oyunu",
+    "boyut": "2D",
+    "eklenme": "2026-10-20",
+    "gunluk": true,
+    "gorsel": "games/okey/kapak.svg",
+    "dosyalar": [
+      "games/okey/",
+      "games/okey/stil.css",
+      "games/okey/mantik.js",
+      "games/okey/isci.js",
+      "games/okey/oyun.js",
+      "games/okey/kapak.svg"
+    ]
   }
 ]
