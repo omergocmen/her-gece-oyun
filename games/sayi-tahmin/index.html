@@ -5,21 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="site-kok" content="../../">
   <!-- SEO:BASLA -->
-  <title>Sayı Tahmin Oyna – Ücretsiz, İndirmeden | Her Gece Oyun</title>
-  <meta name="description" content="1 ile 100 arasında aklımdan tuttuğum sayıyı en az denemede bul. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <title>Sayı Bulmaca Oyna – Ücretsiz, İndirmeden | Her Gece Oyun</title>
+  <meta name="description" content="Rakamları farklı gizli sayıyı +/− ipuçlarıyla mantık yürüterek bul. Günlük bulmaca, 3-5 hane zorluk ve rakam eleme paneli. Ücretsiz, girişsiz ve internetsiz oynanır.">
   <link rel="canonical" href="https://hergeceoyun.netlify.app/games/sayi-tahmin/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Her Gece Oyun">
   <meta property="og:locale" content="tr_TR">
-  <meta property="og:title" content="Sayı Tahmin Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
-  <meta property="og:description" content="1 ile 100 arasında aklımdan tuttuğum sayıyı en az denemede bul. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta property="og:title" content="Sayı Bulmaca Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta property="og:description" content="Rakamları farklı gizli sayıyı +/− ipuçlarıyla mantık yürüterek bul. Günlük bulmaca, 3-5 hane zorluk ve rakam eleme paneli. Ücretsiz, girişsiz ve internetsiz oynanır.">
   <meta property="og:url" content="https://hergeceoyun.netlify.app/games/sayi-tahmin/">
   <meta property="og:image" content="https://hergeceoyun.netlify.app/assets/og.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Sayı Tahmin Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
-  <meta name="twitter:description" content="1 ile 100 arasında aklımdan tuttuğum sayıyı en az denemede bul. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta name="twitter:title" content="Sayı Bulmaca Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta name="twitter:description" content="Rakamları farklı gizli sayıyı +/− ipuçlarıyla mantık yürüterek bul. Günlük bulmaca, 3-5 hane zorluk ve rakam eleme paneli. Ücretsiz, girişsiz ve internetsiz oynanır.">
   <meta name="twitter:image" content="https://hergeceoyun.netlify.app/assets/og.png">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Sayı Tahmin","description":"1 ile 100 arasında aklımdan tuttuğum sayıyı en az denemede bul.","url":"https://hergeceoyun.netlify.app/games/sayi-tahmin/","image":"https://hergeceoyun.netlify.app/assets/og.png","genre":"Bulmaca","inLanguage":"tr","datePublished":"2026-10-20","gamePlatform":"Web tarayıcısı","applicationCategory":"Game","operatingSystem":"Tüm işletim sistemleri","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"},"isPartOf":{"@type":"WebSite","name":"Her Gece Oyun","url":"https://hergeceoyun.netlify.app/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Sayı Bulmaca","description":"Rakamları farklı gizli sayıyı +/− ipuçlarıyla mantık yürüterek bul. Günlük bulmaca, 3-5 hane zorluk ve rakam eleme paneli.","url":"https://hergeceoyun.netlify.app/games/sayi-tahmin/","image":"https://hergeceoyun.netlify.app/assets/og.png","genre":"Bulmaca","inLanguage":"tr","datePublished":"2026-10-20","gamePlatform":"Web tarayıcısı","applicationCategory":"Game","operatingSystem":"Tüm işletim sistemleri","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"},"isPartOf":{"@type":"WebSite","name":"Her Gece Oyun","url":"https://hergeceoyun.netlify.app/"}}</script>
   <!-- SEO:BITIS -->
   <meta name="theme-color" content="#110f0d">
   <link rel="manifest" href="../../manifest.webmanifest">
@@ -30,30 +30,71 @@
 <body>
   <header class="site-header">
     <a class="logo" href="../../"><span>Her Gece <em>Oyun</em></span></a>
-    <a class="geri" href="../../" aria-label="Tüm oyunlar">←<span class="uzun"> Tüm oyunlar</span></a>
+    <div class="sag">
+      <button id="istatistik-ac" class="ikon-buton" type="button" aria-label="İstatistikler"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4 20h3V11H4zm6.5 0h3V4h-3zM17 20h3v-6h-3z"/></svg></button>
+      <button id="ayar-ac" class="ikon-buton" type="button" aria-label="Ayarlar"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></button>
+      <a class="geri" href="../../" aria-label="Tüm oyunlar">←<span class="uzun"> Tüm oyunlar</span></a>
+    </div>
   </header>
   <main class="container oyun-sayfasi sayi-oyunu">
     <span class="ust-baslik">Bulmaca</span>
-    <h1>Sayı Tahmin</h1>
-    <section class="oyun-alani">
-      <div class="aralik" aria-hidden="true">
-        <span id="alt-sinir">1</span>
-        <div class="aralik-cubuk"><div id="aralik-dolgu" class="aralik-dolgu"></div></div>
-        <span id="ust-sinir">100</span>
+    <h1>Sayı Bulmaca <span id="mod-etiketi" class="mod-etiketi"></span></h1>
+    <div class="seviye" role="group" aria-label="Zorluk">
+      <button type="button" class="buton ikincil" data-hane="3">3 hane</button>
+      <button type="button" class="buton ikincil" data-hane="4">4 hane</button>
+      <button type="button" class="buton ikincil" data-hane="5">5 hane</button>
+    </div>
+    <button id="gunluge-don" class="metin-buton" type="button" hidden>Günlük bulmacaya dön</button>
+
+    <section class="oyun-alani bulmaca-alani">
+      <div class="sol">
+        <div class="hud"><span class="hud-etiket">Deneme</span> <strong id="deneme" class="hud-sayi">0</strong></div>
+        <ol id="gecmis" class="gecmis" aria-label="Tahmin geçmişi"></ol>
+        <div id="aktif" class="hane-satiri aktif" aria-label="Şu anki tahmin"></div>
+        <p id="mesaj" class="kelime-mesaj" role="status" aria-live="polite"></p>
       </div>
-      <p id="mesaj" class="sayi-mesaj" aria-live="polite">Aklımdan 1 ile 100 arasında bir sayı tuttum.</p>
-      <form id="tahmin-formu" class="tahmin-formu">
-        <label for="tahmin">Tahminin (1-100):</label>
-        <input id="tahmin" type="number" min="1" max="100" inputmode="numeric" required>
-        <button class="buton" type="submit">Tahmin et</button>
-      </form>
-      <button id="yeniden" class="buton" type="button" hidden>Yeniden oyna</button>
-      <p class="sayi-alt"><span id="deneme-sayisi">0 deneme</span><span id="rekor"></span></p>
+      <div class="sag-sutun">
+        <div id="tuslar" class="tuslar" aria-label="Rakam tuşları"></div>
+        <div class="tus-alt">
+          <button id="sil" type="button" class="tus genis">Sil</button>
+          <button id="isaretle" type="button" class="tus genis" aria-pressed="false">İşaretle</button>
+          <button id="tahmin-et" type="button" class="tus genis birincil">Tahmin et</button>
+        </div>
+        <p class="ipucu-not">Uzun bas ya da <strong>İşaretle</strong>'yi aç: rakam sırayla <em>yok</em>, <em>var</em>, <em>yeri belli</em> olarak işaretlenir.</p>
+      </div>
     </section>
+
     <h2>Nasıl oynanır?</h2>
-    <p>Oyun 1 ile 100 arasında rastgele bir sayı seçer. Her tahmininden sonra gizli sayının daha büyük mü yoksa daha küçük mü olduğunu söyler. Sayıyı ne kadar az denemede bulursan o kadar iyi; en iyi skorun bu cihazda saklanır.</p>
+    <p>Gizli sayının rakamları birbirinden farklıdır ve ilk hanesi sıfır değildir (serbest modda bunu ayarlardan değiştirebilirsin). Her tahminden sonra iki ipucu alırsın: <strong>+</strong> sayısı doğru rakamı doğru yerde bildiğin hane sayısıdır, <strong>−</strong> sayısı ise sayıda olan ama başka yerde duran rakamların sayısıdır. Örneğin gizli sayı 7309 iken 3709 tahmini +2 −2 alır. Rakam tuşlarını uzun basarak ya da İşaretle modunu açarak elediğin rakamları not edebilirsin. Deneme hakkın sınırsız; amaç sayıyı en az denemede bulmak. Günlük bulmacada bugün herkes aynı 4 haneli sayıyı çözer, serbest modda 3, 4 ya da 5 haneli rastgele sayılarla istediğin kadar oynarsın. İstatistiklerin yalnızca bu cihazda, her zorluk için ayrı saklanır.</p>
   </main>
+
+  <dialog id="istatistik" class="istatistik">
+    <h2 id="ist-baslik">İstatistikler</h2>
+    <p id="ist-sonuc" class="ist-sonuc" hidden></p>
+    <div class="ist-sayilar">
+      <div><strong id="ist-oynanan">0</strong><span>Çözülen</span></div>
+      <div><strong id="ist-ortalama">–</strong><span>Ortalama</span></div>
+      <div><strong id="ist-en-iyi">–</strong><span>En iyi</span></div>
+      <div><strong id="ist-seri">0</strong><span>Günlük seri</span></div>
+    </div>
+    <h3>Deneme dağılımı <span id="ist-seviye" class="ist-seviye"></span></h3>
+    <ol id="ist-dagilim" class="ist-dagilim"></ol>
+    <div id="ist-eylemler" class="ist-eylemler" hidden>
+      <button id="paylas" class="buton" type="button">Sonucu kopyala</button>
+      <button id="serbest" class="buton ikincil" type="button">Serbest modda oyna</button>
+    </div>
+    <form method="dialog"><button class="buton ikincil kapat" type="submit">Kapat</button></form>
+  </dialog>
+
+  <dialog id="ayarlar" class="istatistik">
+    <h2>Ayarlar</h2>
+    <label class="ayar"><input id="sifir-ayari" type="checkbox"> Serbest modda ilk hane 0 olabilir</label>
+    <p class="ayar-not">Günlük bulmacada ilk hane hiçbir zaman 0 olmaz, böylece herkes aynı kurallarla oynar.</p>
+    <form method="dialog"><button class="buton" type="submit">Tamam</button></form>
+  </dialog>
+
   <script src="../../assets/js/depo.js"></script>
+  <script src="mantik.js"></script>
   <script src="oyun.js"></script>
   <script src="../../assets/js/sw-kayit.js"></script>
 </body>

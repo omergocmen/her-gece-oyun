@@ -17,14 +17,15 @@
   },
   {
     "slug": "sayi-tahmin",
-    "ad": "Sayı Tahmin",
-    "aciklama": "1 ile 100 arasında aklımdan tuttuğum sayıyı en az denemede bul.",
+    "ad": "Sayı Bulmaca",
+    "aciklama": "Rakamları farklı gizli sayıyı +/− ipuçlarıyla mantık yürüterek bul. Günlük bulmaca, 3-5 hane zorluk ve rakam eleme paneli.",
     "kategori": "Bulmaca",
     "eklenme": "2026-10-20",
     "gorsel": "games/sayi-tahmin/kapak.svg",
     "dosyalar": [
       "games/sayi-tahmin/",
       "games/sayi-tahmin/stil.css",
+      "games/sayi-tahmin/mantik.js",
       "games/sayi-tahmin/oyun.js",
       "games/sayi-tahmin/kapak.svg"
     ]
