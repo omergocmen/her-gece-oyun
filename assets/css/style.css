@@ -384,6 +384,15 @@ h1, h2, h3 { line-height: 1.08; letter-spacing: -.015em; font-weight: 750; }
 .sozler li { display: inline-flex; align-items: center; gap: 8px; color: var(--krem); font-weight: 650; }
 .sozler li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--sodyum); }
 .site-footer p { margin-top: 0; margin-bottom: 0; }
+.yedek { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.yedek button {
+  font: inherit; font-weight: 650; min-height: 44px; padding: 8px 16px; border-radius: 999px;
+  background: transparent; color: var(--krem); border: 0; box-shadow: inset 0 0 0 1px var(--cizgi); cursor: pointer;
+}
+@media (hover: hover) { .yedek button:hover { box-shadow: inset 0 0 0 2px var(--soluk); } }
+.yedek button:focus-visible { outline: 3px solid var(--sodyum); outline-offset: 2px; }
+.yedek p { flex-basis: 100%; min-height: 1.4em; font-size: .9rem; }
+.yedek p.yedek-hata { color: #ff9b8a; }
 
 /* ---------- Ortak oyun alanı ---------- */
 .oyun-alani {
