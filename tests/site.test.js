@@ -45,7 +45,8 @@ test('hiçbir sayfa harici kaynak yüklemez', () => {
   const desen = /(?:src|href)\s*=\s*["']\s*(?:https?:)?\/\/|url\(\s*["']?\s*(?:https?:)?\/\/|(?:fetch|importScripts|import)\s*\(\s*["'](?:https?:)?\/\/|@import\s+["']?(?:https?:)?\/\//i;
   for (const dosya of dosyalariTopla(KOK, ['.html', '.css', '.js'])) {
     if (dosya.includes(`${path.sep}tests${path.sep}`)) continue;
-    const icerik = fs.readFileSync(dosya, 'utf8');
+    // SEO bloğundaki canonical ve paylaşım adresleri kaynak yüklemez, kontrol dışıdır.
+    const icerik = fs.readFileSync(dosya, 'utf8').replace(/<!-- SEO:BASLA -->[\s\S]*?<!-- SEO:BITIS -->/g, '');
     assert.ok(!desen.test(icerik), `${path.relative(KOK, dosya)} harici bir kaynağa bağlanıyor`);
   }
 });
