@@ -1,6 +1,6 @@
 // Bu dosya otomatik üretilir: npm run precache
 self.PRECACHE = {
-  "surum": "cb5f96cea206",
+  "surum": "c82e6a6f68b2",
   "dosyalar": [
     "./",
     "index.html",
@@ -120,12 +120,17 @@ self.PRECACHE = {
     "games/sudoku/mantik.js",
     "games/sudoku/isci.js",
     "games/sudoku/oyun.js",
-    "games/sudoku/kapak.svg"
+    "games/sudoku/kapak.svg",
+    "games/kule-kat/",
+    "games/kule-kat/stil.css",
+    "games/kule-kat/mantik.js",
+    "games/kule-kat/oyun.js",
+    "games/kule-kat/kapak.svg"
   ],
   "ozetler": {
-    "./": "10e976850927",
-    "index.html": "10e976850927",
-    "games.json": "fd66907eeedc",
+    "./": "594c75376585",
+    "index.html": "594c75376585",
+    "games.json": "2f219b5ed67b",
     "manifest.webmanifest": "402a1b3b6849",
     "assets/css/style.css": "663954d4ca9f",
     "assets/fonts/bricolage-latin.woff2": "a756882d8a78",
@@ -139,13 +144,13 @@ self.PRECACHE = {
     "assets/icons/icon.svg": "a40ef20ade23",
     "assets/icons/icon-192.png": "a9a1e71d8e38",
     "assets/icons/icon-512.png": "c19b5bf4f1c7",
-    "games/gunun-kelimesi/": "75a97d26061d",
+    "games/gunun-kelimesi/": "f70b7dee193b",
     "games/gunun-kelimesi/stil.css": "4f9952b58aeb",
     "games/gunun-kelimesi/kelimeler.js": "9a63089d8b6a",
     "games/gunun-kelimesi/mantik.js": "438b7d2ce5dc",
     "games/gunun-kelimesi/oyun.js": "99bd7f940a3f",
     "games/gunun-kelimesi/kapak.svg": "3ec1bb8be7a1",
-    "games/sayi-tahmin/": "4321092199e1",
+    "games/sayi-tahmin/": "3e2f1e937eef",
     "games/sayi-tahmin/stil.css": "048ee654f31f",
     "games/sayi-tahmin/mantik.js": "de2da1c4307b",
     "games/sayi-tahmin/oyun.js": "5d1b1da22d65",
@@ -229,7 +234,7 @@ self.PRECACHE = {
     "games/okey/isci.js": "9f9bb875e09f",
     "games/okey/oyun.js": "44dc640b6444",
     "games/okey/kapak.svg": "22d2ca0874c9",
-    "games/satranc/": "5f31884e6167",
+    "games/satranc/": "adea9912653b",
     "games/satranc/stil.css": "313a8cd4c571",
     "games/satranc/motor.js": "c53088e65894",
     "games/satranc/bulmaca.js": "6c757c4872c4",
@@ -241,6 +246,11 @@ self.PRECACHE = {
     "games/sudoku/mantik.js": "95741ba85c81",
     "games/sudoku/isci.js": "bdfce9679229",
     "games/sudoku/oyun.js": "d6c1de74fa69",
-    "games/sudoku/kapak.svg": "d63c661505ad"
+    "games/sudoku/kapak.svg": "d63c661505ad",
+    "games/kule-kat/": "87daa729bd87",
+    "games/kule-kat/stil.css": "ea9f607ee98d",
+    "games/kule-kat/mantik.js": "b04701a0dc62",
+    "games/kule-kat/oyun.js": "262eb9a0f6e7",
+    "games/kule-kat/kapak.svg": "7e4b73487347"
   }
 };
