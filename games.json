@@ -61,5 +61,21 @@
       "games/cini-blok/oyun.js",
       "games/cini-blok/kapak.svg"
     ]
+  },
+  {
+    "slug": "tavla",
+    "ad": "Tavla",
+    "aciklama": "Bilgisayara karşı Türk usulü tavla: kapı, kırık, zorunlu hamle, toplama ve mars. Üç zorluk, 3 ya da 5 puanlık maç.",
+    "kategori": "Masa oyunu",
+    "eklenme": "2026-10-20",
+    "gorsel": "games/tavla/kapak.svg",
+    "dosyalar": [
+      "games/tavla/",
+      "games/tavla/stil.css",
+      "games/tavla/mantik.js",
+      "games/tavla/isci.js",
+      "games/tavla/oyun.js",
+      "games/tavla/kapak.svg"
+    ]
   }
 ]
