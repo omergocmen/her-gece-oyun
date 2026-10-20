@@ -317,5 +317,24 @@
       "games/sudoku/oyun.js",
       "games/sudoku/kapak.svg"
     ]
+  },
+  {
+    "slug": "kule-kat",
+    "ad": "Kule Kat",
+    "aciklama": "İstanbul'un gece silüetinde tek dokunuşla kat istifleme: kayan katı tam hizada bırak, mükemmel seride kule genişlesin. Galata, Kız Kulesi ve Süleymaniye temaları; günlük mod.",
+    "kategori": "Beceri",
+    "boyut": "3D",
+    "eklenme": "2026-10-20",
+    "gorsel": "games/kule-kat/kapak.svg",
+    "gunluk": true,
+    "dosyalar": [
+      "games/kule-kat/",
+      "games/kule-kat/stil.css",
+      "games/kule-kat/mantik.js",
+      "games/kule-kat/oyun.js",
+      "games/kule-kat/kapak.svg",
+      "assets/vendor/three/three.module.min.js",
+      "assets/js/kalite.js"
+    ]
   }
 ]
