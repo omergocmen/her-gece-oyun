@@ -77,5 +77,23 @@
       "games/tavla/oyun.js",
       "games/tavla/kapak.svg"
     ]
+  },
+  {
+    "slug": "karsidan-karsiya",
+    "ad": "Gece Yarısı Karşıdan Karşıya",
+    "aciklama": "Gece İstanbul sokaklarında 3D sonsuz zıplama: taksi, dolmuş ve tramvaydan kaç, Boğaz vapurlarına bin, simit topla, martı ve kedi aç.",
+    "kategori": "Aksiyon",
+    "eklenme": "2026-10-20",
+    "gorsel": "games/karsidan-karsiya/kapak.svg",
+    "dosyalar": [
+      "games/karsidan-karsiya/",
+      "games/karsidan-karsiya/stil.css",
+      "games/karsidan-karsiya/mantik.js",
+      "games/karsidan-karsiya/oyun.js",
+      "games/karsidan-karsiya/sahne.js",
+      "games/karsidan-karsiya/ses.js",
+      "games/karsidan-karsiya/kapak.svg",
+      "assets/vendor/three/three.module.min.js"
+    ]
   }
 ]
