@@ -48,6 +48,55 @@
     ]
   },
   {
+    "slug": "cini-blok",
+    "ad": "Çini Blok",
+    "aciklama": "İznik motifli blok parçalarını 8×8 tahtaya sürükle, satır ve sütun doldurup kombo yap. Günlük meydan okuma ve sonsuz klasik mod.",
+    "kategori": "Bulmaca",
+    "eklenme": "2026-10-20",
+    "gorsel": "games/cini-blok/kapak.svg",
+    "dosyalar": [
+      "games/cini-blok/",
+      "games/cini-blok/stil.css",
+      "games/cini-blok/mantik.js",
+      "games/cini-blok/oyun.js",
+      "games/cini-blok/kapak.svg"
+    ]
+  },
+  {
+    "slug": "tavla",
+    "ad": "Tavla",
+    "aciklama": "Bilgisayara karşı Türk usulü tavla: kapı, kırık, zorunlu hamle, toplama ve mars. Üç zorluk, 3 ya da 5 puanlık maç.",
+    "kategori": "Masa oyunu",
+    "eklenme": "2026-10-20",
+    "gorsel": "games/tavla/kapak.svg",
+    "dosyalar": [
+      "games/tavla/",
+      "games/tavla/stil.css",
+      "games/tavla/mantik.js",
+      "games/tavla/isci.js",
+      "games/tavla/oyun.js",
+      "games/tavla/kapak.svg"
+    ]
+  },
+  {
+    "slug": "karsidan-karsiya",
+    "ad": "Gece Yarısı Karşıdan Karşıya",
+    "aciklama": "Gece İstanbul sokaklarında 3D sonsuz zıplama: taksi, dolmuş ve tramvaydan kaç, Boğaz vapurlarına bin, simit topla, martı ve kedi aç.",
+    "kategori": "Aksiyon",
+    "eklenme": "2026-10-20",
+    "gorsel": "games/karsidan-karsiya/kapak.svg",
+    "dosyalar": [
+      "games/karsidan-karsiya/",
+      "games/karsidan-karsiya/stil.css",
+      "games/karsidan-karsiya/mantik.js",
+      "games/karsidan-karsiya/oyun.js",
+      "games/karsidan-karsiya/sahne.js",
+      "games/karsidan-karsiya/ses.js",
+      "games/karsidan-karsiya/kapak.svg",
+      "assets/vendor/three/three.module.min.js"
+    ]
+  },
+  {
     "slug": "mini-golf",
     "ad": "Mini Golf Türkiye",
     "aciklama": "Kapadokya'dan Nemrut'a dokuz delikli 3D mini golf. Çek-bırak vuruş, sektiren peribacaları, Galata yokuşu, Kız Kulesi vapuru ve skor kartı.",
