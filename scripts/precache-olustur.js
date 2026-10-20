@@ -21,6 +21,7 @@ const KABUK = [
   'assets/js/depo.js',
   'assets/js/main.js',
   'assets/js/yedek.js',
+  'assets/js/kur.js',
   'assets/js/sw-kayit.js',
   'assets/icons/icon.svg',
   'assets/icons/icon-192.png',
