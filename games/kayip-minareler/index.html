@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="site-kok" content="../../">
+  <!-- SEO:BASLA -->
+  <title>Kayıp Minareler Oyna – Ücretsiz, İndirmeden | Her Gece Oyun</title>
+  <meta name="description" content="Selçuklu ve Osmanlı mimarisinde izometrik 3D imkânsız geometri bulmacası. Parçaları döndür, köprüleri kaydır, bekçiyi minareye ulaştır ve sekiz minarenin ışığını yak. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <link rel="canonical" href="https://her-gece-oyun-a52g.vercel.app/games/kayip-minareler/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Her Gece Oyun">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:title" content="Kayıp Minareler Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta property="og:description" content="Selçuklu ve Osmanlı mimarisinde izometrik 3D imkânsız geometri bulmacası. Parçaları döndür, köprüleri kaydır, bekçiyi minareye ulaştır ve sekiz minarenin ışığını yak. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta property="og:url" content="https://her-gece-oyun-a52g.vercel.app/games/kayip-minareler/">
+  <meta property="og:image" content="https://her-gece-oyun-a52g.vercel.app/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kayıp Minareler Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta name="twitter:description" content="Selçuklu ve Osmanlı mimarisinde izometrik 3D imkânsız geometri bulmacası. Parçaları döndür, köprüleri kaydır, bekçiyi minareye ulaştır ve sekiz minarenin ışığını yak. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta name="twitter:image" content="https://her-gece-oyun-a52g.vercel.app/assets/og.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Kayıp Minareler","description":"Selçuklu ve Osmanlı mimarisinde izometrik 3D imkânsız geometri bulmacası. Parçaları döndür, köprüleri kaydır, bekçiyi minareye ulaştır ve sekiz minarenin ışığını yak.","url":"https://her-gece-oyun-a52g.vercel.app/games/kayip-minareler/","image":"https://her-gece-oyun-a52g.vercel.app/assets/og.png","genre":"Bulmaca","inLanguage":"tr","datePublished":"2026-10-20","gamePlatform":"Web tarayıcısı","applicationCategory":"Game","operatingSystem":"Tüm işletim sistemleri","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"},"isPartOf":{"@type":"WebSite","name":"Her Gece Oyun","url":"https://her-gece-oyun-a52g.vercel.app/"}}</script>
+  <!-- SEO:BITIS -->
+  <meta name="theme-color" content="#110f0d">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="stil.css">
+  <script type="importmap">{ "imports": { "three": "../../assets/vendor/three/three.module.min.js" } }</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="../../"><span>Her Gece <em>Oyun</em></span></a>
+    <div class="sag">
+      <a class="geri" href="../../" aria-label="Tüm oyunlar">←<span class="uzun"> Tüm oyunlar</span></a>
+    </div>
+  </header>
+  <main class="container oyun-sayfasi minare-oyunu">
+    <span class="ust-baslik">Bulmaca · 3D</span>
+    <h1>Kayıp Minareler</h1>
+
+    <section class="minare-alani">
+      <div id="sahne" class="minare-sahne">
+        <div class="minare-hud">
+          <button id="menu" class="ikon-buton" type="button" aria-label="Bölümler"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+          <button id="ses" class="ikon-buton" type="button" aria-label="Sesi kapat" aria-pressed="true"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path class="ses-dalga" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/><path class="ses-kapali" d="M17 9l5 6M22 9l-5 6"/></svg></button>
+        </div>
+        <p id="bolum-adi" class="bolum-adi" aria-live="polite"></p>
+        <p id="ipucu" class="minare-ipucu gizli" aria-live="polite"></p>
+        <div id="son" class="bolum-sonu" hidden>
+          <p id="siir" class="siir"></p>
+          <button id="sonraki" class="buton" type="button">Sonraki bölüm</button>
+        </div>
+      </div>
+    </section>
+
+    <h2>Nasıl oynanır?</h2>
+    <p>Gece yarısı ezan sesi kaybolmuş; küçük bekçi her bölümde bir minarenin ışığını yakarak onu arıyor. Bir taşa dokun, bekçi oraya giden yolu bulup yürür. Kemik renkli çarkı olan parçaları parmağınla ya da farenle çevirerek döndür, bırakınca en yakın dik açıya oturur. Kenarında sodyum ray çizgisi olan köprüleri ve kuyuları ray boyunca sürükle. Gömülü kemik daireler basınç plakasıdır: üstüne basınca uzakta bir şey hareket eder. Bu atölyede göz ne görürse ayak oraya basar: ekranda birleşmiş görünen iki yol, biri ötekinden ne kadar yüksekte olursa olsun birleşmiştir. Bekçiyi minarenin kapısına ulaştırınca minare yanar ve sıradaki bölüm açılır. Sekiz bölüm var; ilerlemen yalnızca bu cihazda saklanır.</p>
+  </main>
+
+  <dialog id="bolumler" class="istatistik minare-dialog">
+    <h2>Bölümler</h2>
+    <ol id="bolum-listesi" class="bolum-listesi"></ol>
+    <form method="dialog"><button class="buton ikincil" type="submit">Kapat</button></form>
+  </dialog>
+
+  <script src="../../assets/js/depo.js"></script>
+  <script src="mantik.js"></script>
+  <script type="module" src="oyun.js"></script>
+  <script src="../../assets/js/sw-kayit.js"></script>
+</body>
+</html>
