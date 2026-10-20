@@ -29,8 +29,8 @@ const kaydet = () => Depo.yaz('minare:ilerleme', ilerleme);
 let sesAcik = Depo.oku('minare:ses', true);
 
 // ---------- Sahne ----------
-const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
-renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+const renderer = new THREE.WebGLRenderer(Kalite.rendererSecenek({ alpha: true, powerPreference: 'high-performance' }));
+const kalite = Kalite.kur(renderer, { azami: 2, boyutla: boyutlandir });
 renderer.setClearColor(0x000000, 0);
 kap.prepend(renderer.domElement);
 const canvas = renderer.domElement;
@@ -727,6 +727,7 @@ document.addEventListener('visibilitychange', () => { if (document.hidden) ortam
 // ---------- Döngü ----------
 let onceki = performance.now();
 function kare(simdi) {
+  kalite.kare(simdi);
   const dt = Math.min(0.1, (simdi - onceki) / 1000);
   onceki = simdi;
   if (B) {
@@ -752,6 +753,7 @@ function kare(simdi) {
 
 // ---------- Başlat ----------
 sesDugmesi();
+Kalite.dugmeEkle(document.getElementById('ses'), kalite);
 fetch('bolumler.json').then((r) => r.json()).then((veri) => {
   bolumler = veri;
   const ilk = bolumler.find((b) => !ilerleme.tamam.includes(b.no)) || bolumler[0];

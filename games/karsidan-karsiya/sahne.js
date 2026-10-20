@@ -361,10 +361,9 @@ const LAMBA_TARIF = (yon) => ({
 // ---------- Sahne ----------
 export function sahneOlustur(tuval, ayar) {
   const hareketAz = !!ayar.hareketAz;
-  const renderer = new THREE.WebGLRenderer({ canvas: tuval, antialias: true, powerPreference: 'high-performance' });
+  const renderer = new THREE.WebGLRenderer(Kalite.rendererSecenek({ canvas: tuval, powerPreference: 'high-performance' }));
   renderer.setClearColor(RENK.murekkep, 1);
-  let pikselOrani = Math.min(window.devicePixelRatio || 1, 2);
-  renderer.setPixelRatio(pikselOrani);
+  const kalite = Kalite.kur(renderer, { azami: 2, boyutla: () => boyutla() });
 
   const sahne = new THREE.Scene();
   sahne.fog = new THREE.Fog(RENK.murekkep, 17, 27);
@@ -880,22 +879,11 @@ export function sahneOlustur(tuval, ayar) {
     return sonuc;
   }
 
-  // Kare süresi yüksekse çözünürlüğü kademeli düşürür (orta segment telefonlar için).
-  function kaliteAyarla(ortalamaKare) {
-    if (ortalamaKare > 24 && pikselOrani > 1) {
-      pikselOrani = Math.max(1, pikselOrani - 0.25);
-      renderer.setPixelRatio(pikselOrani);
-      boyutla();
-      return true;
-    }
-    return false;
-  }
-
   boyutla();
   return {
     renderer, boyutla, dunyaKur, seritleriAyarla, seritKaydi, nesneleriGuncelle, tekneSallantisi, lambalariYerlestir,
     oyuncuyuAyarla, oyuncuyuCiz, kocaMartiCiz, parcacikSac, parcaciklariGuncelle, halkaAc, halkalariGuncelle,
-    simitTopla, ucanSimitleriGuncelle, efektleriTemizle, kameraGuncelle, sars, korTonu, ciz, onizlemeler, kaliteAyarla,
-    GUVERTE, pikselOrani: () => pikselOrani
+    simitTopla, ucanSimitleriGuncelle, efektleriTemizle, kameraGuncelle, sars, korTonu, ciz, onizlemeler,
+    GUVERTE, kalite
   };
 }

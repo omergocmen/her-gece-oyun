@@ -31,4 +31,6 @@ python3 -m http.server 8000
 
 Ardından http://localhost:8000 adresini açın.
 
+Yeni bir 3D oyun `assets/js/kalite.js`'i kullanmalıdır (oyun başına kalite kodu yazılmaz): sayfada `depo.js`'den sonra yükleyin, `new THREE.WebGLRenderer(Kalite.rendererSecenek({...}))` ile kurun, `Kalite.kur(renderer, { azami, boyutla })` döndürdüğü nesnenin `kare(zaman)` işlevini her animasyon karesinde çağırın ve `Kalite.dugmeEkle(sesDugmesi, kalite)` ile "Düşük grafik" düğmesini ekleyin; dosyayı `games.json` `dosyalar` listesine de yazın. Göreli sahne maliyetini (kare/sn, çizim çağrısı) görmek için sunucu açıkken `node scripts/kalite-olc.js` çalıştırın.
+
 Service worker yeni sürümde yalnızca içerik özeti değişen dosyaları indirir; özetler `npm run precache` ile `precache-manifest.js` içine yazılır. Güncelleme akışını (yalnızca değişen dosyaların inmesi, "Yenile" bildirimi, uçak modu) tarayıcıda denemek için Playwright kuruluyken `node scripts/sw-guncelleme-incele.js` çalıştırın.

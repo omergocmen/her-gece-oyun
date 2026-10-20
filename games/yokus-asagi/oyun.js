@@ -26,8 +26,8 @@ let mod = Depo.oku('yokus:mod', 'sonsuz') === 'gunluk' ? 'gunluk' : 'sonsuz';
 let sesAcik = Depo.oku('yokus:ses', true);
 
 // ---------- Sahne ----------
-const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
-renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
+const renderer = new THREE.WebGLRenderer(Kalite.rendererSecenek({ powerPreference: 'high-performance' }));
+const kalite = Kalite.kur(renderer, { azami: 1.75, boyutla: boyutlandir });
 renderer.setClearColor(R.murekkep);
 kap.prepend(renderer.domElement);
 const canvas = renderer.domElement;
@@ -411,6 +411,7 @@ new ResizeObserver(boyutlandir).observe(kap);
 let onceki = performance.now();
 function girdi() { return (basili.sag ? 1 : 0) - (basili.sol ? 1 : 0); }
 function kare(simdi) {
+  kalite.kare(simdi);
   const dt = Math.min(0.1, (simdi - onceki) / 1000);
   onceki = simdi;
   if (calisiyor && !oldu) {
@@ -554,6 +555,7 @@ document.querySelectorAll('[data-mod]').forEach((b) => b.addEventListener('click
 }));
 
 sesDugmesi();
+Kalite.dugmeEkle($('ses'), kalite);
 modDugmeleri();
 boyutlandir();
 yeniOyun();

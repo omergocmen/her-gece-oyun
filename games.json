@@ -50,7 +50,8 @@
       "games/zeka-kupu/cozucu.js",
       "games/zeka-kupu/oyun.js",
       "games/zeka-kupu/kapak.svg",
-      "assets/vendor/three/three.module.min.js"
+      "assets/vendor/three/three.module.min.js",
+      "assets/js/kalite.js"
     ]
   },
   {
@@ -104,7 +105,8 @@
       "games/karsidan-karsiya/sahne.js",
       "games/karsidan-karsiya/ses.js",
       "games/karsidan-karsiya/kapak.svg",
-      "assets/vendor/three/three.module.min.js"
+      "assets/vendor/three/three.module.min.js",
+      "assets/js/kalite.js"
     ]
   },
   {
@@ -122,7 +124,8 @@
       "games/mini-golf/parkur.js",
       "games/mini-golf/oyun.js",
       "games/mini-golf/kapak.svg",
-      "assets/vendor/three/three.module.min.js"
+      "assets/vendor/three/three.module.min.js",
+      "assets/js/kalite.js"
     ]
   },
   {
@@ -139,7 +142,8 @@
       "games/cam-ustasi/mantik.js",
       "games/cam-ustasi/oyun.js",
       "games/cam-ustasi/kapak.svg",
-      "assets/vendor/three/three.module.min.js"
+      "assets/vendor/three/three.module.min.js",
+      "assets/js/kalite.js"
     ]
   },
   {
@@ -159,7 +163,8 @@
       "games/kapadokya-yollari/ses.js",
       "games/kapadokya-yollari/oyun.js",
       "games/kapadokya-yollari/kapak.svg",
-      "assets/vendor/three/three.module.min.js"
+      "assets/vendor/three/three.module.min.js",
+      "assets/js/kalite.js"
     ]
   },
   {
@@ -180,7 +185,8 @@
       "games/marmaray-kosusu/sahne.js",
       "games/marmaray-kosusu/ses.js",
       "games/marmaray-kosusu/kapak.svg",
-      "assets/vendor/three/three.module.min.js"
+      "assets/vendor/three/three.module.min.js",
+      "assets/js/kalite.js"
     ]
   },
   {
@@ -198,7 +204,8 @@
       "games/kayip-minareler/bolumler.json",
       "games/kayip-minareler/oyun.js",
       "games/kayip-minareler/kapak.svg",
-      "assets/vendor/three/three.module.min.js"
+      "assets/vendor/three/three.module.min.js",
+      "assets/js/kalite.js"
     ]
   },
   {
@@ -216,7 +223,8 @@
       "games/yokus-asagi/mantik.js",
       "games/yokus-asagi/oyun.js",
       "games/yokus-asagi/kapak.svg",
-      "assets/vendor/three/three.module.min.js"
+      "assets/vendor/three/three.module.min.js",
+      "assets/js/kalite.js"
     ]
   }
 ]
