@@ -1,0 +1,39 @@
+.kelime-oyunu { max-width: 520px; text-align: center; }
+.kelime-oyunu h2, .kelime-oyunu h2 + p { text-align: left; }
+.mod-etiketi { font-size: .9rem; color: var(--accent); vertical-align: middle; }
+.kelime-mesaj { min-height: 1.5em; font-weight: 600; }
+.ikon-buton { background: none; border: 0; font-size: 1.5rem; cursor: pointer; color: var(--text); }
+.izgara { display: grid; gap: 6px; justify-content: center; margin: 8px 0 16px; }
+.satir { display: grid; grid-template-columns: repeat(5, minmax(0, 58px)); gap: 6px; }
+.satir.salla { animation: salla .4s; }
+@keyframes salla { 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+.kutu {
+  aspect-ratio: 1; display: grid; place-items: center; font-size: 1.8rem; font-weight: 700;
+  border: 2px solid #3a4180; border-radius: 6px; text-transform: none;
+}
+.kutu.dolu { border-color: var(--muted); }
+.kutu.dogru, .tus.dogru { background: #2e8b57; border-color: #2e8b57; color: #fff; }
+.kutu.var, .tus.var { background: #c9a227; border-color: #c9a227; color: #141836; }
+.kutu.yok, .tus.yok { background: #3a3f5c; border-color: #3a3f5c; color: #b8bbd9; }
+.kelime-sonuc { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+.buton.ikincil { background: transparent; color: var(--accent); border: 2px solid var(--accent); }
+.klavye { display: grid; gap: 6px; user-select: none; touch-action: manipulation; }
+.klavye-satir { display: flex; gap: 4px; justify-content: center; }
+.tus {
+  flex: 1; min-width: 0; max-width: 44px; height: 54px; border: 0; border-radius: 6px;
+  background: #4a5190; color: var(--text); font-size: 1.05rem; font-weight: 700; cursor: pointer; padding: 0;
+}
+.tus.genis { max-width: 70px; flex: 1.6; font-size: .8rem; }
+.istatistik { background: var(--panel); color: var(--text); border: 0; border-radius: var(--radius); max-width: 360px; width: 90%; }
+.istatistik::backdrop { background: rgba(0, 0, 0, .6); }
+.ist-sayilar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; text-align: center; }
+.ist-sayilar strong { display: block; font-size: 1.6rem; }
+.ist-sayilar span { font-size: .75rem; color: var(--muted); }
+.ist-dagilim { padding-left: 1.5em; text-align: left; }
+.ist-dagilim li { margin: 4px 0; }
+.ist-cubuk { display: inline-block; background: #4a5190; padding: 0 6px; min-width: 1.5em; border-radius: 3px; }
+.ist-cubuk.bugun { background: #2e8b57; }
+@media (max-width: 400px) {
+  .kutu { font-size: 1.4rem; }
+  .tus { height: 48px; font-size: .95rem; }
+}
