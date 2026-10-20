@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://her-gece-oyun-a52g.vercel.app/</loc>
     <lastmod>2026-10-20</lastmod>
@@ -7,49 +7,85 @@
   <url>
     <loc>https://her-gece-oyun-a52g.vercel.app/games/gunun-kelimesi/</loc>
     <lastmod>2026-10-20</lastmod>
+    <image:image>
+      <image:loc>https://her-gece-oyun-a52g.vercel.app/games/gunun-kelimesi/paylasim.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://her-gece-oyun-a52g.vercel.app/games/sayi-tahmin/</loc>
     <lastmod>2026-10-20</lastmod>
+    <image:image>
+      <image:loc>https://her-gece-oyun-a52g.vercel.app/games/sayi-tahmin/paylasim.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://her-gece-oyun-a52g.vercel.app/games/zeka-kupu/</loc>
     <lastmod>2026-10-20</lastmod>
+    <image:image>
+      <image:loc>https://her-gece-oyun-a52g.vercel.app/games/zeka-kupu/paylasim.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://her-gece-oyun-a52g.vercel.app/games/cini-blok/</loc>
     <lastmod>2026-10-20</lastmod>
+    <image:image>
+      <image:loc>https://her-gece-oyun-a52g.vercel.app/games/cini-blok/paylasim.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://her-gece-oyun-a52g.vercel.app/games/tavla/</loc>
     <lastmod>2026-10-20</lastmod>
+    <image:image>
+      <image:loc>https://her-gece-oyun-a52g.vercel.app/games/tavla/paylasim.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://her-gece-oyun-a52g.vercel.app/games/karsidan-karsiya/</loc>
     <lastmod>2026-10-20</lastmod>
+    <image:image>
+      <image:loc>https://her-gece-oyun-a52g.vercel.app/games/karsidan-karsiya/paylasim.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://her-gece-oyun-a52g.vercel.app/games/mini-golf/</loc>
     <lastmod>2026-10-20</lastmod>
+    <image:image>
+      <image:loc>https://her-gece-oyun-a52g.vercel.app/games/mini-golf/paylasim.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://her-gece-oyun-a52g.vercel.app/games/cam-ustasi/</loc>
     <lastmod>2026-10-20</lastmod>
+    <image:image>
+      <image:loc>https://her-gece-oyun-a52g.vercel.app/games/cam-ustasi/paylasim.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://her-gece-oyun-a52g.vercel.app/games/kapadokya-yollari/</loc>
     <lastmod>2026-10-20</lastmod>
+    <image:image>
+      <image:loc>https://her-gece-oyun-a52g.vercel.app/games/kapadokya-yollari/paylasim.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://her-gece-oyun-a52g.vercel.app/games/marmaray-kosusu/</loc>
     <lastmod>2026-10-20</lastmod>
+    <image:image>
+      <image:loc>https://her-gece-oyun-a52g.vercel.app/games/marmaray-kosusu/paylasim.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://her-gece-oyun-a52g.vercel.app/games/kayip-minareler/</loc>
     <lastmod>2026-10-20</lastmod>
+    <image:image>
+      <image:loc>https://her-gece-oyun-a52g.vercel.app/games/kayip-minareler/paylasim.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://her-gece-oyun-a52g.vercel.app/games/yokus-asagi/</loc>
     <lastmod>2026-10-20</lastmod>
+    <image:image>
+      <image:loc>https://her-gece-oyun-a52g.vercel.app/games/yokus-asagi/paylasim.png</image:loc>
+    </image:image>
   </url>
 </urlset>

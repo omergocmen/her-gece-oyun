@@ -243,6 +243,8 @@ Uzak yıldızlar (künyede birkaç piksellik noktalar) dekoratiftir ve içerikle
 - **Butonlar:** `button-primary` sayfadaki tek ana eylem; `button-secondary` ikincil eylemler için çizgili hap.
 - **Panel (`.oyun-alani`):** Oyunun oynandığı alan.
 - **Oyun içi:** Harf kutuları (`tile-correct`, `tile-present`, `tile-absent`), ekran klavyesi tuşu (`key`, en az 56 px yükseklik), sayaç ve skorlar `numeric`. Sonuç ve istatistik pencereleri `<dialog>` + `panel`.
+- **Benzer oyunlar (`.benzer`):** Oyun sayfasının en altında, `Nasıl oynanır?` bölümünden sonra 3 `game-card`. 600 px altında kartlar yatay (kapak solda %42, yalnızca kategori + başlık + boyut rozeti), üstünde 3 sütun. HTML derlemede statik üretilir (`npm run seo`).
+- **Paylaşım görseli (`games/<slug>/paylasim.png`):** 1200×630, `neutral` zemin, çift çizgi çerçeve, solda logo + `No. · kategori` (`label-caps` sodyum) + daraltılmış büyük harf oyun adı, sağda 1.5° eğik kapak ve sodyum parıltısı. `npm run paylasim` üretir; yalnızca sosyal ağlar içindir, önbelleğe girmez.
 - **Kapak görseli (`games/<slug>/kapak.svg`):** 320×180 SVG, zemin `surface`, iki üç küçük yıldız noktası, oyunun özünü anlatan tek bir sembol (ör. kelime kutuları; "42" ve oklar). Yalnızca bu paletteki renkler; yazı tipi `system-ui` (SVG `<img>` içinde web fontu yüklenmez). 3D oyunlarda kapak sahnenin bir karesinden düz renkli bir çizim olabilir, fotoğraf gerçekçiliği olmaz.
 
 ## Do's and Don'ts
