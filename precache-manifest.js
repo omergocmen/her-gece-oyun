@@ -1,6 +1,6 @@
 // Bu dosya otomatik üretilir: npm run precache
 self.PRECACHE = {
-  "surum": "021a2bf865cf",
+  "surum": "b427b0343b66",
   "dosyalar": [
     "./",
     "index.html",
@@ -91,16 +91,16 @@ self.PRECACHE = {
     "games/yokus-asagi/kapak.svg"
   ],
   "ozetler": {
-    "./": "e62a2ff30296",
-    "index.html": "e62a2ff30296",
+    "./": "bd30f3cdb0dc",
+    "index.html": "bd30f3cdb0dc",
     "games.json": "860aaff6e7f2",
     "manifest.webmanifest": "402a1b3b6849",
-    "assets/css/style.css": "8e64288a3d39",
+    "assets/css/style.css": "a91582c77af6",
     "assets/fonts/bricolage-latin.woff2": "a756882d8a78",
     "assets/fonts/bricolage-latin-ext.woff2": "e1a04c169c02",
-    "assets/js/katalog.js": "e16332d88d44",
-    "assets/js/depo.js": "742c19fcec86",
-    "assets/js/main.js": "72e749049cc0",
+    "assets/js/katalog.js": "8c2e171bf830",
+    "assets/js/depo.js": "15719dbeea5c",
+    "assets/js/main.js": "dbda6f7e9f95",
     "assets/js/sw-kayit.js": "2ed7e56cb07e",
     "assets/icons/icon.svg": "a40ef20ade23",
     "assets/icons/icon-192.png": "a9a1e71d8e38",
