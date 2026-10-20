@@ -1,11 +1,25 @@
 # games/gunun-kelimesi/kelimeler.js dosyasını üretir.
+#   python3 scripts/kelime-listesi.py games/gunun-kelimesi/kelimeler.js [sozluk.dict]
 # CEVAPLAR: günün kelimesi olabilecek yaygın sözcükler (sabit tohumla karıştırılmış sırada).
 # GECERLI: tahmin olarak kabul edilen tüm sözcükler (cevaplar dahil).
-import json, random, sys
+#
+# GECERLI'nin kaynağı Zemberek-NLP projesinin sözlüğüdür:
+#   https://raw.githubusercontent.com/ahmetaa/zemberek-nlp/master/morphology/src/main/resources/tr/master-dictionary.dict
+#   Lisans: Apache-2.0, Copyright 2018 Ahmet A. Akın, Mehmet D. Akın
+# Sözlük yalnızca bu betik çalışırken indirilir (ya da ikinci argümanla yerel dosya verilir);
+# oyun çalışma zamanında hiçbir sözlüğe bağlanmaz. Dosya düz metin olarak okunur, çalıştırılmaz.
+import hashlib, json, random, re, sys, urllib.request
+
+SOZLUK_URL = ("https://raw.githubusercontent.com/ahmetaa/zemberek-nlp/master/"
+              "morphology/src/main/resources/tr/master-dictionary.dict")
+# Listenin üretildiği sözlük sürümü; farklıysa uyarı verilir (kaynak değişmiş olabilir).
+SOZLUK_SHA256 = "c539e12904d1ccac4792073f05deeae2babe692249dc4a359da254f1bd338f6f"
 
 HARFLER = set("ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ")
 
 def buyuk(s):
+    # Şapkalı harfler klavyede olmadığından düz harfe indirilir (âdet → ADET).
+    s = s.replace("â", "a").replace("î", "i").replace("û", "u")
     return s.replace("i", "İ").replace("ı", "I").upper()
 
 CEVAP_HAM = """
@@ -79,15 +93,57 @@ def temizle(liste):
             sonuc.append(b)
     return sonuc
 
-cevaplar = temizle(CEVAP_HAM)
-gecerli = sorted(set(cevaplar) | set(temizle(EK_HAM)))
-random.Random(2026).shuffle(cevaplar)
+# Günün kelimesi olunca keyifsiz olan bağlaç, zarf, zamir, belirteç ve sayılar (#29).
+# CEVAP_HAM'dan silinmez, karıştırmadan SONRA çıkarılır: böylece kalan kelimelerin sırası
+# aynen korunur. Çıkarılanların ilki (NEDEN) 37. indekste olduğundan #1-#37 bulmacaları
+# (20 Ekim - 25 Kasım 2026) ve liste sonu (#0) eskisiyle aynıdır; yalnızca henüz gelmemiş
+# günlerin kelimeleri öne kayar. İstatistik bulmaca numarasıyla tutulduğu için etkilenmez.
+CIKARILAN = set(temizle("""
+nasıl çünkü ancak fakat hangi belki bazen artık henüz neden kimse bütün sonra bugün yarın
+aşağı ileri sekiz dokuz yirmi
+""".split()))
+# Bu numaraya kadarki (dahil) bulmacalar eski listeyle aynı kalmalıdır: liste değiştiğinde
+# oynanmış günlerin kayıtlı tahminleri başka bir cevapla renklenmesin.
+KORUNAN_GUN = 37  # #37 = 25 Kasım 2026
+
+def sozluk_oku(yol):
+    if yol:
+        with open(yol, "rb") as f:
+            veri = f.read()
+    else:
+        with urllib.request.urlopen(SOZLUK_URL, timeout=60) as yanit:
+            veri = yanit.read()
+    if hashlib.sha256(veri).hexdigest() != SOZLUK_SHA256:
+        print("uyarı: sözlük sürümü değişmiş, yeni listeyi gözden geçirin", file=sys.stderr)
+    kelimeler = []
+    for satir in veri.decode("utf-8").splitlines():
+        satir = satir.strip()
+        if not satir or satir.startswith("#"):
+            continue
+        kok, _, ozellik = satir.partition(" ")
+        # Büyük harfle başlayanlar özel isimdir; kısaltma ve noktalama da alınmaz.
+        if kok[0].isupper() or re.search(r"Prop|Abbrv|Punc", ozellik):
+            continue
+        kelimeler.append(kok)
+    return temizle(kelimeler)
+
+eski_cevaplar = temizle(CEVAP_HAM)
+random.Random(2026).shuffle(eski_cevaplar)
+cevaplar = [k for k in eski_cevaplar if k not in CIKARILAN]
+assert cevaplar[:KORUNAN_GUN] == eski_cevaplar[:KORUNAN_GUN], "geçmiş bulmacalar değişiyor"
+assert cevaplar[-1] == eski_cevaplar[-1], "#0 bulmacası değişiyor"
+
+sozluk = sozluk_oku(sys.argv[2] if len(sys.argv) > 2 else None)
+# Eski elle yazılmış listedeki her kelime geçerli kalır; liste yalnızca büyür.
+gecerli = sorted(set(sozluk) | set(eski_cevaplar) | set(temizle(EK_HAM)))
 
 with open(sys.argv[1], "w", encoding="utf-8") as f:
     f.write("// Bu dosya otomatik üretilir: python3 scripts/kelime-listesi.py games/gunun-kelimesi/kelimeler.js\n")
+    f.write("// GECERLI kaynağı: Zemberek-NLP sözlüğü (Apache-2.0), ayrıntı scripts/kelime-listesi.py içinde.\n")
     f.write("(function (kok) {\n")
     f.write("  var CEVAPLAR = " + json.dumps(cevaplar, ensure_ascii=False) + ";\n")
-    f.write("  var GECERLI = " + json.dumps(gecerli, ensure_ascii=False) + ";\n")
+    # Boyutu küçük tutmak için boşlukla ayrılmış tek metin olarak yazılır.
+    f.write("  var GECERLI = " + json.dumps(" ".join(gecerli), ensure_ascii=False) + ".split(' ');\n")
     f.write("  var Kelimeler = { CEVAPLAR: CEVAPLAR, GECERLI: GECERLI };\n")
     f.write("  if (typeof module !== 'undefined' && module.exports) module.exports = Kelimeler;\n")
     f.write("  else kok.Kelimeler = Kelimeler;\n")

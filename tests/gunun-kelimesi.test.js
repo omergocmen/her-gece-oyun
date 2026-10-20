@@ -15,6 +15,28 @@ test('kelime listeleri beş harfli, Türkçe alfabeyle, tekrarsız ve cevaplar g
   for (const k of CEVAPLAR) assert.ok(gecerli.has(k), `${k} geçerli listede yok`);
 });
 
+test('yaygın kelimeler tahmin olarak kabul edilir ve geçerli liste sözlükten gelecek kadar büyük (#29)', () => {
+  const gecerli = new Set(GECERLI);
+  const yaygin = ('KUZEY GÜNEY KAPAK AHŞAP AKTÖR ANKET BASIN EMLAK FENER HALKA HAMAM HIRKA JETON ' +
+    'KAFES KANAT KASAP KAZAK KUTLU MASKE MİDYE OTLAK PALTO PUDRA SUÇLU TOKAT').split(' ');
+  for (const k of yaygin) assert.ok(gecerli.has(k), `${k} kabul edilmiyor`);
+  assert.ok(GECERLI.length >= 3000, `geçerli liste ${GECERLI.length} kelime, en az 3000 olmalı`);
+});
+
+test('cevaplarda bağlaç, zarf, zamir ve sayı yok (#29)', () => {
+  const yasak = ('NASIL ÇÜNKÜ ANCAK FAKAT HANGİ BELKİ BAZEN ARTIK HENÜZ NEDEN KİMSE BÜTÜN SONRA ' +
+    'BUGÜN YARIN AŞAĞI İLERİ SEKİZ DOKUZ YİRMİ').split(' ');
+  for (const k of yasak) assert.ok(!CEVAPLAR.includes(k), `${k} cevap olmamalı`);
+});
+
+test('liste temizliği oynanmış ve yakın günlerin bulmacasını değiştirmez (#29)', () => {
+  // Temizlikten önceki listenin ilk 37 günü ve #0 (liste sonu); sıra korunarak yalnızca çıkarma yapıldı
+  const ilkGunler = ['KAŞIK', 'HIZLI', 'GURUR', 'ÇAKIL', 'SOĞUK'];
+  ilkGunler.forEach((k, i) => assert.equal(M.gununKelimesi(CEVAPLAR, new Date(2026, 9, 20 + i, 12)), k));
+  assert.equal(M.gununKelimesi(CEVAPLAR, new Date(2026, 10, 25, 12)), 'HUKUK'); // #37, son korunan gün
+  assert.equal(CEVAPLAR[CEVAPLAR.length - 1], 'TARLA');
+});
+
 test('I/ı ve İ/i dönüşümleri Türkçe kurallarla yapılır', () => {
   assert.equal(M.buyut('ıi'), 'Iİ');
   assert.equal(M.buyut('kılıç'), 'KILIÇ');
