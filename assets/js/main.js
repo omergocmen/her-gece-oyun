@@ -19,7 +19,7 @@
     return e;
   }
 
-  // Oyunlar eklenme sırasıyla numaralanır: ilk oyun No. 001.
+  // Oyunlar games.json'daki sırayla numaralanır: ilk oyun No. 001 (Katalog.numaralar).
   function numara(n) { return 'No. ' + String(n).padStart(3, '0'); }
 
   function tarihYazisi(iso) {
@@ -120,8 +120,8 @@
         return;
       }
       katalog = sirali;
-      sirali.forEach(function (oyun, i) { numaralar[oyun.slug] = sirali.length - i; });
-      buGeceninOyunu(sirali[0], sirali.length);
+      numaralar = Katalog.numaralar(oyunlar);
+      buGeceninOyunu(sirali[0], numaralar[sirali[0].slug]);
       kaldiginYer();
       suzgecKur();
       izgaraCiz(anahtarOku(), false);

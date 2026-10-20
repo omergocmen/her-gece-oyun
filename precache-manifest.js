@@ -1,6 +1,6 @@
 // Bu dosya otomatik üretilir: npm run precache
 self.PRECACHE = {
-  "surum": "b427b0343b66",
+  "surum": "d4501e2a50c9",
   "dosyalar": [
     "./",
     "index.html",
@@ -98,9 +98,9 @@ self.PRECACHE = {
     "assets/css/style.css": "a91582c77af6",
     "assets/fonts/bricolage-latin.woff2": "a756882d8a78",
     "assets/fonts/bricolage-latin-ext.woff2": "e1a04c169c02",
-    "assets/js/katalog.js": "8c2e171bf830",
+    "assets/js/katalog.js": "3b9fbfacc9aa",
     "assets/js/depo.js": "15719dbeea5c",
-    "assets/js/main.js": "dbda6f7e9f95",
+    "assets/js/main.js": "29a78cdb27f2",
     "assets/js/sw-kayit.js": "2ed7e56cb07e",
     "assets/icons/icon.svg": "a40ef20ade23",
     "assets/icons/icon-192.png": "a9a1e71d8e38",
