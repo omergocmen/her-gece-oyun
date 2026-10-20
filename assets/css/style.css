@@ -169,6 +169,28 @@ h1, h2, h3 { line-height: 1.08; letter-spacing: -.015em; font-weight: 750; }
 .buton.ikincil { background: transparent; color: var(--krem); box-shadow: inset 0 0 0 2px var(--cizgi); }
 .buton.ikincil:hover { box-shadow: inset 0 0 0 2px var(--soluk); }
 
+/* ---------- Uygulama gibi kur paneli ---------- */
+.kur { padding: 12px 0 0; }
+.kur-panel {
+  display: flex; align-items: center; gap: 12px; min-height: 64px; padding: 12px 16px;
+  background: var(--kagit-2); border: 1px solid var(--cizgi); border-radius: 16px;
+  opacity: 0; transition: opacity .2s;
+}
+.kur.gorunur .kur-panel { opacity: 1; }
+.kur-ay { flex: none; color: var(--sodyum); }
+.kur-metin { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; }
+.kur-metin strong { font-size: 1rem; line-height: 1.25; font-weight: 750; }
+.kur-metin span { font-size: .875rem; color: var(--soluk); }
+.kur-metin .kur-ios { display: inline-flex; align-items: center; gap: 6px; color: var(--krem); margin-top: 2px; }
+.kur-dugme { flex: none; min-height: 40px; padding: 8px 20px; }
+.kur-dugme:disabled { opacity: .6; cursor: default; }
+.kur-kapat {
+  flex: none; width: 40px; height: 40px; border-radius: 50%; border: 0; cursor: pointer; font: inherit;
+  background: transparent; color: var(--soluk); box-shadow: inset 0 0 0 1px var(--cizgi);
+}
+@media (hover: hover) { .kur-kapat:hover { color: var(--krem); box-shadow: inset 0 0 0 2px var(--soluk); } }
+.kur-kapat:focus-visible { outline: 3px solid var(--sodyum); outline-offset: 2px; }
+
 /* ---------- Tüm oyunlar: oyun kartı ızgarası (DESIGN.md → game-card) ---------- */
 .bolum-baslik {
   display: flex; align-items: baseline; justify-content: space-between; gap: 12px;

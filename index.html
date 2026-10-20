@@ -55,6 +55,21 @@
         </div>
       </div>
     </section>
+    <section id="kur" class="kur" aria-labelledby="kur-baslik" role="region" hidden>
+      <div class="kur-panel">
+        <svg class="kur-ay" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        <div class="kur-metin">
+          <strong id="kur-baslik">Uygulama gibi kur</strong>
+          <span>İnternetsiz de oyna</span>
+          <span id="kur-ios" class="kur-ios" hidden>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12M8 7l4-4 4 4M6 11H5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-1"/></svg>
+            Paylaş → Ana Ekrana Ekle
+          </span>
+        </div>
+        <button id="kur-dugme" class="buton kur-dugme" type="button" hidden>Kur</button>
+        <button id="kur-kapat" class="kur-kapat" type="button" aria-label="Kapat">✕</button>
+      </div>
+    </section>
     <section id="kaldigin-yer" class="kaldigin-yer" aria-labelledby="kaldigin-baslik" hidden>
       <h2 id="kaldigin-baslik" class="serit-baslik">Kaldığın yerden</h2>
       <ol id="son-oynananlar" class="kompakt-serit"></ol>
@@ -88,6 +103,7 @@
   <script src="assets/js/katalog.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/yedek.js"></script>
+  <script src="assets/js/kur.js"></script>
   <script src="assets/js/sw-kayit.js"></script>
 </body>
 </html>
