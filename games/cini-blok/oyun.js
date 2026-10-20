@@ -130,6 +130,7 @@
 
   function kaydet() {
     if (mod === 'gunluk') Depo.yaz('cini:gunluk', { tarih: bugunAnahtar, durum: durum });
+    if (mod === 'gunluk' && durum.hamle && !durum.bitti) window.Gunluk && window.Gunluk.kaydet('cini-blok', { durum: 'yarim', ozet: '' });
     else Depo.yaz('cini:klasik', durum);
     if (durum.puan > Depo.oku(enIyiAnahtari(), 0)) Depo.yaz(enIyiAnahtari(), durum.puan);
     Depo.ozetYaz('cini-blok', durum.puan && 'En iyi ' + Math.max(Depo.oku('cini:en-iyi', 0), Depo.oku('cini:gunluk-en-iyi', 0)));
@@ -384,6 +385,7 @@
       var gecmis = Depo.oku('cini:gunluk-gecmis', {});
       gecmis[bugunAnahtar] = { puan: durum.puan, cizgi: durum.cizgi };
       Depo.yaz('cini:gunluk-gecmis', gecmis);
+      window.Gunluk && window.Gunluk.kaydet('cini-blok', { durum: 'bitti', ozet: durum.puan + ' puan' });
     }
     mesaj.textContent = 'Yer kalmadı. Hiçbir parça sığmıyor.';
     tahtaKap.classList.add('bitti');

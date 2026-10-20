@@ -325,6 +325,7 @@ function basla() {
   if (!durum || oldu) yeniOyun();
   $('perde').hidden = true;
   calisiyor = true;
+  if (mod === 'gunluk') window.Gunluk && window.Gunluk.kaydet('yokus-asagi', { durum: 'yarim', ozet: '' });
   durakli = false;
   muzikBaslat();
   if (!Depo.oku('yokus:ipucu', false)) {
@@ -355,7 +356,7 @@ function olum() {
   const m = Math.floor(durum.d);
   const onceki = mod === 'gunluk' ? gunluk.enIyi : enIyi;
   const rekor = m > onceki;
-  if (mod === 'gunluk') { if (rekor) gunluk.enIyi = m; Depo.yaz('yokus:gunluk', gunluk); }
+  if (mod === 'gunluk') { if (rekor) gunluk.enIyi = m; Depo.yaz('yokus:gunluk', gunluk); window.Gunluk && window.Gunluk.kaydet('yokus-asagi', { durum: 'bitti', ozet: gunluk.enIyi + ' m' }); }
   else if (rekor) { enIyi = m; Depo.yaz('yokus:enIyi', enIyi); }
   if (enIyi > 0) Depo.ozetYaz('yokus-asagi', 'En iyi ' + enIyi + ' m');
   setTimeout(() => {

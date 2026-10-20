@@ -243,6 +243,7 @@ function basla(yeniMod) {
   if (yeniMod === 'ralli') {
     parkur = M.ralliParkuru(tohum);
     ralli = M.ralliDurumu();
+    if (tohum === gunlukTohum) window.Gunluk && window.Gunluk.kaydet('kapadokya-yollari', { durum: 'yarim', ozet: '' });
     sahne.kapilariKur(parkur);
     eskiKayit = kayitlar()[tohum] || null;
     hayaletKayit = M.hayaletYeni();
@@ -306,6 +307,7 @@ function bitir() {
   const sonuc = M.rekorIsle(kayitlar(), String(tohum), sure, ralli.araSureler, hayaletKayit, Date.now());
   Depo.yaz(ANAHTAR.ralli, sonuc.kayitlar);
   Depo.ozetYaz('kapadokya-yollari', 'Rekor ' + M.sureYaz(sonuc.kayitlar[String(tohum)].sure));
+  if (tohum === gunlukTohum) window.Gunluk && window.Gunluk.kaydet('kapadokya-yollari', { durum: 'bitti', ozet: M.sureYaz(sure) });
   ses.bitis(sonuc.rekor);
   mesajYaz(M.sureYaz(sure), false, true, 0);
   bitisBekle = 1.6;

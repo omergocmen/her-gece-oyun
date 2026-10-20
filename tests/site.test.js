@@ -120,6 +120,16 @@ test('ana sayfa kartları depo.js özetini okuyabilir ve her oyun özet yazar', 
   }
 });
 
+test('gunluk:true olan her oyun Gunluk.kaydet çağırır ve çağıran her oyun işaretlidir', () => {
+  for (const oyun of oyunlar) {
+    const kodlar = oyun.dosyalar.filter((d) => d.endsWith('.js') && d.startsWith(`games/${oyun.slug}/`))
+      .map((d) => fs.readFileSync(diskYolu(d), 'utf8')).join('\n');
+    const cagiriyor = kodlar.includes(`Gunluk.kaydet('${oyun.slug}'`);
+    assert.equal(cagiriyor, oyun.gunluk === true,
+      cagiriyor ? `${oyun.slug}: Gunluk.kaydet çağırıyor ama games.json'da gunluk:true yok` : `${oyun.slug}: gunluk:true ama Gunluk.kaydet('${oyun.slug}', …) çağrısı yok`);
+  }
+});
+
 test('kategori süzgeci games.json\'dan türetilir; 3D düğmesi boyut alanından gelir', () => {
   const kategoriler = Katalog.kategoriler(Katalog.sirala(oyunlar));
   const anahtarlar = kategoriler.map((k) => k.anahtar);
