@@ -1,6 +1,6 @@
 // Bu dosya otomatik üretilir: npm run precache
 self.PRECACHE = {
-  "surum": "7c407a59b90c",
+  "surum": "4df36fa10943",
   "dosyalar": [
     "./",
     "index.html",
@@ -105,12 +105,19 @@ self.PRECACHE = {
     "games/okey/mantik.js",
     "games/okey/isci.js",
     "games/okey/oyun.js",
-    "games/okey/kapak.svg"
+    "games/okey/kapak.svg",
+    "games/satranc/",
+    "games/satranc/stil.css",
+    "games/satranc/motor.js",
+    "games/satranc/bulmaca.js",
+    "games/satranc/isci.js",
+    "games/satranc/oyun.js",
+    "games/satranc/kapak.svg"
   ],
   "ozetler": {
-    "./": "0fdaa9604869",
-    "index.html": "0fdaa9604869",
-    "games.json": "b37e52a20040",
+    "./": "e8f008088b06",
+    "index.html": "e8f008088b06",
+    "games.json": "73d81db0e38b",
     "manifest.webmanifest": "402a1b3b6849",
     "assets/css/style.css": "7d1d3d464ca4",
     "assets/fonts/bricolage-latin.woff2": "a756882d8a78",
@@ -122,7 +129,7 @@ self.PRECACHE = {
     "assets/icons/icon.svg": "a40ef20ade23",
     "assets/icons/icon-192.png": "a9a1e71d8e38",
     "assets/icons/icon-512.png": "c19b5bf4f1c7",
-    "games/gunun-kelimesi/": "181461fffb70",
+    "games/gunun-kelimesi/": "20fda4bde757",
     "games/gunun-kelimesi/stil.css": "4f9952b58aeb",
     "games/gunun-kelimesi/kelimeler.js": "9a63089d8b6a",
     "games/gunun-kelimesi/mantik.js": "438b7d2ce5dc",
@@ -185,7 +192,7 @@ self.PRECACHE = {
     "games/marmaray-kosusu/sahne.js": "7ca7e478a942",
     "games/marmaray-kosusu/ses.js": "d061884d2549",
     "games/marmaray-kosusu/kapak.svg": "f7319fe515df",
-    "games/kayip-minareler/": "4a1ffb576f6e",
+    "games/kayip-minareler/": "e027d84eaf9d",
     "games/kayip-minareler/stil.css": "184a1583bfea",
     "games/kayip-minareler/mantik.js": "f753b672a284",
     "games/kayip-minareler/bolumler.json": "48c5a4b20ced",
@@ -196,7 +203,7 @@ self.PRECACHE = {
     "games/yokus-asagi/mantik.js": "427c912bc4d6",
     "games/yokus-asagi/oyun.js": "4670d9226e3d",
     "games/yokus-asagi/kapak.svg": "ecf26cc6b6b9",
-    "games/pasyans/": "c256e7ad8a70",
+    "games/pasyans/": "fef25a9c1d70",
     "games/pasyans/stil.css": "e1ecd633a8e3",
     "games/pasyans/mantik.js": "641d47bc5bb9",
     "games/pasyans/oyun.js": "ac0488d44384",
@@ -206,11 +213,18 @@ self.PRECACHE = {
     "games/smac/mantik.js": "673cf3769f80",
     "games/smac/oyun.js": "c7c62a2bd960",
     "games/smac/kapak.svg": "ff51167ebccc",
-    "games/okey/": "62188cd13ec0",
+    "games/okey/": "27522c967a3c",
     "games/okey/stil.css": "eab0e1200c83",
     "games/okey/mantik.js": "a8dd047ccfcb",
     "games/okey/isci.js": "9f9bb875e09f",
     "games/okey/oyun.js": "44dc640b6444",
-    "games/okey/kapak.svg": "22d2ca0874c9"
+    "games/okey/kapak.svg": "22d2ca0874c9",
+    "games/satranc/": "bf7a4d07cd92",
+    "games/satranc/stil.css": "313a8cd4c571",
+    "games/satranc/motor.js": "c53088e65894",
+    "games/satranc/bulmaca.js": "6c757c4872c4",
+    "games/satranc/isci.js": "1a579be1bb98",
+    "games/satranc/oyun.js": "b64e9bcb1789",
+    "games/satranc/kapak.svg": "d737267239c4"
   }
 };

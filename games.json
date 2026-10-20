@@ -280,5 +280,24 @@
       "games/okey/oyun.js",
       "games/okey/kapak.svg"
     ]
+  },
+  {
+    "slug": "satranc",
+    "ad": "Satranç",
+    "aciklama": "Bilgisayara karşı 5 seviyeli satranç: tam kurallar, Türkçe notasyon, açılış adları ve ipucu modu. Her gün herkese aynı Günün Bulmacası.",
+    "kategori": "Strateji",
+    "boyut": "2D",
+    "eklenme": "2026-10-20",
+    "gorsel": "games/satranc/kapak.svg",
+    "gunluk": true,
+    "dosyalar": [
+      "games/satranc/",
+      "games/satranc/stil.css",
+      "games/satranc/motor.js",
+      "games/satranc/bulmaca.js",
+      "games/satranc/isci.js",
+      "games/satranc/oyun.js",
+      "games/satranc/kapak.svg"
+    ]
   }
 ]
