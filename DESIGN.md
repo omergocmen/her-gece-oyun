@@ -270,6 +270,19 @@ Oyunlar her gece değişir; bazen 2D, bazen 3D olur. Hepsi bu sistemin parçası
 
 **Ses (isteğe bağlı):** Kısa, yumuşak, yerel dosyalardan; varsayılan açık ama tek dokunuşla kapanır ve tercih `localStorage`'da saklanır.
 
+**Oyun içi ek renkler:** Arayüz paleti yetmediğinde (oyun nesneleri, malzemeler) yalnızca şunlar eklenir; arayüz metninde ve butonlarda kullanılmaz. Hepsi gece ışığında, hafif kısık tonlardır.
+
+| Ad | Değer | Kullanım |
+| --- | --- | --- |
+| İznik mavisi | `#2f6fb0` | Çini, su tehlikesi kenarı, küp yüzü |
+| Turkuaz | `#2aa198` | Çini, küp yüzü, Pamukkale suyu |
+| Ceviz | `#5a3b24` | Tavla masası, ahşap |
+| Kemik | `#e9dcc2` | Tavla beyaz taşı, zar |
+| Gece çimi | `#2c5a3a` | Golf yeşili, park |
+| Kum | `#c9a46a` | Kum tehlikesi, peribacası taşı |
+
+Renk ayrımı oyun için kritikse (küp yüzleri, çini türleri) renkler ayrıca bir sembol ya da desenle de ayrışır.
+
 ## Agent Prompt Guide
 
 Bir ajan bu siteye arayüz eklerken şu kısa başvuruyu kullanır:
