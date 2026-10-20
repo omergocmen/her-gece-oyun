@@ -336,5 +336,24 @@
       "assets/vendor/three/three.module.min.js",
       "assets/js/kalite.js"
     ]
+  },
+  {
+    "slug": "dama",
+    "ad": "Dama",
+    "aciklama": "Türk damasını bilgisayara karşı oyna: zorunlu yeme, çok taşlı yeme zinciri, dama taşı, üç seviye ve her gün herkese aynı \"2 hamlede kazan\" bulmacası.",
+    "kategori": "Masa oyunu",
+    "boyut": "2D",
+    "eklenme": "2026-10-20",
+    "gorsel": "games/dama/kapak.svg",
+    "gunluk": true,
+    "dosyalar": [
+      "games/dama/",
+      "games/dama/stil.css",
+      "games/dama/motor.js",
+      "games/dama/isci.js",
+      "games/dama/bulmaca.js",
+      "games/dama/oyun.js",
+      "games/dama/kapak.svg"
+    ]
   }
 ]
