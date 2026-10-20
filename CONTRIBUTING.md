@@ -4,6 +4,8 @@ Site derleme gerektirmez; düz HTML, CSS ve JavaScript'ten oluşur. İlke: her o
 
 ## Adımlar
 
+Görsel kimlik (renkler, yazı tipi, bileşenler, kapak tarifi) `DESIGN.md` dosyasındadır; yeni oyun sayfası ve kapağı bu rehbere uymalıdır.
+
 1. `games/<slug>/` klasörünü oluşturun. Slug küçük harf ve tire içerir (ör. `mayin-tarlasi`).
 2. `games/<slug>/index.html` yazın. `games/sayi-tahmin/index.html` örnek alınabilir. Sayfada şunlar olmalı:
    - `<html lang="tr">` ve `<head>` içinde boş bir `<!-- SEO:BASLA -->` / `<!-- SEO:BITIS -->` bloğu (title, description, canonical, Open Graph ve JSON-LD bu bloğa otomatik yazılır)

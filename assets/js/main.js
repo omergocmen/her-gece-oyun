@@ -3,59 +3,86 @@
   var buGece = document.getElementById('bu-gece');
   var baglanti = document.getElementById('baglanti');
 
-  function kart(oyun) {
+  function el(etiket, sinif, metin) {
+    var e = document.createElement(etiket);
+    if (sinif) e.className = sinif;
+    if (metin) e.textContent = metin;
+    return e;
+  }
+
+  // Oyunlar eklenme sırasıyla numaralanır: ilk oyun No. 001.
+  function numara(n) { return 'No. ' + String(n).padStart(3, '0'); }
+
+  function tarihYazisi(iso) {
+    var p = iso.split('-');
+    return new Date(+p[0], +p[1] - 1, +p[2]).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
+  }
+
+  function kart(oyun, n) {
     var li = document.createElement('li');
-    var a = document.createElement('a');
-    a.className = 'oyun-karti';
+    var a = el('a', 'oyun-karti');
     a.href = Katalog.oyunAdresi(oyun);
     var img = document.createElement('img');
     img.src = oyun.gorsel;
     img.alt = '';
     img.loading = 'lazy';
-    var icerik = document.createElement('div');
-    icerik.className = 'icerik';
-    var kategori = document.createElement('span');
-    kategori.className = 'kategori';
-    kategori.textContent = oyun.kategori;
-    var h3 = document.createElement('h3');
-    h3.textContent = oyun.ad;
-    var p = document.createElement('p');
-    p.textContent = oyun.aciklama;
-    icerik.append(kategori, h3, p);
-    a.append(img, icerik);
+    var icerik = el('div', 'icerik');
+    var no = el('span', 'no', numara(n) + ' · ');
+    no.append(el('span', 'kategori', oyun.kategori));
+    icerik.append(no, el('h3', '', oyun.ad), el('p', '', oyun.aciklama));
+    var git = el('span', 'git', '→');
+    git.setAttribute('aria-hidden', 'true');
+    a.append(img, icerik, git);
     li.append(a);
     return li;
   }
 
-  function buGeceninOyunu(oyun) {
+  function buGeceninOyunu(oyun, n) {
     buGece.innerHTML = '';
-    var etiket = document.createElement('span');
-    etiket.className = 'etiket';
-    etiket.textContent = 'Bu gecenin oyunu';
-    var h1 = document.createElement('h1');
-    h1.textContent = oyun.ad;
-    var p = document.createElement('p');
-    p.textContent = oyun.aciklama;
-    var a = document.createElement('a');
-    a.className = 'buton';
-    a.href = Katalog.oyunAdresi(oyun);
-    a.textContent = 'Hemen oyna';
-    buGece.append(etiket, h1, p, a);
+    var adres = Katalog.oyunAdresi(oyun);
+    var metin = el('div', 'metin');
+    var baslik = el('h2');
+    var baslikBag = el('a', '', oyun.ad);
+    baslikBag.href = adres;
+    baslik.append(baslikBag);
+    var buton = el('a', 'buton', 'Hemen oyna ');
+    buton.href = adres;
+    buton.append(el('span', 'ok', '→'));
+    metin.append(
+      el('span', 'damga', 'Bu gecenin oyunu'),
+      baslik,
+      el('span', 'meta', numara(n) + ' · ' + oyun.kategori + ' · ' + tarihYazisi(oyun.eklenme)),
+      el('p', '', oyun.aciklama),
+      buton
+    );
+    var vitrin = el('a', 'vitrin');
+    vitrin.href = adres;
+    vitrin.tabIndex = -1;
+    vitrin.setAttribute('aria-hidden', 'true');
+    var img = document.createElement('img');
+    img.src = oyun.gorsel;
+    img.alt = '';
+    vitrin.append(img);
+    buGece.append(metin, vitrin);
   }
+
+  document.getElementById('tarih').textContent = new Date().toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric', weekday: 'long' });
 
   fetch('games.json')
     .then(function (yanit) { return yanit.json(); })
     .then(function (oyunlar) {
       var sirali = Katalog.sirala(oyunlar);
+      document.getElementById('sayi').textContent = String(sirali.length).padStart(3, '0');
       if (!sirali.length) {
-        buGece.textContent = 'Henüz oyun yok. Bu gece ilk oyun geliyor!';
+        buGece.append(el('p', 'bos-durum', 'Henüz oyun yok. Bu gece ilk oyun geliyor!'));
         return;
       }
-      buGeceninOyunu(sirali[0]);
-      sirali.forEach(function (oyun) { liste.append(kart(oyun)); });
+      document.getElementById('oyun-sayisi').textContent = sirali.length + ' oyun';
+      buGeceninOyunu(sirali[0], sirali.length);
+      sirali.forEach(function (oyun, i) { liste.append(kart(oyun, sirali.length - i)); });
     })
     .catch(function () {
-      buGece.textContent = 'Oyun listesi yüklenemedi. Bağlantınızı kontrol edip sayfayı yenileyin.';
+      buGece.append(el('p', 'bos-durum', 'Oyun listesi yüklenemedi. Bağlantını kontrol edip sayfayı yenile.'));
     });
 
   function baglantiDurumu() { baglanti.hidden = navigator.onLine; }
