@@ -12,9 +12,11 @@ jobs:
   bildir:
     if: github.event_name == 'workflow_dispatch' || github.event.issue.state_reason == 'completed'
     runs-on: ubuntu-latest
+    # Token ve chat id bu GitHub environment'ının secret'larında tutulur.
+    environment: TELEGRAM_BOT_TOKEN
     env:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || vars.TELEGRAM_CHAT_ID || '7985595078' }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || secrets.CHATID || vars.TELEGRAM_CHAT_ID || '7985595078' }}
       SITE_URL: https://hergeceoyun.netlify.app
       GH_TOKEN: ${{ github.token }}
     steps:
