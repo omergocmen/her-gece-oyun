@@ -1,6 +1,6 @@
 // Bu dosya otomatik üretilir: npm run precache
 self.PRECACHE = {
-  "surum": "995b6aa26437",
+  "surum": "c3039f8408c3",
   "dosyalar": [
     "./",
     "index.html",
@@ -89,12 +89,19 @@ self.PRECACHE = {
     "games/yokus-asagi/stil.css",
     "games/yokus-asagi/mantik.js",
     "games/yokus-asagi/oyun.js",
-    "games/yokus-asagi/kapak.svg"
+    "games/yokus-asagi/kapak.svg",
+    "games/satranc/",
+    "games/satranc/stil.css",
+    "games/satranc/motor.js",
+    "games/satranc/bulmaca.js",
+    "games/satranc/isci.js",
+    "games/satranc/oyun.js",
+    "games/satranc/kapak.svg"
   ],
   "ozetler": {
-    "./": "acbb9312bbeb",
-    "index.html": "acbb9312bbeb",
-    "games.json": "ba237adcd7e5",
+    "./": "b8ad343d5ca3",
+    "index.html": "b8ad343d5ca3",
+    "games.json": "de0bc8be2a91",
     "manifest.webmanifest": "402a1b3b6849",
     "assets/css/style.css": "7d1d3d464ca4",
     "assets/fonts/bricolage-latin.woff2": "a756882d8a78",
@@ -106,7 +113,7 @@ self.PRECACHE = {
     "assets/icons/icon.svg": "a40ef20ade23",
     "assets/icons/icon-192.png": "a9a1e71d8e38",
     "assets/icons/icon-512.png": "c19b5bf4f1c7",
-    "games/gunun-kelimesi/": "589ff4b82dc2",
+    "games/gunun-kelimesi/": "c0c0476fc42c",
     "games/gunun-kelimesi/stil.css": "4f9952b58aeb",
     "games/gunun-kelimesi/kelimeler.js": "9a63089d8b6a",
     "games/gunun-kelimesi/mantik.js": "438b7d2ce5dc",
@@ -179,6 +186,13 @@ self.PRECACHE = {
     "games/yokus-asagi/stil.css": "177cde38eb30",
     "games/yokus-asagi/mantik.js": "427c912bc4d6",
     "games/yokus-asagi/oyun.js": "4670d9226e3d",
-    "games/yokus-asagi/kapak.svg": "ecf26cc6b6b9"
+    "games/yokus-asagi/kapak.svg": "ecf26cc6b6b9",
+    "games/satranc/": "1357f32ed0f5",
+    "games/satranc/stil.css": "313a8cd4c571",
+    "games/satranc/motor.js": "c53088e65894",
+    "games/satranc/bulmaca.js": "6c757c4872c4",
+    "games/satranc/isci.js": "1a579be1bb98",
+    "games/satranc/oyun.js": "b64e9bcb1789",
+    "games/satranc/kapak.svg": "d737267239c4"
   }
 };

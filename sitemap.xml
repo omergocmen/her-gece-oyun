@@ -88,4 +88,11 @@
       <image:loc>https://her-gece-oyun-a52g.vercel.app/games/yokus-asagi/paylasim.png</image:loc>
     </image:image>
   </url>
+  <url>
+    <loc>https://her-gece-oyun-a52g.vercel.app/games/satranc/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <image:image>
+      <image:loc>https://her-gece-oyun-a52g.vercel.app/games/satranc/paylasim.png</image:loc>
+    </image:image>
+  </url>
 </urlset>
