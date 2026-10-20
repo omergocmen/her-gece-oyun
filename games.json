@@ -128,5 +128,22 @@
       "games/cam-ustasi/kapak.svg",
       "assets/vendor/three/three.module.min.js"
     ]
+  },
+  {
+    "slug": "kayip-minareler",
+    "ad": "Kayıp Minareler",
+    "aciklama": "Selçuklu ve Osmanlı mimarisinde izometrik 3D imkânsız geometri bulmacası. Parçaları döndür, köprüleri kaydır, bekçiyi minareye ulaştır ve sekiz minarenin ışığını yak.",
+    "kategori": "Bulmaca",
+    "eklenme": "2026-10-20",
+    "gorsel": "games/kayip-minareler/kapak.svg",
+    "dosyalar": [
+      "games/kayip-minareler/",
+      "games/kayip-minareler/stil.css",
+      "games/kayip-minareler/mantik.js",
+      "games/kayip-minareler/bolumler.json",
+      "games/kayip-minareler/oyun.js",
+      "games/kayip-minareler/kapak.svg",
+      "assets/vendor/three/three.module.min.js"
+    ]
   }
 ]
