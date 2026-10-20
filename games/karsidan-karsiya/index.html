@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="site-kok" content="../../">
+  <!-- SEO:BASLA -->
+  <title>Gece Yarısı Karşıdan Karşıya Oyna – Ücretsiz, İndirmeden | Her Gece Oyun</title>
+  <meta name="description" content="Gece İstanbul sokaklarında 3D sonsuz zıplama: taksi, dolmuş ve tramvaydan kaç, Boğaz vapurlarına bin, simit topla, martı ve kedi aç. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <link rel="canonical" href="https://her-gece-oyun-a52g.vercel.app/games/karsidan-karsiya/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Her Gece Oyun">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:title" content="Gece Yarısı Karşıdan Karşıya Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta property="og:description" content="Gece İstanbul sokaklarında 3D sonsuz zıplama: taksi, dolmuş ve tramvaydan kaç, Boğaz vapurlarına bin, simit topla, martı ve kedi aç. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta property="og:url" content="https://her-gece-oyun-a52g.vercel.app/games/karsidan-karsiya/">
+  <meta property="og:image" content="https://her-gece-oyun-a52g.vercel.app/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gece Yarısı Karşıdan Karşıya Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta name="twitter:description" content="Gece İstanbul sokaklarında 3D sonsuz zıplama: taksi, dolmuş ve tramvaydan kaç, Boğaz vapurlarına bin, simit topla, martı ve kedi aç. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta name="twitter:image" content="https://her-gece-oyun-a52g.vercel.app/assets/og.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Gece Yarısı Karşıdan Karşıya","description":"Gece İstanbul sokaklarında 3D sonsuz zıplama: taksi, dolmuş ve tramvaydan kaç, Boğaz vapurlarına bin, simit topla, martı ve kedi aç.","url":"https://her-gece-oyun-a52g.vercel.app/games/karsidan-karsiya/","image":"https://her-gece-oyun-a52g.vercel.app/assets/og.png","genre":"Aksiyon","inLanguage":"tr","datePublished":"2026-10-20","gamePlatform":"Web tarayıcısı","applicationCategory":"Game","operatingSystem":"Tüm işletim sistemleri","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"},"isPartOf":{"@type":"WebSite","name":"Her Gece Oyun","url":"https://her-gece-oyun-a52g.vercel.app/"}}</script>
+  <!-- SEO:BITIS -->
+  <meta name="theme-color" content="#110f0d">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="modulepreload" href="../../assets/vendor/three/three.module.min.js">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="../../"><span>Her Gece <em>Oyun</em></span></a>
+    <a class="geri" href="../../" aria-label="Tüm oyunlar">←<span class="uzun"> Tüm oyunlar</span></a>
+  </header>
+  <main class="container oyun-sayfasi karsi-oyunu">
+    <span class="ust-baslik">Aksiyon · 3D</span>
+    <h1>Gece Yarısı Karşıdan Karşıya</h1>
+
+    <section id="alan" class="oyun-alani sahne-alani" aria-label="Oyun alanı: dokun ya da yön tuşlarına bas">
+      <canvas id="tuval"></canvas>
+      <div id="flas" class="flas" aria-hidden="true"></div>
+
+      <div class="hud">
+        <div class="hud-sol">
+          <strong id="skor" class="skor" aria-label="Mesafe">0</strong>
+          <span class="en-iyi">En iyi <b id="en-iyi">0</b></span>
+        </div>
+        <div class="hud-sag">
+          <span class="simit-sayac" title="Simit">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="7.5" fill="none" stroke="currentColor" stroke-width="4.5"/><g fill="#e9dcc2"><circle cx="8" cy="7.2" r=".9"/><circle cx="15.6" cy="6.6" r=".9"/><circle cx="18" cy="13.4" r=".9"/><circle cx="6" cy="14.6" r=".9"/><circle cx="12.4" cy="18.6" r=".9"/></g></svg>
+            <b id="simit">0</b><span class="gizli"> simit</span>
+          </span>
+          <button id="ses-dugme" class="yuvarlak" type="button" aria-label="Sesi kapat" aria-pressed="false">
+            <svg class="ses-acik" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg class="ses-kapali" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16.5 9.5l5 5M21.5 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <button id="duraklat-dugme" class="yuvarlak" type="button" aria-label="Duraklat">
+            <svg class="dur" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+            <svg class="oynat" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M7 5l12 7-12 7z"/></svg>
+          </button>
+        </div>
+      </div>
+      <p id="uyari" class="uyari" role="status" hidden>Koca martı geliyor, ilerle!</p>
+
+      <div id="baslangic" class="kaplama baslangic">
+        <div class="ipucu">
+          <p class="ipucu-baslik">Dokun ve zıpla</p>
+          <svg class="kaydir-cizim" viewBox="0 0 120 64" width="120" height="64" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M60 40V10M52 18l8-8 8 8"/>
+              <path d="M40 46H12M20 38l-8 8 8 8" opacity=".55"/>
+              <path d="M80 46h28M100 38l8 8-8 8" opacity=".55"/>
+            </g>
+            <circle cx="60" cy="50" r="7" fill="#ffb23f"/>
+          </svg>
+          <p class="ipucu-alt">Kaydır: sola, sağa, geri · Klavyede oklar ya da WASD</p>
+        </div>
+        <div class="karakter-bolumu">
+          <p class="karakter-baslik">Karakter <span>· cüzdanda <b id="cuzdan">0</b> simit</span></p>
+          <div id="karakterler" class="karakterler" role="list" aria-label="Karakterler"></div>
+          <p id="karakter-mesaj" class="karakter-mesaj" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div id="duraklama" class="kaplama duraklama" hidden>
+        <p class="ipucu-baslik">Duraklatıldı</p>
+        <button id="devam" class="buton" type="button">Devam et</button>
+      </div>
+      <p id="destek-yok" class="destek-yok" hidden>Bu tarayıcı 3D çizimi (WebGL) desteklemiyor. Başka bir tarayıcıda dene ya da donanım hızlandırmayı aç.</p>
+    </section>
+
+    <h2>Nasıl oynanır?</h2>
+    <p>Gece yarısı İstanbul'da karşıdan karşıya geçebildiğin kadar geç. Ekrana dokununca karakterin bir şerit ileri zıplar; parmağını sola, sağa ya da aşağı kaydırarak yön değiştirirsin. Klavyede yön tuşları ya da WASD kullanılır, P tuşu oyunu duraklatır. Taksi ve dolmuşlar arasındaki boşluğu kolla; tramvay hattında zil çalıp kırmızı lambalar yanıp sönüyorsa bekle. Boğaz'a düşmemek için kayan vapurların ve sandalların üstüne bin, ama seni ekranın kenarına taşımadan in. Kaldırımdaki simitleri topla; biriktirdiğin simitlerle Tekir, Martı ve Hamal karakterlerini açarsın. Bir yerde fazla oyalanırsan koca martı gelip seni kapar, o yüzden ilerlemeye devam et. Skorun ulaştığın en uzak şerittir; en iyi skorun, simitlerin ve açtığın karakterler yalnızca bu cihazda saklanır ve oyun internetsiz de çalışır.</p>
+  </main>
+
+  <dialog id="sonuc" class="sonuc-panel" aria-labelledby="sonuc-baslik">
+    <span id="rekor-damga" class="damga" hidden>Yeni rekor</span>
+    <h2 id="sonuc-baslik" class="sonuc-baslik">Tur bitti</h2>
+    <p id="neden" class="sonuc-neden"></p>
+    <div class="sonuc-skor"><strong id="sonuc-mesafe">0</strong><span>şerit</span></div>
+    <div class="sonuc-sayilar">
+      <div><strong id="sonuc-en-iyi">0</strong><span>En iyi</span></div>
+      <div><strong id="sonuc-simit">+0</strong><span>Simit</span></div>
+    </div>
+    <div class="sonuc-eylemler">
+      <button id="tekrar" class="buton" type="button" autofocus>Yeniden oyna</button>
+      <button id="karakter-ac" class="buton ikincil" type="button">Karakterler</button>
+    </div>
+    <a class="tum-oyunlar" href="../../">Tüm oyunlar</a>
+  </dialog>
+
+  <script src="../../assets/js/depo.js"></script>
+  <script src="mantik.js"></script>
+  <script type="module" src="oyun.js"></script>
+  <script src="../../assets/js/sw-kayit.js"></script>
+</body>
+</html>
