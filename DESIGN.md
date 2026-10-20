@@ -111,14 +111,25 @@ components:
     textColor: "{colors.on-surface}"
     rounded: "{rounded.lg}"
     padding: 24px
-  archive-row:
-    backgroundColor: "{colors.neutral}"
+  game-card:
+    backgroundColor: "{colors.surface}"
     textColor: "{colors.on-surface}"
     typography: "{typography.title}"
-    rounded: "{rounded.md}"
+    rounded: "{rounded.lg}"
     padding: 16px
-  archive-row-hover:
+  game-card-hover:
     backgroundColor: "{colors.surface}"
+    textColor: "{colors.on-surface-muted}"
+  game-card-stamp:
+    backgroundColor: "{colors.neutral}"
+    textColor: "{colors.on-surface}"
+    typography: "{typography.label-caps}"
+    rounded: "{rounded.full}"
+  badge-new:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.on-primary}"
+    typography: "{typography.label-caps}"
+    rounded: "{rounded.full}"
   eyebrow:
     backgroundColor: "{colors.neutral}"
     textColor: "{colors.primary}"
@@ -168,7 +179,7 @@ Her Gece Oyun, gece yarısı basılan bir gazete gibi hissettirir. Zemin sıcak 
 
 Kişilik: meraklı, gececi, biraz muzip ama özensiz değil. Oyuncuya "bu gece seni bekleyen bir şey var" duygusu verir. Kalabalık değil, editoryal: büyük tipografi, ince çizgiler, bol nefes. Hedef kitle telefonda, yatmadan önce birkaç dakika oynayan Türkçe konuşan oyuncudur; bu yüzden her şey önce mobil ve tek elle kullanılabilir tasarlanır.
 
-Kaçınılacak görünüm: mor/lacivert gradyan kahraman alanı, aynı boyda yuvarlak kart ızgarası, emoji ikonlar, "oyun portalı" kalabalığı, reklam alanı gibi duran kutular.
+Kaçınılacak görünüm: mor/lacivert gradyan kahraman alanı, ritmi olmayan, aynı boyda portal kartı ızgarası, emoji ikonlar, "oyun portalı" kalabalığı, reklam alanı gibi duran kutular.
 
 Site karanlık temalıdır ve açık tema yoktur; gece kimliğin kendisidir (`color-scheme: dark`, `theme-color` = `neutral`).
 
@@ -193,7 +204,7 @@ Tek aile: **Bricolage Grotesque** (değişken; ağırlık 200–800, genişlik %
 
 - **Masthead:** Site adı. %75 genişlik, 800 ağırlık, büyük harf; ekran genişliğini dolduracak kadar büyük (`clamp(3rem, 15.5vw, 10.5rem)`).
 - **Display / Headline:** Manşet oyun adı ve sayfa başlıkları. Daraltılmış genişlik (%82–88) ve hafif negatif harf aralığı gazete manşeti hissi verir.
-- **Title:** Arşiv satırı başlıkları, butonlar.
+- **Title:** Oyun kartı başlıkları, butonlar.
 - **Body:** 17 px, satır yüksekliği 1.55, satır uzunluğu en fazla 62 karakter.
 - **Label caps:** Üst başlık, kategori, tarih şeridi. Büyük harf, geniş harf aralığı.
 - **Numeric:** Skor, sayaç, süre. Her zaman tabular rakam (`tnum`), böylece sayılar değişirken titremez.
@@ -204,11 +215,11 @@ Büyük harf dönüşümü Türkçe kurala uysun diye her sayfa `<html lang="tr"
 
 Mobil önce: tasarım 390 px genişlikte başlar, yatay kaydırma yoktur, kenar boşluğu 16 px'tir. Masaüstünde içerik en fazla 1040 px genişliğinde ortalanır. Boşluk ölçeği 4 px tabanlıdır (4, 8, 16, 24, 48).
 
-Sayfalar kart ızgarası yerine gazete sütunu gibi akar: bölümler ince bir çizgiyle (`outline`), ana bölüm geçişleri çift çizgiyle (`4px double`) ayrılır. Ana sayfa sırası: künye (tarih şeridi, masthead, slogan) → bu gecenin oyunu (manşet + eğik vitrin görseli) → arşiv (numaralı satırlar) → alt bilgi (Ücretsiz · Girişsiz · İnternetsiz).
+Sayfalar gazete sütunu gibi akar: bölümler ince bir çizgiyle (`outline`), ana bölüm geçişleri çift çizgiyle (`4px double`) ayrılır. Ana sayfa sırası: künye (tarih şeridi, masthead, slogan) → bu gecenin oyunu (manşet + eğik vitrin görseli) → kaldığın yerden (kompakt kartlar, yalnızca oynanmışsa) → tüm oyunlar (kategori süzgeci + oyun kartı ızgarası) → alt bilgi (Ücretsiz · Girişsiz · İnternetsiz).
 
 Oyun sayfası sırası: başlık çubuğu (logo + `← Tüm oyunlar` + varsa oyun ikonları) → üst başlık (kategori) → `<h1>` → oyun alanı → `Nasıl oynanır?`. Oyun alanı ilk ekranda tamamen görünmelidir; açıklama metni kaydırınca gelir.
 
-Duyarlı davranış: 420 px altında geri bağlantısı yalnızca oka iner, logo küçülür, arşiv satırındaki ok düğmesi gizlenir. 760 px üstünde manşet iki sütuna açılır. Dokunma hedefleri en az 44 px'tir.
+Duyarlı davranış: 420 px altında geri bağlantısı yalnızca oka iner, logo küçülür, oyun kartı ızgarası 2 sütuna iner ve kart açıklamaları gizlenir. 760 px üstünde manşet iki sütuna, ızgara 3 sütuna açılır. Dokunma hedefleri en az 44 px'tir.
 
 ## Elevation & Depth
 
@@ -227,7 +238,8 @@ Uzak yıldızlar (künyede birkaç piksellik noktalar) dekoratiftir ve içerikle
 
 - **Künye:** Tarih şeridi (gün, ay, yıl, gün adı) + "Sayı 00X" sayacı + masthead + slogan. Çevrimdışıyken şeritte `offline-badge` görünür.
 - **Bu gecenin oyunu:** Nabız atan damga ("Bu gecenin oyunu"), `display` başlık, `No. · kategori · tarih` meta satırı, açıklama, `button-primary` ("Hemen oyna →"), 1.5° eğik vitrin görseli; hover'da düzleşir ve yükselir.
-- **Arşiv satırı (`archive-row`):** Kapak küçük resmi (16:9), `No. 00X · KATEGORİ` üst satırı, başlık, en fazla iki satır açıklama, sağda yuvarlak ok. Hover'da zemin `surface` olur, kapak -2° döner, ok sodyumla dolar.
+- **Oyun kartı (`game-card`, `.oyun-karti`):** Gece afişi gibi: üstte 16:10 kapak (alt kenarı metne doğru yumuşakça kararır), sol üstte numara damgası `No. 008` (`game-card-stamp`; son 7 günde eklendiyse yerine `badge-new` "YENİ"), sağ üstte `2D`/`3D` rozeti (`games.json` → `boyut`). Altta kategori (`label-caps` sodyum), başlık (en fazla 2 satır), açıklama (`body-sm` soluk, en fazla 2 satır) ve oynanmışsa ince çizgi üstünde özet satırı (`numeric`, oyunun `Depo`'ya yazdığı `hgo:ozet:<slug>`). Izgara: 390 px'de 2 sütun (açıklama gizli), 360 px altında 1, 760 px+ 3 sütun. Ritim: ızgaranın ilk kartı "öne çıkan" olur (masaüstünde 2 sütun, kapak solda; mobilde tam genişlik, açıklama görünür). Manşetteki oyun ızgarada tekrar etmez. Hover/odak: 3 px yükselme, kenar `on-surface-muted`, kapak 1.04, zayıf sodyum parıltı; basma `scale(.98)`. Kompakt hali (`.oyun-karti--kompakt`, 148 px, yalnızca kapak + başlık + özet) "Kaldığın yerden" şeridinde kullanılır.
+- **Kategori süzgeci:** Izgaranın üstünde hap düğme grubu (`aria-pressed`), seçili `button-primary`, diğerleri `button-secondary`; dar ekranda yatay kaydırılan tek satır.
 - **Butonlar:** `button-primary` sayfadaki tek ana eylem; `button-secondary` ikincil eylemler için çizgili hap.
 - **Panel (`.oyun-alani`):** Oyunun oynandığı alan.
 - **Oyun içi:** Harf kutuları (`tile-correct`, `tile-present`, `tile-absent`), ekran klavyesi tuşu (`key`, en az 56 px yükseklik), sayaç ve skorlar `numeric`. Sonuç ve istatistik pencereleri `<dialog>` + `panel`.
@@ -241,7 +253,7 @@ Uzak yıldızlar (künyede birkaç piksellik noktalar) dekoratiftir ve içerikle
 - Do: Her yeni dosyayı (font, model, ses, doku) çevrimdışı önbellek listesine ekle.
 - Do: Animasyonları `prefers-reduced-motion` açıkken kapat.
 - Don't: Harici font, CDN, API ya da analitik betiği ekleme; her şey depoda olmalı.
-- Don't: Mor/lacivert gradyan, emoji ikon, aynı boy kart ızgarası kullanma.
+- Don't: Mor/lacivert gradyan, emoji ikon, öne çıkan kartı olmayan düz portal ızgarası kullanma.
 - Don't: Paletten başka renk uydurma; gerekiyorsa önce bu dosyaya token olarak ekle.
 - Don't: Bilgiyi yalnızca renkle verme.
 - Don't: Krem yazıyı sodyum zemin üstüne koyma; sodyum üstünde yalnızca `on-primary`.
