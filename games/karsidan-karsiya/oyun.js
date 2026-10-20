@@ -357,6 +357,7 @@ function sonucGoster() {
   const sonuc = M.turuIsle(kayit, skor, tur.toplanan);
   kayit = sonuc.kayit;
   kaydet();
+  Depo.ozetYaz('karsidan-karsiya', kayit.enIyi && 'En iyi ' + kayit.enIyi);
   ogeler.sonucMesafe.textContent = skor;
   ogeler.sonucEnIyi.textContent = kayit.enIyi;
   ogeler.sonucSimit.textContent = '+' + tur.toplanan;

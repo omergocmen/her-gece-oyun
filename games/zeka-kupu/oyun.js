@@ -540,6 +540,7 @@ function cozuldu() {
   const sure = gecenMs;
   const kayit = M.rekorIsle(Depo.oku('kup:rekor:' + N, null), sure, hamleSayisi);
   Depo.yaz('kup:rekor:' + N, kayit.rekor);
+  Depo.ozetYaz('zeka-kupu', 'En iyi ' + M.sureMetni(kayit.rekor.sure) + ' · ' + N + '×' + N);
   let gunlukIlk = false;
   if (mod === 'gunluk') {
     const onceki = Depo.oku('kup:gunluk:' + N, null);

@@ -132,6 +132,7 @@
     if (mod === 'gunluk') Depo.yaz('cini:gunluk', { tarih: bugunAnahtar, durum: durum });
     else Depo.yaz('cini:klasik', durum);
     if (durum.puan > Depo.oku(enIyiAnahtari(), 0)) Depo.yaz(enIyiAnahtari(), durum.puan);
+    Depo.ozetYaz('cini-blok', durum.puan && 'En iyi ' + Math.max(Depo.oku('cini:en-iyi', 0), Depo.oku('cini:gunluk-en-iyi', 0)));
   }
 
   // ---------- Çizim ----------

@@ -4,6 +4,7 @@
     "ad": "Günün Kelimesi",
     "aciklama": "Beş harfli Türkçe kelimeyi altı tahminde bul. Her gün yeni bir kelime, Türkçe klavye ve serbest mod.",
     "kategori": "Kelime",
+    "boyut": "2D",
     "eklenme": "2026-10-20",
     "gorsel": "games/gunun-kelimesi/kapak.svg",
     "dosyalar": [
@@ -20,6 +21,7 @@
     "ad": "Sayı Bulmaca",
     "aciklama": "Rakamları farklı gizli sayıyı +/− ipuçlarıyla mantık yürüterek bul. Günlük bulmaca, 3-5 hane zorluk ve rakam eleme paneli.",
     "kategori": "Bulmaca",
+    "boyut": "2D",
     "eklenme": "2026-10-20",
     "gorsel": "games/sayi-tahmin/kapak.svg",
     "dosyalar": [
@@ -35,6 +37,7 @@
     "ad": "Zekâ Küpü",
     "aciklama": "Parmağınla döndürülen 3D zekâ küpü. 2×2, 3×3 ve 4×4 boyutları, günlük karıştırma, kronometre ve adım adım Türkçe çözüm rehberi.",
     "kategori": "Bulmaca",
+    "boyut": "3D",
     "eklenme": "2026-10-20",
     "gorsel": "games/zeka-kupu/kapak.svg",
     "dosyalar": [
@@ -52,6 +55,7 @@
     "ad": "Çini Blok",
     "aciklama": "İznik motifli blok parçalarını 8×8 tahtaya sürükle, satır ve sütun doldurup kombo yap. Günlük meydan okuma ve sonsuz klasik mod.",
     "kategori": "Bulmaca",
+    "boyut": "2D",
     "eklenme": "2026-10-20",
     "gorsel": "games/cini-blok/kapak.svg",
     "dosyalar": [
@@ -67,6 +71,7 @@
     "ad": "Tavla",
     "aciklama": "Bilgisayara karşı Türk usulü tavla: kapı, kırık, zorunlu hamle, toplama ve mars. Üç zorluk, 3 ya da 5 puanlık maç.",
     "kategori": "Masa oyunu",
+    "boyut": "2D",
     "eklenme": "2026-10-20",
     "gorsel": "games/tavla/kapak.svg",
     "dosyalar": [
@@ -83,6 +88,7 @@
     "ad": "Gece Yarısı Karşıdan Karşıya",
     "aciklama": "Gece İstanbul sokaklarında 3D sonsuz zıplama: taksi, dolmuş ve tramvaydan kaç, Boğaz vapurlarına bin, simit topla, martı ve kedi aç.",
     "kategori": "Aksiyon",
+    "boyut": "3D",
     "eklenme": "2026-10-20",
     "gorsel": "games/karsidan-karsiya/kapak.svg",
     "dosyalar": [
@@ -102,6 +108,7 @@
     "ad": "Mini Golf Türkiye",
     "aciklama": "Kapadokya'dan Nemrut'a dokuz delikli 3D mini golf. Çek-bırak vuruş, sektiren peribacaları, Galata yokuşu, Kız Kulesi vapuru ve skor kartı.",
     "kategori": "Spor",
+    "boyut": "3D",
     "eklenme": "2026-10-20",
     "gorsel": "games/mini-golf/kapak.svg",
     "dosyalar": [
@@ -119,6 +126,7 @@
     "ad": "Cam Ustası",
     "aciklama": "Gece cam atölyesinde 3D koridor: dokun, bilye fırlat, camları kır. Çeşmibülbül camları, kayan paneller, kombo atışlar ve kırılmaması gereken nazar boncuğu kapıları.",
     "kategori": "Aksiyon",
+    "boyut": "3D",
     "eklenme": "2026-10-20",
     "gorsel": "games/cam-ustasi/kapak.svg",
     "dosyalar": [
@@ -135,6 +143,7 @@
     "ad": "Kapadokya Yolları",
     "aciklama": "Gün batımında peribacaları arasında 3D sürüş. Sonsuz serbest yol, günlük ralli parkuru, kontrol noktaları ve kendi rekorunla yarışan hayalet araba.",
     "kategori": "Yarış",
+    "boyut": "3D",
     "eklenme": "2026-10-20",
     "gorsel": "games/kapadokya-yollari/kapak.svg",
     "dosyalar": [
@@ -153,6 +162,7 @@
     "ad": "Marmaray Koşusu",
     "aciklama": "Gece Marmaray tünelinde 3D üç şeritli sonsuz koşu: gelen trenlerden kaç, bariyerden zıpla, tabelanın altından kay, İstanbulkart jetonu topla, Boğaz'a çık.",
     "kategori": "Aksiyon",
+    "boyut": "3D",
     "eklenme": "2026-10-20",
     "gorsel": "games/marmaray-kosusu/kapak.svg",
     "dosyalar": [
@@ -172,6 +182,7 @@
     "ad": "Kayıp Minareler",
     "aciklama": "Selçuklu ve Osmanlı mimarisinde izometrik 3D imkânsız geometri bulmacası. Parçaları döndür, köprüleri kaydır, bekçiyi minareye ulaştır ve sekiz minarenin ışığını yak.",
     "kategori": "Bulmaca",
+    "boyut": "3D",
     "eklenme": "2026-10-20",
     "gorsel": "games/kayip-minareler/kapak.svg",
     "dosyalar": [
@@ -189,6 +200,7 @@
     "ad": "Yokuş Aşağı",
     "aciklama": "Gece İstanbul yokuşlarında sodyum ışıklı 3D pistte yuvarlanan top. Sağa sola yönlendir, kor bloklardan kaç, rampalardan uç; günlük pist ve sonsuz mod.",
     "kategori": "Aksiyon",
+    "boyut": "3D",
     "eklenme": "2026-10-20",
     "gorsel": "games/yokus-asagi/kapak.svg",
     "dosyalar": [

@@ -685,6 +685,7 @@
     durum.macBitti = durum.skor[sonuc.kazanan] >= durum.hedefPuan;
     var ist = M.istatistikIsle(Depo.oku('tavla:istatistik', null), sonuc, durum.macBitti, durum.macBitti && sonuc.kazanan === 0);
     Depo.yaz('tavla:istatistik', ist);
+    Depo.ozetYaz('tavla', ist.mac ? ist.macKazanilan + '/' + ist.mac + ' maç' : ist.oyunKazanilan + '/' + ist.oyun + ' oyun');
     secili = null;
     hedefler = [];
     yasal = null;
