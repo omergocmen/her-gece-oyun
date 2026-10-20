@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="site-kok" content="../../">
+  <!-- SEO:BASLA -->
+  <title>Zekâ Küpü Oyna – Ücretsiz, İndirmeden | Her Gece Oyun</title>
+  <meta name="description" content="Parmağınla döndürülen 3D zekâ küpü. 2×2, 3×3 ve 4×4 boyutları, günlük karıştırma, kronometre ve adım adım Türkçe çözüm rehberi. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <link rel="canonical" href="https://her-gece-oyun-a52g.vercel.app/games/zeka-kupu/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Her Gece Oyun">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:title" content="Zekâ Küpü Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta property="og:description" content="Parmağınla döndürülen 3D zekâ küpü. 2×2, 3×3 ve 4×4 boyutları, günlük karıştırma, kronometre ve adım adım Türkçe çözüm rehberi. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta property="og:url" content="https://her-gece-oyun-a52g.vercel.app/games/zeka-kupu/">
+  <meta property="og:image" content="https://her-gece-oyun-a52g.vercel.app/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zekâ Küpü Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta name="twitter:description" content="Parmağınla döndürülen 3D zekâ küpü. 2×2, 3×3 ve 4×4 boyutları, günlük karıştırma, kronometre ve adım adım Türkçe çözüm rehberi. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta name="twitter:image" content="https://her-gece-oyun-a52g.vercel.app/assets/og.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Zekâ Küpü","description":"Parmağınla döndürülen 3D zekâ küpü. 2×2, 3×3 ve 4×4 boyutları, günlük karıştırma, kronometre ve adım adım Türkçe çözüm rehberi.","url":"https://her-gece-oyun-a52g.vercel.app/games/zeka-kupu/","image":"https://her-gece-oyun-a52g.vercel.app/assets/og.png","genre":"Bulmaca","inLanguage":"tr","datePublished":"2026-10-20","gamePlatform":"Web tarayıcısı","applicationCategory":"Game","operatingSystem":"Tüm işletim sistemleri","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"},"isPartOf":{"@type":"WebSite","name":"Her Gece Oyun","url":"https://her-gece-oyun-a52g.vercel.app/"}}</script>
+  <!-- SEO:BITIS -->
+  <meta name="theme-color" content="#110f0d">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="stil.css">
+  <script type="importmap">{ "imports": { "three": "../../assets/vendor/three/three.module.min.js" } }</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="../../"><span>Her Gece <em>Oyun</em></span></a>
+    <div class="sag">
+      <button id="istatistik-ac" class="ikon-buton" type="button" aria-label="Rekorlar"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4 20h3V11H4zm6.5 0h3V4h-3zM17 20h3v-6h-3z"/></svg></button>
+      <a class="geri" href="../../" aria-label="Tüm oyunlar">←<span class="uzun"> Tüm oyunlar</span></a>
+    </div>
+  </header>
+  <main class="container oyun-sayfasi kup-oyunu">
+    <span class="ust-baslik">Bulmaca · 3D</span>
+    <h1>Zekâ Küpü</h1>
+    <div class="secimler">
+      <div class="segment" role="group" aria-label="Küp boyutu">
+        <button type="button" data-boyut="2">2×2</button>
+        <button type="button" data-boyut="3">3×3</button>
+        <button type="button" data-boyut="4">4×4</button>
+      </div>
+      <div class="segment" role="group" aria-label="Mod">
+        <button type="button" data-mod="serbest">Serbest</button>
+        <button type="button" data-mod="gunluk">Günlük</button>
+      </div>
+    </div>
+
+    <section class="oyun-alani kup-alani">
+      <div id="sahne" class="kup-sahne">
+        <div class="kup-hud">
+          <div class="sayaclar">
+            <strong id="sure" class="sure" aria-label="Süre">00:00.0</strong>
+            <span class="hamle-sayaci"><strong id="hamle">0</strong> <span>hamle</span></span>
+          </div>
+          <div class="hud-dugmeler">
+            <button id="geri-al" class="ikon-buton" type="button" aria-label="Geri al"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14 4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-3"/></svg></button>
+            <button id="karistir" class="ikon-buton" type="button" aria-label="Karıştır"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg></button>
+            <button id="ipucu" class="ikon-buton" type="button" aria-label="İpucu"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg></button>
+            <button id="ayar-ac" class="ikon-buton" type="button" aria-label="Ayarlar"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></button>
+          </div>
+        </div>
+        <p id="durum" class="kup-durum" role="status" aria-live="polite"></p>
+        <ol id="iz" class="notasyon-izi" aria-label="Son hamleler"></ol>
+        <aside id="rehber" class="rehber" hidden aria-labelledby="rehber-baslik">
+          <div class="rehber-ust">
+            <span id="rehber-adim" class="rehber-adim"></span>
+            <button id="rehber-kapat" class="ikon-buton kucuk" type="button" aria-label="Rehberi kapat"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+          </div>
+          <h3 id="rehber-baslik"></h3>
+          <p id="rehber-hamleler" class="rehber-hamleler"></p>
+          <p id="rehber-metin"></p>
+        </aside>
+      </div>
+      <div class="kup-alt">
+        <button id="rehber-ac" class="metin-buton" type="button">Adım adım çözüm rehberi</button>
+        <span class="klavye-not">Klavye: R L U D F B, ters için Shift</span>
+      </div>
+    </section>
+
+    <h2>Nasıl oynanır?</h2>
+    <p>Amaç, karışık küpü her yüzü tek renk olacak şekilde düzeltmek. Bir çıkartmanın üzerinden parmağını ya da fareni kaydırarak o katmanı döndürürsün; turuncu çerçeve hangi katmanın döneceğini gösterir, çeyrek turun dörtte birini geçmeden bırakırsan katman geri yaylanır. Küpün dışındaki boş alanı kaydırınca bütün küp döner, böylece her yüze bakabilirsin. Klavyede R, L, U, D, F ve B tuşları sağ, sol, üst, alt, ön ve arka yüzü saat yönünde çevirir; Shift ile birlikte basınca ters yöne döner. Süre ilk hamlenle başlar. 2×2 "Cep Küp" ısınmak için, 3×3 klasik, 4×4 ise sabır isteyenler için. Günlük modda bugün herkes aynı karıştırmayı çözer ve sonucunu paylaşabilir. Rekorların yalnızca bu cihazda, her boyut için ayrı saklanır. Renkleri ayırt etmekte zorlanıyorsan ayarlardan yüzlere sembol ekleyebilirsin.</p>
+
+    <h3 class="cozum-baslik">Nasıl çözülür? Katman katman yöntem</h3>
+    <p class="cozum-giris">3×3 küp yedi adımda, aşağıdan yukarıya çözülür. Takılırsan <strong>Adım adım çözüm rehberi</strong>ni aç: bulunduğun adımı anlatır ve sıradaki hamleyi küpün üzerinde turuncu bir okla gösterir. İpucu düğmesi her boyutta sıradaki hamleyi gösterir. Notasyonda harf yüzü saat yönünde, kesme işareti (R′) ters yönde, 2 ise yarım tur demektir.</p>
+    <ol class="cozum-adimlari">
+      <li><strong>Alt artı.</strong> Alt rengindeki dört kenarı alta getir; her kenarın yan rengi yanındaki merkezle eşleşsin.</li>
+      <li><strong>Alt köşeler.</strong> Köşeyi yuvasının üstüne getir ve <code>R U R′ U′</code> dizisini köşe oturana kadar tekrarla.</li>
+      <li><strong>Orta katman.</strong> Kenarı rengi eşleşen merkezin üstüne getir; sağa indirmek için <code>U R U′ R′ U′ F′ U F</code>, sola indirmek için <code>U′ L′ U L U F U′ F′</code>.</li>
+      <li><strong>Üst artı.</strong> <code>F R U R′ U′ F′</code> nokta, L ve çizgi şekillerini sırayla artıya çevirir.</li>
+      <li><strong>Üst kenarlar.</strong> <code>R U R′ U R U2 R′</code> ile kenarların yan renklerini merkezlerle eşleştir.</li>
+      <li><strong>Üst köşelerin yeri.</strong> <code>U R U′ L′ U R′ U′ L</code> üç köşeyi yer değiştirir; köşeler yönü ne olursa olsun doğru yere gelsin.</li>
+      <li><strong>Üst köşelerin yönü.</strong> Sağ ön üst köşeye <code>R′ D′ R D</code> dizisini üst rengi yukarı bakana kadar uygula, U ile sıradaki köşeyi getir. Alt katman arada bozulur, sonunda kendiliğinden düzelir.</li>
+    </ol>
+  </main>
+
+  <dialog id="sonuc" class="istatistik kup-dialog">
+    <span id="sonuc-damga" class="rekor-damga" hidden>Kişisel rekor</span>
+    <h2 id="sonuc-baslik">Çözüldü!</h2>
+    <div class="ist-sayilar iki">
+      <div><strong id="sonuc-sure">00:00.0</strong><span>Süre</span></div>
+      <div><strong id="sonuc-hamle">0</strong><span>Hamle</span></div>
+    </div>
+    <p id="sonuc-not" class="ayar-not"></p>
+    <p id="sonuc-metin" class="sonuc-metin" hidden></p>
+    <div class="ist-eylemler">
+      <button id="paylas" class="buton" type="button" hidden>Sonucu kopyala</button>
+      <button id="yeniden" class="buton" type="button">Yeniden oyna</button>
+      <a class="buton ikincil" href="../../">Tüm oyunlar</a>
+    </div>
+    <form method="dialog"><button class="buton ikincil kapat" type="submit">Kapat</button></form>
+  </dialog>
+
+  <dialog id="istatistik" class="istatistik kup-dialog">
+    <h2>Rekorlar</h2>
+    <table class="rekor-tablo">
+      <thead><tr><th scope="col">Boyut</th><th scope="col">En iyi süre</th><th scope="col">En az hamle</th><th scope="col">Çözülen</th></tr></thead>
+      <tbody id="rekor-satirlari"></tbody>
+    </table>
+    <p id="gunluk-ozet" class="ayar-not"></p>
+    <form method="dialog"><button class="buton ikincil kapat" type="submit">Kapat</button></form>
+  </dialog>
+
+  <dialog id="ayarlar" class="istatistik kup-dialog">
+    <h2>Ayarlar</h2>
+    <label class="ayar"><input id="sembol-ayari" type="checkbox"> Yüzlerde sembol göster (renk körlüğü için)</label>
+    <p class="ayar-not">Her renge ayrı bir işaret eklenir: nokta, çizgi, artı, halka, üçgen ve kare.</p>
+    <form method="dialog"><button class="buton" type="submit">Tamam</button></form>
+  </dialog>
+
+  <script src="../../assets/js/depo.js"></script>
+  <script src="mantik.js"></script>
+  <script src="cozucu.js"></script>
+  <script type="module" src="oyun.js"></script>
+  <script src="../../assets/js/sw-kayit.js"></script>
+</body>
+</html>
