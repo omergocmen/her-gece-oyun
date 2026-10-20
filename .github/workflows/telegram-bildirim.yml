@@ -1,0 +1,59 @@
+name: Telegram bildirimi
+on:
+  issues:
+    types: [closed]
+  workflow_dispatch:
+
+permissions:
+  issues: read
+  pull-requests: read
+
+jobs:
+  bildir:
+    if: github.event_name == 'workflow_dispatch' || github.event.issue.state_reason == 'completed'
+    runs-on: ubuntu-latest
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || vars.TELEGRAM_CHAT_ID }}
+      SITE_URL: https://hergeceoyun.netlify.app
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Mesajı gönder
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ]; then
+            echo "::warning::TELEGRAM_BOT_TOKEN secret'ı tanımlı değil, bildirim atlanıyor."
+            exit 0
+          fi
+          API="https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}"
+
+          # Chat id tanımlı değilse bota en son yazan sohbet kullanılır (bota /start yazmak yeterli).
+          if [ -z "$TELEGRAM_CHAT_ID" ]; then
+            TELEGRAM_CHAT_ID=$(curl -sS "$API/getUpdates" | jq -r '[.result[] | (.message // .my_chat_member).chat.id] | last // empty')
+            if [ -z "$TELEGRAM_CHAT_ID" ]; then
+              echo "::error::Chat id bulunamadı. Telegram'da bota /start yazıp tekrar deneyin ya da TELEGRAM_CHAT_ID secret'ını ekleyin."
+              exit 1
+            fi
+            echo "Bulunan chat id: $TELEGRAM_CHAT_ID (TELEGRAM_CHAT_ID olarak kaydedilebilir)"
+          fi
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            METIN=$(printf '🔔 Her Gece Oyun bildirimleri çalışıyor.\n\nSon versiyon: %s' "$SITE_URL")
+          else
+            NO='${{ github.event.issue.number }}'
+            PR=$(gh api graphql \
+              -f query='query($o:String!,$r:String!,$n:Int!){repository(owner:$o,name:$r){issue(number:$n){closedByPullRequestsReferences(first:1,includeClosedPrs:true){nodes{url}}}}}' \
+              -f o="${GITHUB_REPOSITORY%/*}" -f r="${GITHUB_REPOSITORY#*/}" -F n="$NO" \
+              --jq '.data.repository.issue.closedByPullRequestsReferences.nodes[0].url // empty' || true)
+            METIN=$(printf '✅ Issue #%s kapandı: %s\n%s' "$NO" "$ISSUE_BASLIK" "$ISSUE_URL")
+            [ -n "$PR" ] && METIN=$(printf '%s\nPR: %s' "$METIN" "$PR")
+            METIN=$(printf '%s\n\nSon versiyon: %s' "$METIN" "$SITE_URL")
+          fi
+
+          curl -sS --fail-with-body "$API/sendMessage" \
+            --data-urlencode "chat_id=$TELEGRAM_CHAT_ID" \
+            --data-urlencode "text=$METIN" \
+            --data-urlencode "disable_web_page_preview=true" > /dev/null
+          echo "Bildirim gönderildi."
+        env:
+          ISSUE_BASLIK: ${{ github.event.issue.title }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
