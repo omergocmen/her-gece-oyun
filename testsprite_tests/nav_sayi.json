@@ -1,0 +1,23 @@
+{
+ "projectId": "321b5730-4986-4118-a388-ab3d2e416c01",
+ "type": "frontend",
+ "name": "Ana sayfadan Sayı Tahmin'e gidiş",
+ "planSteps": [
+  {
+   "type": "action",
+   "description": "Open the site root /"
+  },
+  {
+   "type": "action",
+   "description": "Click the 'Sayı Tahmin' game card"
+  },
+  {
+   "type": "assertion",
+   "description": "The URL contains /games/sayi-tahmin/"
+  },
+  {
+   "type": "assertion",
+   "description": "The input with id 'tahmin' is visible"
+  }
+ ]
+}

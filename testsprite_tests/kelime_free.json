@@ -1,0 +1,27 @@
+{
+ "projectId": "321b5730-4986-4118-a388-ab3d2e416c01",
+ "type": "frontend",
+ "name": "Günün Kelimesi: serbest mod",
+ "planSteps": [
+  {
+   "type": "action",
+   "description": "Open /games/gunun-kelimesi/"
+  },
+  {
+   "type": "action",
+   "description": "Enter the word KALEM using the on-screen keyboard and press the enter key; repeat this 6 times in total until the 6 rows are used up and the game ends"
+  },
+  {
+   "type": "action",
+   "description": "Click the button with id 'serbest' (it appears in the element with id 'sonuc' once the game is over)"
+  },
+  {
+   "type": "assertion",
+   "description": "The element with id 'mod-etiketi' shows the text '(serbest)'"
+  },
+  {
+   "type": "assertion",
+   "description": "The grid with id 'izgara' is empty again with 6 rows of 5 cells"
+  }
+ ]
+}
