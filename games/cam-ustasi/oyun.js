@@ -39,7 +39,7 @@ canvas.setAttribute('aria-label', 'Cam atölyesi koridoru');
 const sahne = new THREE.Scene();
 sahne.fog = new THREE.Fog(R.murekkep, 14, 44);
 const kamera = new THREE.PerspectiveCamera(66, 1, 0.05, 60);
-sahne.add(new THREE.HemisphereLight(R.kemik, R.murekkep, 0.35));
+sahne.add(new THREE.HemisphereLight(R.kemik, R.murekkep, 0.6));
 
 // Kameranın önündeki lambalara taşınan üç sodyum ışığı
 const lambaIsiklari = [0, 1, 2].map(() => {
@@ -693,7 +693,7 @@ function kameraKonumla(dt) {
   // Işıkları kameranın önündeki lambalara taşı
   const ilkLamba = Math.ceil((durum.d - LAMBA_ARALIK / 2) / LAMBA_ARALIK);
   lambaIsiklari.forEach((l, i) => {
-    const d = (ilkLamba + i) * LAMBA_ARALIK + LAMBA_ARALIK / 2;
+    const d = (ilkLamba - 1 + i) * LAMBA_ARALIK + LAMBA_ARALIK / 2;
     l.position.set(0, M.YUK - 0.6, -d);
   });
 }

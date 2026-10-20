@@ -99,7 +99,7 @@
 }
 
 .cam-ipucu {
-  position: absolute; left: 50%; bottom: 16px; z-index: 2; transform: translateX(-50%); margin: 0; max-width: calc(100% - 32px);
+  position: absolute; left: 50%; bottom: 16px; z-index: 2; transform: translateX(-50%); margin: 0; width: max-content; max-width: calc(100% - 32px);
   padding: 6px 14px; border-radius: 999px; background: var(--kagit); border: 1px solid var(--cizgi);
   font-weight: 650; font-size: .92rem; text-align: center; pointer-events: none; transition: opacity .3s;
 }

@@ -95,5 +95,21 @@
       "games/karsidan-karsiya/kapak.svg",
       "assets/vendor/three/three.module.min.js"
     ]
+  },
+  {
+    "slug": "cam-ustasi",
+    "ad": "Cam Ustası",
+    "aciklama": "Gece cam atölyesinde 3D koridor: dokun, bilye fırlat, camları kır. Çeşmibülbül camları, kayan paneller, kombo atışlar ve kırılmaması gereken nazar boncuğu kapıları.",
+    "kategori": "Aksiyon",
+    "eklenme": "2026-10-20",
+    "gorsel": "games/cam-ustasi/kapak.svg",
+    "dosyalar": [
+      "games/cam-ustasi/",
+      "games/cam-ustasi/stil.css",
+      "games/cam-ustasi/mantik.js",
+      "games/cam-ustasi/oyun.js",
+      "games/cam-ustasi/kapak.svg",
+      "assets/vendor/three/three.module.min.js"
+    ]
   }
 ]
