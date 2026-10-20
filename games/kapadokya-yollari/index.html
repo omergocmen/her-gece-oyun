@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="site-kok" content="../../">
+  <!-- SEO:BASLA -->
+  <title>Kapadokya Yolları Oyna – Ücretsiz, İndirmeden | Her Gece Oyun</title>
+  <meta name="description" content="Gün batımında peribacaları arasında 3D sürüş. Sonsuz serbest yol, günlük ralli parkuru, kontrol noktaları ve kendi rekorunla yarışan hayalet araba. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <link rel="canonical" href="https://her-gece-oyun-a52g.vercel.app/games/kapadokya-yollari/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Her Gece Oyun">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:title" content="Kapadokya Yolları Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta property="og:description" content="Gün batımında peribacaları arasında 3D sürüş. Sonsuz serbest yol, günlük ralli parkuru, kontrol noktaları ve kendi rekorunla yarışan hayalet araba. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta property="og:url" content="https://her-gece-oyun-a52g.vercel.app/games/kapadokya-yollari/">
+  <meta property="og:image" content="https://her-gece-oyun-a52g.vercel.app/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kapadokya Yolları Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta name="twitter:description" content="Gün batımında peribacaları arasında 3D sürüş. Sonsuz serbest yol, günlük ralli parkuru, kontrol noktaları ve kendi rekorunla yarışan hayalet araba. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta name="twitter:image" content="https://her-gece-oyun-a52g.vercel.app/assets/og.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Kapadokya Yolları","description":"Gün batımında peribacaları arasında 3D sürüş. Sonsuz serbest yol, günlük ralli parkuru, kontrol noktaları ve kendi rekorunla yarışan hayalet araba.","url":"https://her-gece-oyun-a52g.vercel.app/games/kapadokya-yollari/","image":"https://her-gece-oyun-a52g.vercel.app/assets/og.png","genre":"Yarış","inLanguage":"tr","datePublished":"2026-10-20","gamePlatform":"Web tarayıcısı","applicationCategory":"Game","operatingSystem":"Tüm işletim sistemleri","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"},"isPartOf":{"@type":"WebSite","name":"Her Gece Oyun","url":"https://her-gece-oyun-a52g.vercel.app/"}}</script>
+  <!-- SEO:BITIS -->
+  <meta name="theme-color" content="#110f0d">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="../../"><span>Her Gece <em>Oyun</em></span></a>
+    <a class="geri" href="../../" aria-label="Tüm oyunlar">←<span class="uzun"> Tüm oyunlar</span></a>
+  </header>
+  <main class="container oyun-sayfasi kapadokya">
+    <span class="ust-baslik">Yarış · 3D</span>
+    <h1>Kapadokya Yolları</h1>
+
+    <section class="oyun-alani surus-alani">
+      <div id="sahne" class="sahne">
+        <canvas id="tuval" aria-label="Kapadokya Yolları sürüş sahnesi"></canvas>
+
+        <div id="hud" class="hud" hidden>
+          <div class="hud-sol">
+            <div id="hud-ralli" class="hud-ralli">
+              <strong id="sure" class="hud-sure">0:00.00</strong>
+              <div class="hud-satir">
+                <span id="kn" class="hud-etiket">KN 0/8</span>
+                <span id="fark" class="fark" hidden></span>
+              </div>
+            </div>
+            <div id="hud-serbest" class="hud-serbest" hidden>
+              <span class="hud-blok"><strong id="km" class="hud-sayi">0.0</strong><span class="hud-etiket">km</span></span>
+              <span class="hud-blok"><strong id="saat" class="hud-sayi">19:00</strong><span class="hud-etiket">saat</span></span>
+            </div>
+          </div>
+          <div class="hud-sag">
+            <button id="yola-don" class="ikon-dugme" type="button" aria-label="Yola dön"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4v5h5"/></svg></button>
+            <button id="duraklat-dugme" class="ikon-dugme" type="button" aria-label="Duraklat"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M7 5h3.5v14H7zm6.5 0H17v14h-3.5z"/></svg></button>
+            <button id="ses-dugme" class="ikon-dugme" type="button" aria-label="Sesi kapat" aria-pressed="false"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M4 9h4l5-4v14l-5-4H4z"/><path class="ses-dalga" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="ses-carpi" d="M16.5 9.5l5 5m0-5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+            <button id="tam-ekran" class="ikon-dugme" type="button" aria-label="Tam ekran" hidden><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button>
+          </div>
+        </div>
+
+        <div id="hiz-gosterge" class="hiz-gosterge" hidden><strong id="hiz">0</strong><span>km/sa</span></div>
+        <p id="mesaj" class="sahne-mesaj" role="status" aria-live="polite"></p>
+        <div id="direksiyon-iz" class="direksiyon-iz" hidden><span></span></div>
+
+        <button id="fren" class="pedal fren" type="button" aria-label="Fren ve geri" hidden><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <button id="gaz" class="pedal gaz" type="button" aria-label="Gaz" hidden><svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/><path d="M6 20l6-6 6 6" opacity=".45"/></svg></button>
+
+        <div id="menu" class="kaplama">
+          <div class="kaplama-panel">
+            <span class="kaplama-ust">Gün batımı · Kapadokya</span>
+            <h2 class="kaplama-baslik">Yola çık</h2>
+            <p class="kaplama-metin">Peribacaları arasında sonsuz bir yol. İstersen sadece sür, istersen günün parkurunda saate karşı yarış.</p>
+            <div class="tohum-satiri">
+              <label for="tohum" class="kucuk-etiket">Tohum</label>
+              <input id="tohum" type="text" inputmode="numeric" maxlength="6" autocomplete="off" spellcheck="false">
+              <button id="zar" class="metin-dugme" type="button">Rastgele</button>
+              <button id="gunluge" class="metin-dugme" type="button" hidden>Günün tohumu</button>
+            </div>
+            <p id="rekor-satiri" class="kucuk-not"></p>
+            <div class="kaplama-dugmeler">
+              <button id="serbest-basla" class="buton ikincil" type="button">Sadece sür</button>
+              <button id="ralli-basla" class="buton" type="button">Günlük ralli</button>
+            </div>
+            <label id="egim-ayari" class="ayar" hidden><input id="egim" type="checkbox"> Direksiyonu telefonu eğerek çevir</label>
+            <p class="kontrol-ipucu klavye-ipucu"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> ya da yön tuşları · <kbd>Boşluk</kbd> el freni · <kbd>R</kbd> yola dön · <kbd>Esc</kbd> duraklat</p>
+            <p class="kontrol-ipucu dokunma-ipucu">Sağ alttaki pedal gaz, sol alttaki fren ve geri. Direksiyon için ekranın sol yarısında parmağını sağa sola kaydır.</p>
+          </div>
+        </div>
+
+        <div id="duraklat" class="kaplama" hidden>
+          <div class="kaplama-panel dar">
+            <span class="kaplama-ust">Mola</span>
+            <h2 class="kaplama-baslik">Duraklatıldı</h2>
+            <div class="kaplama-dugmeler dikey">
+              <button id="devam" class="buton" type="button">Devam et</button>
+              <button id="foto-modu" class="buton ikincil" type="button">Ekran görüntüsü modu</button>
+              <button id="yeniden" class="buton ikincil" type="button">Yeniden başlat</button>
+              <button id="mod-sec" class="buton ikincil" type="button">Mod seç</button>
+            </div>
+            <p class="kucuk-not">Ekran görüntüsü modunda göstergeler gizlenir; çıkmak için dokun ya da bir tuşa bas.</p>
+          </div>
+        </div>
+
+        <div id="sonuc" class="kaplama" hidden>
+          <div class="kaplama-panel">
+            <span class="kaplama-ust" id="sonuc-ust">Günlük ralli</span>
+            <h2 class="kaplama-baslik">Parkur bitti <span id="rekor-damga" class="rekor-damga" hidden>Yeni rekor</span></h2>
+            <p class="sonuc-sure"><strong id="sonuc-sure">0:00.00</strong> <span id="sonuc-fark" class="fark"></span></p>
+            <table class="ara-tablo">
+              <thead><tr><th scope="col">KN</th><th scope="col">Ara süre</th><th scope="col">Rekora göre</th></tr></thead>
+              <tbody id="ara-govde"></tbody>
+            </table>
+            <div class="kaplama-dugmeler">
+              <button id="tekrar" class="buton" type="button">Yeniden dene</button>
+              <button id="sonuc-serbest" class="buton ikincil" type="button">Serbest sürüş</button>
+            </div>
+            <a class="kucuk-baglanti" href="../../">Tüm oyunlar</a>
+          </div>
+        </div>
+
+        <div id="yukleniyor" class="yukleniyor"><span>Arazi hazırlanıyor…</span></div>
+        <div id="hata" class="kaplama" hidden>
+          <div class="kaplama-panel dar">
+            <h2 class="kaplama-baslik">3D başlatılamadı</h2>
+            <p class="kaplama-metin">Bu tarayıcı WebGL desteklemiyor ya da kapalı. Başka bir tarayıcıda ya da donanım hızlandırmayı açarak dene.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <h2>Nasıl oynanır?</h2>
+    <p>Kapadokya'nın gün batımında, peribacaları ve vadiler arasında kıvrılan bir yolda araba sürersin. <strong>Sadece sür</strong> modunda yol hiç bitmez; alacakaranlık yavaşça geceye döner, yıldızlar çıkar, köy pencereleri yanar ve farların yolu aydınlatır. <strong>Günlük ralli</strong> modunda herkes aynı gün aynı parkuru sürer: sekiz kontrol noktasından sırayla, iki direk arasından geçerek bitişe en kısa sürede ulaşmaya çalış. Her kontrol noktasında rekorunla farkın görünür; artı (+) yavaş, eksi (−) hızlı olduğun anlamına gelir. En iyi sürüşün bu cihazda hayalet araba olarak saklanır ve bir sonraki denemede yanında yarışır. Masaüstünde W, A, S, D ya da yön tuşlarıyla sürersin; boşluk el freniyle virajda kuyruğu savurursun, R seni yola geri koyar. Telefonda sağ alttaki pedal gaz, sol alttaki fren ve geridir; direksiyon için ekranın sol yarısında parmağını sağa sola kaydır ya da menüden telefonu eğerek sürmeyi aç. Yoldan çıkınca kum ve çimde araba yavaşlar. Tohum alanına bir sayı yazarak istediğin manzarayı yeniden üretebilir, arkadaşınla aynı yolu paylaşabilirsin.</p>
+  </main>
+
+  <script src="../../assets/js/depo.js"></script>
+  <script src="mantik.js"></script>
+  <script type="module" src="oyun.js"></script>
+  <script src="../../assets/js/sw-kayit.js"></script>
+</body>
+</html>
