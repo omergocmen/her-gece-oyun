@@ -7,6 +7,7 @@
     "boyut": "2D",
     "eklenme": "2026-10-20",
     "gorsel": "games/gunun-kelimesi/kapak.svg",
+    "gunluk": true,
     "dosyalar": [
       "games/gunun-kelimesi/",
       "games/gunun-kelimesi/stil.css",
@@ -24,6 +25,7 @@
     "boyut": "2D",
     "eklenme": "2026-10-20",
     "gorsel": "games/sayi-tahmin/kapak.svg",
+    "gunluk": true,
     "dosyalar": [
       "games/sayi-tahmin/",
       "games/sayi-tahmin/stil.css",
@@ -40,6 +42,7 @@
     "boyut": "3D",
     "eklenme": "2026-10-20",
     "gorsel": "games/zeka-kupu/kapak.svg",
+    "gunluk": true,
     "dosyalar": [
       "games/zeka-kupu/",
       "games/zeka-kupu/stil.css",
@@ -59,6 +62,7 @@
     "boyut": "2D",
     "eklenme": "2026-10-20",
     "gorsel": "games/cini-blok/kapak.svg",
+    "gunluk": true,
     "dosyalar": [
       "games/cini-blok/",
       "games/cini-blok/stil.css",
@@ -150,6 +154,7 @@
     "boyut": "3D",
     "eklenme": "2026-10-20",
     "gorsel": "games/kapadokya-yollari/kapak.svg",
+    "gunluk": true,
     "dosyalar": [
       "games/kapadokya-yollari/",
       "games/kapadokya-yollari/stil.css",
@@ -170,6 +175,7 @@
     "boyut": "3D",
     "eklenme": "2026-10-20",
     "gorsel": "games/marmaray-kosusu/kapak.svg",
+    "gunluk": true,
     "dosyalar": [
       "games/marmaray-kosusu/",
       "games/marmaray-kosusu/stil.css",
@@ -210,6 +216,7 @@
     "boyut": "3D",
     "eklenme": "2026-10-20",
     "gorsel": "games/yokus-asagi/kapak.svg",
+    "gunluk": true,
     "dosyalar": [
       "games/yokus-asagi/",
       "games/yokus-asagi/stil.css",

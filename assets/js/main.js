@@ -122,6 +122,7 @@
       katalog = sirali;
       numaralar = Katalog.numaralar(oyunlar);
       buGeceninOyunu(sirali[0], numaralar[sirali[0].slug]);
+      meydanCiz();
       kaldiginYer();
       suzgecKur();
       izgaraCiz(anahtarOku(), false);
@@ -138,6 +139,99 @@
     oyunlar.forEach(function (oyun) { sonOynananlar.append(kart(oyun, numaralar[oyun.slug], 'kompakt')); });
     kaldiginBolum.hidden = false;
   }
+
+  // ---------- Bugünün meydan okumaları ----------
+  // Liste games.json'daki gunluk:true alanından, durum Gunluk.kaydet'in yazdığı hgo:gunluk kaydından gelir.
+  // Depolama kapalıysa ya da günlük oyun yoksa bölüm hiç görünmez.
+  var MEYDAN_GORUNEN = 4;
+  var meydanAcik = false;
+  var meydanGun = null;
+  var meydanMetin = null;
+  var AY_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a.6.6 0 0 0-.8-.7A9.5 9.5 0 1 0 21.2 15.4a.6.6 0 0 0-.7-.8z"/></svg>';
+  var TIK_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+  var DURUM_YAZI = { yok: 'Yapılmadı', yarim: 'Yarım', bitti: 'Bitti' };
+  var EYLEM_YAZI = { yok: 'Oyna', yarim: 'Devam et' };
+
+  function meydanCiz() {
+    var bolum = document.getElementById('meydan');
+    var durum = window.Gunluk ? Gunluk.oku(new Date()) : null;
+    var satirlar = durum ? Katalog.meydanSatirlari(katalog, durum) : [];
+    if (!durum || !satirlar.length) { bolum.hidden = true; return; }
+    meydanGun = Gunluk.gunAnahtari(new Date());
+    var seri = Gunluk.seri(durum, meydanGun);
+    var biten = satirlar.filter(function (s) { return s.durum === 'bitti'; }).length;
+
+    var rozet = document.getElementById('meydan-seri');
+    rozet.className = 'meydan-seri' + (seri.bugunBitti ? ' dolu' : '');
+    rozet.innerHTML = AY_SVG;
+    rozet.append(document.createTextNode(seri.bugunBitti ? 'Seri: ' + seri.sayi + ' gün'
+      : seri.sayi > 0 ? 'Seri: ' + seri.sayi + ' gün · Seriyi sürdür' : 'Seri başlat'));
+    document.getElementById('meydan-tamam').hidden = biten !== satirlar.length;
+
+    var ul = document.getElementById('meydan-liste');
+    ul.innerHTML = '';
+    satirlar.forEach(function (s, i) {
+      var li = el('li');
+      var a = el('a', 'meydan-satir ' + s.durum);
+      a.href = Katalog.oyunAdresi(s.oyun);
+      a.setAttribute('aria-label', [s.oyun.ad, DURUM_YAZI[s.durum], s.ozet].filter(Boolean).join(', '));
+      var img = document.createElement('img');
+      img.src = s.oyun.gorsel; img.alt = ''; img.width = 40; img.height = 40; img.loading = 'lazy'; img.decoding = 'async';
+      var ad = el('span', 'ad');
+      var d = el('span', 'durum');
+      if (s.durum === 'bitti') d.innerHTML = TIK_SVG;
+      else if (s.durum === 'yarim') d.append(el('span', 'nokta'));
+      d.append(document.createTextNode(DURUM_YAZI[s.durum]));
+      ad.append(el('strong', '', s.oyun.ad), d);
+      a.append(img, ad, el('span', 'sag', s.durum === 'bitti' ? s.ozet : EYLEM_YAZI[s.durum]));
+      li.append(a);
+      li.hidden = !meydanAcik && i >= MEYDAN_GORUNEN;
+      ul.append(li);
+    });
+    var hepsi = document.getElementById('meydan-hepsi');
+    hepsi.hidden = satirlar.length <= MEYDAN_GORUNEN;
+    hepsi.textContent = meydanAcik ? 'Daha az göster' : 'Hepsini göster (' + satirlar.length + ')';
+    hepsi.setAttribute('aria-expanded', String(meydanAcik));
+
+    meydanMetin = Katalog.paylasimMetni(satirlar, seri.sayi, new Date());
+    var paylas = document.getElementById('meydan-paylas');
+    paylas.hidden = !meydanMetin;
+    document.querySelector('.meydan-alt').hidden = hepsi.hidden && paylas.hidden;
+    bolum.hidden = false;
+  }
+
+  function panoyaKopyala(metin) {
+    if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(metin);
+    return new Promise(function (coz, red) {
+      var t = document.createElement('textarea');
+      t.value = metin; t.setAttribute('readonly', ''); t.style.cssText = 'position:fixed;opacity:0;top:0';
+      document.body.append(t); t.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) { /* aşağıda reddedilir */ }
+      t.remove();
+      ok ? coz() : red(new Error('kopyalanamadı'));
+    });
+  }
+
+  (function meydanOlaylari() {
+    var paylas = document.getElementById('meydan-paylas');
+    var zaman = null;
+    paylas.addEventListener('click', function () {
+      if (!meydanMetin) return;
+      panoyaKopyala(meydanMetin).then(function () { return 'Kopyalandı'; }, function () { return 'Kopyalanamadı'; })
+        .then(function (yazi) {
+          paylas.textContent = yazi;
+          clearTimeout(zaman);
+          zaman = setTimeout(function () { paylas.textContent = 'Bugünü paylaş'; }, 2000);
+        });
+    });
+    document.getElementById('meydan-hepsi').addEventListener('click', function () { meydanAcik = !meydanAcik; meydanCiz(); });
+    // Başka sekmede/oyunda ilerleme olduysa ya da gece yarısı geçtiyse geri dönünce yenile.
+    function yenile() { if (katalog.length) meydanCiz(); }
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) yenile(); });
+    window.addEventListener('pageshow', yenile);
+    window.addEventListener('storage', function (e) { if (e.key === 'hgo:gunluk') yenile(); });
+  })();
 
   // ---------- Kategori süzgeci ----------
   // Seçili süzgeç URL'ye yansır (?kategori=bulmaca): bağlantı paylaşılabilir, geri tuşu önceki süzgece döner.

@@ -102,6 +102,9 @@
   function kaydet() {
     if (durum.mod !== 'gunluk') return;
     Depo.yaz('sayi:gunluk', { tarih: M.tarihAnahtari(bugun), tahminler: durum.tahminler, isaretler: durum.isaretler });
+    // Ana sayfadaki "Bugünün meydan okumaları" için ortak günlük kayıt.
+    if (durum.tahminler.length) window.Gunluk && window.Gunluk.kaydet('sayi-tahmin', durum.bitti
+      ? { durum: 'bitti', ozet: durum.tahminler.length + ' deneme' } : { durum: 'yarim', ozet: '' });
   }
 
   function uyar(metin) {
@@ -202,6 +205,7 @@
       tahminler: bugunku ? kayit.tahminler : [], isaretler: bugunku ? (kayit.isaretler || {}) : {}, bitti: false
     };
     durum.bitti = durum.tahminler[durum.tahminler.length - 1] === durum.gizli;
+    kaydet(); // bu güncellemeden önce bitirilmiş günü ortak kayda da işler
     yazilan = '';
     mesaj.textContent = durum.bitti ? 'Bugünün sayısını buldun. Yarın yeni sayı var!' : '';
     ciz(false);

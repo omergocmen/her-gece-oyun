@@ -447,6 +447,7 @@ function sonucGoster() {
   kayit = sonuc.kayit;
   kaydet();
   Depo.ozetYaz('marmaray-kosusu', 'En iyi ' + kayit.enIyi);
+  window.Gunluk && window.Gunluk.kaydet('marmaray-kosusu', kayit.gorev.tamam ? { durum: 'bitti', ozet: 'Görev tamam' } : { durum: 'yarim', ozet: '' });
   ogeler.sonucPuan.textContent = skor;
   ogeler.sonucMesafe.textContent = Math.floor(tur.p);
   ogeler.sonucEnIyi.textContent = kayit.enIyi;

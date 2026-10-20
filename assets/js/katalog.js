@@ -95,7 +95,39 @@
     return sonuc;
   }
 
+  // ---------- Bugünün meydan okumaları ----------
+  var KISA_AYLAR = ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'];
+  var SIRA = { yok: 0, yarim: 1, bitti: 2 };
+  var SIMGELER = ['🌙', '🧩', '🎯', '🏁', '⭐', '🔷'];
+
+  // gunluk:true oyunları durumlarıyla satıra çevirir. Sıra: yapılmayanlar, yarımlar, bitenler;
+  // kendi içinde katalog sırası korunur. durum: Gunluk.oku() çıktısı.
+  function meydanSatirlari(oyunlar, durum) {
+    var kayitlar = (durum && durum.oyunlar) || {};
+    return oyunlar
+      .filter(function (o) { return o.gunluk === true; })
+      .map(function (oyun, i) {
+        var k = kayitlar[oyun.slug];
+        var d = k && (k.durum === 'yarim' || k.durum === 'bitti') ? k.durum : 'yok';
+        return { oyun: oyun, durum: d, ozet: d === 'bitti' && k.ozet ? k.ozet : '', i: i };
+      })
+      .sort(function (a, b) { return SIRA[a.durum] - SIRA[b.durum] || a.i - b.i; });
+  }
+
+  // "Her Gece Oyun · 20 Eki" + biten her oyun için bir satır + seri. Biten yoksa null.
+  function paylasimMetni(satirlar, seriSayi, bugun) {
+    var biten = satirlar.filter(function (s) { return s.durum === 'bitti'; });
+    if (!biten.length) return null;
+    var satir = ['Her Gece Oyun · ' + bugun.getDate() + ' ' + KISA_AYLAR[bugun.getMonth()]];
+    biten.forEach(function (s, i) {
+      satir.push(SIMGELER[i % SIMGELER.length] + ' ' + s.oyun.ad + (s.ozet ? ' ' + s.ozet : ''));
+    });
+    if (seriSayi > 0) satir.push('Seri: ' + seriSayi + ' gün');
+    return satir.join('\n');
+  }
+
   var Katalog = {
+    meydanSatirlari: meydanSatirlari, paylasimMetni: paylasimMetni,
     YENI_GUN: YENI_GUN, TUMU: TUMU, sirala: sirala, numaralar: numaralar, oyunAdresi: oyunAdresi, gunBasi: gunBasi, yeniMi: yeniMi,
     kategoriAnahtari: kategoriAnahtari, kategoriler: kategoriler, suz: suz, gecerliAnahtar: gecerliAnahtar,
     sonOynananlar: sonOynananlar

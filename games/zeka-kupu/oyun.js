@@ -549,6 +549,7 @@ function cozuldu() {
       Depo.yaz('kup:gunluk:' + N, { gun: gunNo, sure, hamle: hamleSayisi });
       gunlukIlk = true;
     }
+    window.Gunluk && window.Gunluk.kaydet('zeka-kupu', { durum: 'bitti', ozet: M.sureMetni(sure) });
   }
   Depo.yaz('kup:oyun', null);
   kutlamaBaslat();
@@ -639,6 +640,7 @@ const coz = (metin) => (metin ? metin.split(' ').map((p) => { const [a, k, d] = 
 
 function kaydet() {
   if (asama === 'cozuldu' || asama === 'karisiyor') return;
+  if (mod === 'gunluk' && hamleSayisi > 0) window.Gunluk && window.Gunluk.kaydet('zeka-kupu', { durum: 'yarim', ozet: '' });
   Depo.yaz('kup:oyun', {
     n: N, mod, gun: gunNo, karistirma: kodla(karistirma),
     gecmis: kodla(gecmis), geri: geriYigini.map((g) => g.length), hamle: hamleSayisi, gecen: Math.round(gecen())

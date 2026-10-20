@@ -41,6 +41,20 @@
   </header>
   <main class="container">
     <section id="bu-gece" class="bu-gece" aria-live="polite"></section>
+    <section id="meydan" class="meydan" aria-labelledby="meydan-baslik" hidden>
+      <div class="meydan-panel">
+        <div class="meydan-ust">
+          <h2 id="meydan-baslik">Bugünün meydan okumaları</h2>
+          <span id="meydan-seri" class="meydan-seri"></span>
+          <span id="meydan-tamam" class="meydan-tamam" hidden>Hepsi tamam</span>
+        </div>
+        <ul id="meydan-liste" class="meydan-liste"></ul>
+        <div class="meydan-alt">
+          <button id="meydan-hepsi" class="meydan-hepsi" type="button" aria-expanded="false" hidden></button>
+          <button id="meydan-paylas" class="buton ikincil meydan-paylas" type="button" aria-live="polite" hidden>Bugünü paylaş</button>
+        </div>
+      </div>
+    </section>
     <section id="kaldigin-yer" class="kaldigin-yer" aria-labelledby="kaldigin-baslik" hidden>
       <h2 id="kaldigin-baslik" class="serit-baslik">Kaldığın yerden</h2>
       <ol id="son-oynananlar" class="kompakt-serit"></ol>

@@ -82,6 +82,9 @@
   function kaydet() {
     if (durum.mod === 'gunluk') {
       Depo.yaz('kelime:gunluk', { tarih: M.tarihAnahtari(bugun), tahminler: durum.tahminler });
+      // Ana sayfadaki "Bugünün meydan okumaları" için ortak günlük kayıt.
+      if (durum.tahminler.length) window.Gunluk && window.Gunluk.kaydet('gunun-kelimesi', durum.bitti
+        ? { durum: 'bitti', ozet: (durum.kazandi ? durum.tahminler.length : 'X') + '/' + M.HAK } : { durum: 'yarim', ozet: '' });
     }
   }
 
@@ -152,6 +155,8 @@
     var son = tahminler[tahminler.length - 1];
     if (son === durum.cevap) { durum.bitti = true; mesaj.textContent = 'Bugünün kelimesini buldun. Yarın yeni kelime var!'; }
     else if (tahminler.length >= M.HAK) { durum.bitti = true; mesaj.textContent = 'Kelime: ' + durum.cevap + '. Yarın yeni kelime var!'; }
+    durum.kazandi = son === durum.cevap;
+    kaydet(); // bu güncellemeden önce bitirilmiş günü ortak kayda da işler
   }
 
   function serbestBaslat() {
