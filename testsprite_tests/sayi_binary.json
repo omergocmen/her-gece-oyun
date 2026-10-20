@@ -1,0 +1,23 @@
+{
+ "projectId": "321b5730-4986-4118-a388-ab3d2e416c01",
+ "type": "frontend",
+ "name": "Sayı Tahmin: ikili aramayla sayı bulunur",
+ "planSteps": [
+  {
+   "type": "action",
+   "description": "Open /games/sayi-tahmin/"
+  },
+  {
+   "type": "action",
+   "description": "Repeatedly guess using binary search starting at 50: if the message says the number is too small guess higher, if too big guess lower, until the message starts with 'Tebrikler!' (max 8 guesses)"
+  },
+  {
+   "type": "assertion",
+   "description": "The element with id 'mesaj' starts with 'Tebrikler!' and contains 'denemede buldun.'"
+  },
+  {
+   "type": "assertion",
+   "description": "The element with id 'rekor' shows text starting with 'En iyi skorun:'"
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+{
+ "projectId": "321b5730-4986-4118-a388-ab3d2e416c01",
+ "type": "frontend",
+ "name": "Günün Kelimesi: istatistik paneli",
+ "planSteps": [
+  {
+   "type": "action",
+   "description": "Open /games/gunun-kelimesi/"
+  },
+  {
+   "type": "action",
+   "description": "Click the button with id 'istatistik-ac'"
+  },
+  {
+   "type": "assertion",
+   "description": "The element with id 'istatistik' is visible and the elements 'ist-oynanan', 'ist-oran', 'ist-seri', 'ist-en-iyi' are all visible"
+  }
+ ]
+}

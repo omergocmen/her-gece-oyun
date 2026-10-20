@@ -20,9 +20,6 @@ colors:
   tile-absent: "#2e2822"
   on-tile-absent: "#a89c88"
   moon: "#9db4ff"
-  game-bone: "#e9dcc2"
-  game-iznik: "#2f6fb0"
-  game-turquoise: "#2aa198"
 typography:
   masthead:
     fontFamily: Bricolage Grotesque
@@ -157,15 +154,6 @@ components:
     textColor: "{colors.on-error}"
     typography: "{typography.label-caps}"
     rounded: "{rounded.full}"
-  game-piece-bone:
-    backgroundColor: "{colors.game-bone}"
-    rounded: "{rounded.sm}"
-  game-piece-iznik:
-    backgroundColor: "{colors.game-iznik}"
-    rounded: "{rounded.sm}"
-  game-piece-turquoise:
-    backgroundColor: "{colors.game-turquoise}"
-    rounded: "{rounded.sm}"
 ---
 
 # Her Gece Oyun: Gece Baskısı
@@ -196,7 +184,6 @@ Palet sıcak nötrler ve tek bir parlak vurgu üzerine kuruludur. CSS'te karşı
 - **Kor (`error`, `--kor`):** Çevrimdışı rozeti, hata, tehlike, kaybetme.
 - **Yaprak (`success`, `--yaprak`):** Doğru cevap, kazanma.
 - **Ay (`moon`):** Yalnızca oyun içi soğuk dolgu ışığı ve 3D sahnelerde gece göğü vurgusu; arayüz metninde kullanılmaz.
-- **Oyun renkleri (`game-bone` kemik, `game-iznik` İznik mavisi, `game-turquoise` turkuaz):** Yalnızca oyun nesnelerinde, altı ayrı rengin gerektiği yerlerde (ör. Zekâ Küpü yüzleri: kemik, sodyum, kor, yaprak, İznik mavisi, turkuaz). Arayüzde kullanılmaz.
 
 Renk körlüğü: doğru/yanlış bilgisi hiçbir zaman yalnızca renkle verilmez; şekil, ikon ya da metinle desteklenir.
 
@@ -282,6 +269,19 @@ Oyunlar her gece değişir; bazen 2D, bazen 3D olur. Hepsi bu sistemin parçası
 **Dokunmatik:** Her oyun klavyesiz, tek elle oynanabilir; kaydırma/dokunma kontrolleri ekranın alt yarısındadır ve sayfa kaydırmasını engellemek için oyun alanında `touch-action: none` kullanılır.
 
 **Ses (isteğe bağlı):** Kısa, yumuşak, yerel dosyalardan; varsayılan açık ama tek dokunuşla kapanır ve tercih `localStorage`'da saklanır.
+
+**Oyun içi ek renkler:** Arayüz paleti yetmediğinde (oyun nesneleri, malzemeler) yalnızca şunlar eklenir; arayüz metninde ve butonlarda kullanılmaz. Hepsi gece ışığında, hafif kısık tonlardır.
+
+| Ad | Değer | Kullanım |
+| --- | --- | --- |
+| İznik mavisi | `#2f6fb0` | Çini, su tehlikesi kenarı, küp yüzü |
+| Turkuaz | `#2aa198` | Çini, küp yüzü, Pamukkale suyu |
+| Ceviz | `#5a3b24` | Tavla masası, ahşap |
+| Kemik | `#e9dcc2` | Tavla beyaz taşı, zar |
+| Gece çimi | `#2c5a3a` | Golf yeşili, park |
+| Kum | `#c9a46a` | Kum tehlikesi, peribacası taşı |
+
+Renk ayrımı oyun için kritikse (küp yüzleri, çini türleri) renkler ayrıca bir sembol ya da desenle de ayrışır.
 
 ## Agent Prompt Guide
 

@@ -1,0 +1,19 @@
+{
+ "projectId": "321b5730-4986-4118-a388-ab3d2e416c01",
+ "type": "frontend",
+ "name": "Günün Kelimesi: harf yazma",
+ "planSteps": [
+  {
+   "type": "action",
+   "description": "Open /games/gunun-kelimesi/"
+  },
+  {
+   "type": "action",
+   "description": "Click the on-screen keyboard keys for the letters K, A, L, E, M"
+  },
+  {
+   "type": "assertion",
+   "description": "The first row of the grid with id 'izgara' shows the 5 letters K A L E M in its 5 cells"
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "projectId": "321b5730-4986-4118-a388-ab3d2e416c01",
+ "type": "frontend",
+ "name": "Sayı Tahmin: geçersiz giriş reddedilir",
+ "planSteps": [
+  {
+   "type": "action",
+   "description": "Open /games/sayi-tahmin/"
+  },
+  {
+   "type": "action",
+   "description": "Type 150 into the input with id 'tahmin' and submit the form"
+  },
+  {
+   "type": "assertion",
+   "description": "The element with id 'mesaj' shows the text 'Lütfen 1 ile 100 arasında bir sayı yaz.'"
+  },
+  {
+   "type": "assertion",
+   "description": "The element with id 'deneme-sayisi' does not show '1 deneme'"
+  }
+ ]
+}
