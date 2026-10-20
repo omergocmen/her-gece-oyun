@@ -20,6 +20,9 @@ colors:
   tile-absent: "#2e2822"
   on-tile-absent: "#a89c88"
   moon: "#9db4ff"
+  game-bone: "#e9dcc2"
+  game-iznik: "#2f6fb0"
+  game-turquoise: "#2aa198"
 typography:
   masthead:
     fontFamily: Bricolage Grotesque
@@ -154,6 +157,15 @@ components:
     textColor: "{colors.on-error}"
     typography: "{typography.label-caps}"
     rounded: "{rounded.full}"
+  game-piece-bone:
+    backgroundColor: "{colors.game-bone}"
+    rounded: "{rounded.sm}"
+  game-piece-iznik:
+    backgroundColor: "{colors.game-iznik}"
+    rounded: "{rounded.sm}"
+  game-piece-turquoise:
+    backgroundColor: "{colors.game-turquoise}"
+    rounded: "{rounded.sm}"
 ---
 
 # Her Gece Oyun: Gece Baskısı
@@ -184,6 +196,7 @@ Palet sıcak nötrler ve tek bir parlak vurgu üzerine kuruludur. CSS'te karşı
 - **Kor (`error`, `--kor`):** Çevrimdışı rozeti, hata, tehlike, kaybetme.
 - **Yaprak (`success`, `--yaprak`):** Doğru cevap, kazanma.
 - **Ay (`moon`):** Yalnızca oyun içi soğuk dolgu ışığı ve 3D sahnelerde gece göğü vurgusu; arayüz metninde kullanılmaz.
+- **Oyun renkleri (`game-bone` kemik, `game-iznik` İznik mavisi, `game-turquoise` turkuaz):** Yalnızca oyun nesnelerinde, altı ayrı rengin gerektiği yerlerde (ör. Zekâ Küpü yüzleri: kemik, sodyum, kor, yaprak, İznik mavisi, turkuaz). Arayüzde kullanılmaz.
 
 Renk körlüğü: doğru/yanlış bilgisi hiçbir zaman yalnızca renkle verilmez; şekil, ikon ya da metinle desteklenir.
 
