@@ -71,7 +71,8 @@ sahne.add(dolguIsik);
 
 const kupGrup = new THREE.Group();
 sahne.add(kupGrup);
-const BASLANGIC_YONU = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, -Math.PI / 4, 0));
+// Ön yüz (F) solda biraz daha öne dönük: klavye ve notasyon için ön yüz belirsiz kalmasın.
+const BASLANGIC_YONU = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, -Math.PI / 4 + 0.16, 0));
 kupGrup.quaternion.copy(BASLANGIC_YONU);
 
 // Sahte gölge: küpün altında yumuşak sodyum yansıma diski.
