@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Her Gece Oyun – Ücretsiz, Girişsiz Tarayıcı Oyunları</title>
+  <meta name="description" content="Her gece yeni bir ücretsiz tarayıcı oyunu. Üye olmadan, indirmeden ve internet olmadan oynayın.">
+  <meta name="theme-color" content="#141836">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="./">🌙 Her Gece Oyun</a>
+    <span id="baglanti" class="baglanti" hidden>Çevrimdışı</span>
+  </header>
+  <main class="container">
+    <section id="bu-gece" class="bu-gece" aria-live="polite"></section>
+    <h2>Tüm oyunlar</h2>
+    <ul id="oyun-listesi" class="oyun-listesi"></ul>
+    <noscript><p>Oyunları görmek için JavaScript'i açın.</p></noscript>
+  </main>
+  <footer class="site-footer">
+    <p>Tüm oyunlar ücretsizdir, giriş gerektirmez ve bir kez açıldıktan sonra internetsiz oynanır.</p>
+  </footer>
+  <script src="assets/js/katalog.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/sw-kayit.js"></script>
+</body>
+</html>

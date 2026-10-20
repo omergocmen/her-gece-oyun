@@ -1,0 +1,15 @@
+[
+  {
+    "slug": "sayi-tahmin",
+    "ad": "Sayı Tahmin",
+    "aciklama": "1 ile 100 arasında aklımdan tuttuğum sayıyı en az denemede bul.",
+    "kategori": "Bulmaca",
+    "eklenme": "2026-10-20",
+    "gorsel": "games/sayi-tahmin/kapak.svg",
+    "dosyalar": [
+      "games/sayi-tahmin/",
+      "games/sayi-tahmin/oyun.js",
+      "games/sayi-tahmin/kapak.svg"
+    ]
+  }
+]
