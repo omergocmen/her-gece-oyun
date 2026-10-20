@@ -904,6 +904,7 @@ function delikBitti(skor, kapandi) {
   if (!ilerleme.enIyi[v.no] || skor < ilerleme.enIyi[v.no]) ilerleme.enIyi[v.no] = skor;
   ilerleme.acik = Math.max(ilerleme.acik, Math.min(DELIK_SAYISI, v.no + 1));
   kaydet();
+  Depo.ozetYaz('mini-golf', Object.keys(ilerleme.enIyi).length + '/' + DELIK_SAYISI + ' delik');
   haritaCiz();
   setTimeout(() => {
     if (v.no < DELIK_SAYISI) delikYukle(v.no + 1);

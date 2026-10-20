@@ -149,6 +149,7 @@
       var ist = M.istatistikIsle(Depo.oku(istatistikAnahtari(durum.hane), null), durum.tahminler.length,
         durum.mod === 'gunluk' ? no : null);
       Depo.yaz(istatistikAnahtari(durum.hane), ist);
+      Depo.ozetYaz('sayi-tahmin', 'En iyi ' + ist.enIyi + ' deneme');
     }
     kaydet();
     ciz(true);

@@ -650,6 +650,7 @@ function bolumBitti() {
   const sonraki = bolumler.find((b) => b.no === B.no + 1);
   ilerleme.son = sonraki ? sonraki.no : B.no;
   kaydet();
+  Depo.ozetYaz('kayip-minareler', ilerleme.tamam.length + '/' + bolumler.length + ' bölüm');
   sesler.bitti();
   bitisZamani = performance.now();
   zoomHedef = 1.08;
