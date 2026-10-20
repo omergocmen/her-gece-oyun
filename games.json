@@ -228,6 +228,42 @@
     ]
   },
   {
+    "slug": "pasyans",
+    "ad": "Pasyans",
+    "aciklama": "Klondike pasyans: 1 ya da 3 kart çekiliş, sürükle-bırak ve dokunarak taşıma, geri al, ipucu. Çözücüyle kazanılabilir doğrulanmış günün destesi ve istatistikler.",
+    "kategori": "Masa oyunu",
+    "boyut": "2D",
+    "eklenme": "2026-10-20",
+    "gunluk": true,
+    "gorsel": "games/pasyans/kapak.svg",
+    "dosyalar": [
+      "games/pasyans/",
+      "games/pasyans/stil.css",
+      "games/pasyans/mantik.js",
+      "games/pasyans/oyun.js",
+      "games/pasyans/kapak.svg"
+    ]
+  },
+  {
+    "slug": "smac",
+    "ad": "Smaç",
+    "aciklama": "Gece mahalle sahasında 3D basketbol: parmağını yukarı kaydır, topu potaya at. Seri çarpanı, kayan pota, 60 saniyelik tur, Sonsuz ve günlük pota dizisi.",
+    "kategori": "Spor",
+    "boyut": "3D",
+    "eklenme": "2026-10-20",
+    "gorsel": "games/smac/kapak.svg",
+    "gunluk": true,
+    "dosyalar": [
+      "games/smac/",
+      "games/smac/stil.css",
+      "games/smac/mantik.js",
+      "games/smac/oyun.js",
+      "games/smac/kapak.svg",
+      "assets/vendor/three/three.module.min.js",
+      "assets/js/kalite.js"
+    ]
+  },
+  {
     "slug": "satranc",
     "ad": "Satranç",
     "aciklama": "Bilgisayara karşı 5 seviyeli satranç: tam kurallar, Türkçe notasyon, açılış adları ve ipucu modu. Her gün herkese aynı Günün Bulmacası.",

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="site-kok" content="../../">
+  <!-- SEO:BASLA -->
+  <title>Smaç Oyna – Ücretsiz, İndirmeden | Her Gece Oyun</title>
+  <meta name="description" content="Gece mahalle sahasında 3D basketbol: parmağını yukarı kaydır, topu potaya at. Seri çarpanı, kayan pota, 60 saniyelik tur, Sonsuz ve günlük pota dizisi. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <link rel="canonical" href="https://her-gece-oyun-a52g.vercel.app/games/smac/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Her Gece Oyun">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:title" content="Smaç Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta property="og:description" content="Gece mahalle sahasında 3D basketbol: parmağını yukarı kaydır, topu potaya at. Seri çarpanı, kayan pota, 60 saniyelik tur, Sonsuz ve günlük pota dizisi. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta property="og:url" content="https://her-gece-oyun-a52g.vercel.app/games/smac/">
+  <meta property="og:image" content="https://her-gece-oyun-a52g.vercel.app/games/smac/paylasim.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Smaç Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta name="twitter:description" content="Gece mahalle sahasında 3D basketbol: parmağını yukarı kaydır, topu potaya at. Seri çarpanı, kayan pota, 60 saniyelik tur, Sonsuz ve günlük pota dizisi. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta name="twitter:image" content="https://her-gece-oyun-a52g.vercel.app/games/smac/paylasim.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Smaç","description":"Gece mahalle sahasında 3D basketbol: parmağını yukarı kaydır, topu potaya at. Seri çarpanı, kayan pota, 60 saniyelik tur, Sonsuz ve günlük pota dizisi.","url":"https://her-gece-oyun-a52g.vercel.app/games/smac/","image":"https://her-gece-oyun-a52g.vercel.app/games/smac/paylasim.png","genre":"Spor","inLanguage":"tr","datePublished":"2026-10-20","gamePlatform":"Web tarayıcısı","applicationCategory":"Game","operatingSystem":"Tüm işletim sistemleri","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"},"isPartOf":{"@type":"WebSite","name":"Her Gece Oyun","url":"https://her-gece-oyun-a52g.vercel.app/"}}</script>
+  <!-- SEO:BITIS -->
+  <meta name="theme-color" content="#110f0d">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="stil.css">
+  <script type="importmap">{ "imports": { "three": "../../assets/vendor/three/three.module.min.js" } }</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="../../"><span>Her Gece <em>Oyun</em></span></a>
+    <div class="sag">
+      <a class="geri" href="../../" aria-label="Tüm oyunlar">←<span class="uzun"> Tüm oyunlar</span></a>
+    </div>
+  </header>
+  <main class="container oyun-sayfasi smac-oyunu">
+    <span class="ust-baslik">Spor · 3D</span>
+    <h1>Smaç</h1>
+
+    <section class="oyun-alani smac-alani">
+      <div id="sahne" class="smac-sahne">
+        <div class="smac-hud">
+          <div class="hud-kutu"><span class="hud-etiket">Skor</span><strong id="skor" class="hud-sayi">0</strong></div>
+          <div class="hud-kutu orta"><span id="sure-etiket" class="hud-etiket">Süre</span><strong id="sure" class="hud-sayi">60</strong></div>
+          <div class="hud-kutu sag"><span class="hud-etiket">Seri</span><strong id="carpan" class="carpan-rozet" aria-label="Seri çarpanı">x1</strong></div>
+        </div>
+        <div class="smac-alt">
+          <span id="en-iyi" class="hud-etiket">En iyi 0</span>
+          <div class="hud-dugmeler">
+            <button id="duraklat" class="ikon-buton" type="button" aria-label="Duraklat"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
+            <button id="ses" class="ikon-buton" type="button" aria-label="Sesi kapat" aria-pressed="true"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path class="ses-dalga" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/><path class="ses-kapali" d="M17 9l5 6M22 9l-5 6"/></svg></button>
+          </div>
+        </div>
+        <p id="damga" class="smac-damga" aria-live="polite"></p>
+        <p id="uyari" class="pota-uyari" hidden>Pota kayıyor</p>
+        <div id="guc" class="guc-kutu" hidden aria-hidden="true"><span id="nisan" class="hud-etiket">Nişan 0°</span><div class="guc-cubuk"><i id="guc-dolgu"></i></div></div>
+        <div id="perde" class="smac-perde">
+          <div class="panel-kutu">
+            <p class="perde-baslik">Gece mahalle sahası</p>
+            <p class="perde-metin">Parmağını yukarı kaydır, topu potaya at.</p>
+            <div class="segment" role="group" aria-label="Mod">
+              <button type="button" data-mod="sure">60 sn</button>
+              <button type="button" data-mod="sonsuz">Sonsuz</button>
+              <button type="button" data-mod="gunluk">Günlük</button>
+            </div>
+            <p id="mod-aciklama" class="mod-aciklama"></p>
+            <button id="kolay" class="buton ikincil" type="button" aria-pressed="false">Kolay: önizleme kapalı</button>
+            <button id="basla" class="buton" type="button">Başla</button>
+          </div>
+        </div>
+        <div id="duraklama" class="smac-perde" hidden>
+          <div class="panel-kutu">
+            <p class="perde-baslik">Duraklatıldı</p>
+            <button id="devam" class="buton" type="button">Devam</button>
+          </div>
+        </div>
+        <div id="sonuc" class="smac-perde" hidden>
+          <div class="panel-kutu">
+            <p id="sonuc-baslik" class="perde-baslik">Tur bitti</p>
+            <strong id="sonuc-skor" class="sonuc-skor">0</strong>
+            <span id="rekor" class="rekor-damga" hidden>Rekor</span>
+            <div class="sonuc-satir">
+              <div><span class="hud-etiket">En iyi</span><strong id="sonuc-eniyi">0</strong></div>
+              <div><span class="hud-etiket">En uzun seri</span><strong id="sonuc-seri">0</strong></div>
+              <div><span class="hud-etiket">Sayı</span><strong id="sonuc-sayi">0</strong></div>
+            </div>
+            <button id="tekrar" class="buton" type="button">Tekrar</button>
+            <button id="menu" class="buton ikincil" type="button">Mod seç</button>
+            <a class="tum-oyunlar" href="../../">Tüm oyunlar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <h2>Nasıl oynanır?</h2>
+    <p>Gece mahalle sahasında, sokak lambasının altında basketbol atıyorsun. Telefonda parmağını topun üstüne koyup yukarı doğru kaydır ve bırak; bilgisayarda fareyle aynı şekilde sürükle. Ne kadar hızlı kaydırırsan top o kadar güçlü, hangi yöne kaydırırsan o yöne gider. Klavyede sol ve sağ ok tuşlarıyla nişan al, boşluk tuşunu basılı tutup bırakarak at. Top çemberin içinden geçerse sayı olur; tabelaya ya da çember kenarına değmeden giren "temiz" atış fazladan puan getirir. Art arda isabet seri çarpanını artırır, üçüncü isabette "Smaç!" gelir. Seri 3'ü geçince pota kaymaya başlar (hareket başlamadan bir saniye önce soluk bir çerçeveyle uyarır), 6'dan sonra uzaklaşır. Üç mod var: 60 saniyede en çok sayı, üç ıskada biten Sonsuz ve o günün pota dizisini herkes için aynı gösteren on atışlık Günlük. Kolay seçeneği yörünge önizlemesini ve biraz daha fazla yardım açar. En iyi skorun yalnızca bu cihazda saklanır; oyun internetsiz de oynanır.</p>
+
+    <!-- BENZER:BASLA -->
+    <section class="benzer" aria-labelledby="benzer-baslik">
+      <h2 id="benzer-baslik">Benzer oyunlar</h2>
+      <ul class="benzer-izgara">
+        <li><a class="oyun-karti" href="../mini-golf/" aria-label="Mini Golf Türkiye, Spor, 3D, No. 007">
+          <div class="kapak"><img src="../mini-golf/kapak.svg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="damga-kart" aria-hidden="true">No. 007</span><span class="damga-kart boyut uc-boyut" aria-hidden="true">3D</span></div>
+          <div class="metin"><span class="kategori">Spor</span><h3>Mini Golf Türkiye</h3><p class="aciklama">Kapadokya'dan Nemrut'a dokuz delikli 3D mini golf. Çek-bırak vuruş, sektiren peribacaları, Galata yokuşu, Kız Kulesi vapuru ve skor kartı.</p></div>
+        </a></li>
+        <li><a class="oyun-karti" href="../yokus-asagi/" aria-label="Yokuş Aşağı, Aksiyon, 3D, No. 012">
+          <div class="kapak"><img src="../yokus-asagi/kapak.svg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="damga-kart" aria-hidden="true">No. 012</span><span class="damga-kart boyut uc-boyut" aria-hidden="true">3D</span></div>
+          <div class="metin"><span class="kategori">Aksiyon</span><h3>Yokuş Aşağı</h3><p class="aciklama">Gece İstanbul yokuşlarında sodyum ışıklı 3D pistte yuvarlanan top. Sağa sola yönlendir, kor bloklardan kaç, rampalardan uç; günlük pist ve sonsuz mod.</p></div>
+        </a></li>
+        <li><a class="oyun-karti" href="../kayip-minareler/" aria-label="Kayıp Minareler, Bulmaca, 3D, No. 011">
+          <div class="kapak"><img src="../kayip-minareler/kapak.svg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="damga-kart" aria-hidden="true">No. 011</span><span class="damga-kart boyut uc-boyut" aria-hidden="true">3D</span></div>
+          <div class="metin"><span class="kategori">Bulmaca</span><h3>Kayıp Minareler</h3><p class="aciklama">Selçuklu ve Osmanlı mimarisinde izometrik 3D imkânsız geometri bulmacası. Parçaları döndür, köprüleri kaydır, bekçiyi minareye ulaştır ve sekiz minarenin ışığını yak.</p></div>
+        </a></li>
+      </ul>
+    </section>
+    <!-- BENZER:BITIS -->
+  </main>
+
+  <script src="../../assets/js/depo.js"></script>
+  <script src="../../assets/js/kalite.js"></script>
+  <script src="mantik.js"></script>
+  <script type="module" src="oyun.js"></script>
+  <script src="../../assets/js/sw-kayit.js"></script>
+</body>
+</html>
