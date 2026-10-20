@@ -31,6 +31,23 @@
     ]
   },
   {
+    "slug": "zeka-kupu",
+    "ad": "Zekâ Küpü",
+    "aciklama": "Parmağınla döndürülen 3D zekâ küpü. 2×2, 3×3 ve 4×4 boyutları, günlük karıştırma, kronometre ve adım adım Türkçe çözüm rehberi.",
+    "kategori": "Bulmaca",
+    "eklenme": "2026-10-20",
+    "gorsel": "games/zeka-kupu/kapak.svg",
+    "dosyalar": [
+      "games/zeka-kupu/",
+      "games/zeka-kupu/stil.css",
+      "games/zeka-kupu/mantik.js",
+      "games/zeka-kupu/cozucu.js",
+      "games/zeka-kupu/oyun.js",
+      "games/zeka-kupu/kapak.svg",
+      "assets/vendor/three/three.module.min.js"
+    ]
+  },
+  {
     "slug": "cini-blok",
     "ad": "Çini Blok",
     "aciklama": "İznik motifli blok parçalarını 8×8 tahtaya sürükle, satır ve sütun doldurup kombo yap. Günlük meydan okuma ve sonsuz klasik mod.",
