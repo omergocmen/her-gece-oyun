@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="site-kok" content="../../">
+  <!-- SEO:BASLA -->
+  <title>Dama Oyna – Ücretsiz, İndirmeden | Her Gece Oyun</title>
+  <meta name="description" content="Türk damasını bilgisayara karşı oyna: zorunlu yeme, çok taşlı yeme zinciri, dama taşı, üç seviye ve her gün herkese aynı &quot;2 hamlede kazan&quot; bulmacası. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <link rel="canonical" href="https://her-gece-oyun-a52g.vercel.app/games/dama/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Her Gece Oyun">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:title" content="Dama Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta property="og:description" content="Türk damasını bilgisayara karşı oyna: zorunlu yeme, çok taşlı yeme zinciri, dama taşı, üç seviye ve her gün herkese aynı &quot;2 hamlede kazan&quot; bulmacası. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta property="og:url" content="https://her-gece-oyun-a52g.vercel.app/games/dama/">
+  <meta property="og:image" content="https://her-gece-oyun-a52g.vercel.app/games/dama/paylasim.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dama Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta name="twitter:description" content="Türk damasını bilgisayara karşı oyna: zorunlu yeme, çok taşlı yeme zinciri, dama taşı, üç seviye ve her gün herkese aynı &quot;2 hamlede kazan&quot; bulmacası. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta name="twitter:image" content="https://her-gece-oyun-a52g.vercel.app/games/dama/paylasim.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Dama","description":"Türk damasını bilgisayara karşı oyna: zorunlu yeme, çok taşlı yeme zinciri, dama taşı, üç seviye ve her gün herkese aynı \"2 hamlede kazan\" bulmacası.","url":"https://her-gece-oyun-a52g.vercel.app/games/dama/","image":"https://her-gece-oyun-a52g.vercel.app/games/dama/paylasim.png","genre":"Masa oyunu","inLanguage":"tr","datePublished":"2026-10-20","gamePlatform":"Web tarayıcısı","applicationCategory":"Game","operatingSystem":"Tüm işletim sistemleri","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"},"isPartOf":{"@type":"WebSite","name":"Her Gece Oyun","url":"https://her-gece-oyun-a52g.vercel.app/"}}</script>
+  <!-- SEO:BITIS -->
+  <meta name="theme-color" content="#110f0d">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="../../"><span>Her Gece <em>Oyun</em></span></a>
+    <div class="sag">
+      <button id="istatistik-ac" class="ikon-buton" type="button" aria-label="İstatistikler"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4 20h3V11H4zm6.500 0h3V4h-3zM17 20h3v-6h-3z"/></svg></button>
+      <a class="geri" href="../../" aria-label="Tüm oyunlar">←<span class="uzun"> Tüm oyunlar</span></a>
+    </div>
+  </header>
+  <main class="container oyun-sayfasi dama-oyunu">
+    <span class="ust-baslik">Masa oyunu</span>
+    <h1>Dama</h1>
+    <div class="mod-satiri">
+      <div class="segment" role="group" aria-label="Seviye" id="seviye-segment">
+        <button type="button" data-seviye="1" aria-pressed="false">Kolay</button>
+        <button type="button" data-seviye="2" aria-pressed="true">Orta</button>
+        <button type="button" data-seviye="3" aria-pressed="false">Zor</button>
+      </div>
+      <button id="bulmaca-sekme" class="buton ikincil" type="button" aria-pressed="false">Günün Bulmacası</button>
+    </div>
+    <p id="devam-bilgi" class="devam-bilgi" hidden>Kaldığın yerden devam ediyorsun</p>
+
+    <section class="oyun-alani dama-alani" aria-label="Oyun alanı">
+      <div class="tahta-sutun">
+        <div class="oyuncu-satiri">
+          <span id="ust-ad" class="oyuncu-ad">Bilgisayar · Orta</span>
+          <span id="ust-yenen" class="yenen" aria-label="Yediği taşlar"></span>
+        </div>
+        <p id="serit" class="serit" role="status" hidden>&nbsp;</p>
+        <div class="tahta-kutu">
+          <div id="tahta" class="tahta" role="group" aria-label="Dama tahtası"></div>
+          <div id="damga" class="damga" aria-hidden="true" hidden></div>
+        </div>
+        <div id="dusunuyor" class="ilerleme" role="progressbar" aria-label="Bilgisayar düşünüyor" hidden><i></i></div>
+        <div class="oyuncu-satiri">
+          <span id="alt-ad" class="oyuncu-ad">Sen · Açık</span>
+          <span id="alt-yenen" class="yenen" aria-label="Yediğin taşlar"></span>
+          <span id="sure" class="sure" aria-label="Geçen süre">00:00</span>
+        </div>
+        <p id="durum" class="durum" role="status" aria-live="polite"></p>
+        <div class="eylemler">
+          <button id="geri-al" class="buton ikincil" type="button" disabled>Geri al</button>
+          <button id="ipucu" class="buton ikincil" type="button">İpucu</button>
+          <button id="yeni-oyun" class="buton ikincil" type="button">Yeni oyun</button>
+        </div>
+      </div>
+      <aside class="panel yan" aria-label="Hamleler">
+        <p class="yan-baslik">Hamle <span id="hamle-sayi" class="hamle-sayi">0</span> · <span id="yan-seviye">Orta</span></p>
+        <ol id="hamle-listesi" class="hamle-listesi"></ol>
+        <p class="notasyon-not">Yazım: c3-c4 yürüyüş, c3xc5 yeme (her durak ayrı yazılır).</p>
+      </aside>
+    </section>
+
+    <h2>Nasıl oynanır?</h2>
+    <p>Dama, Türkiye'nin kahvehane ve kıraathanelerde en çok oynanan masa oyunudur. Sekize sekiz tahtada herkesin on altı taşı vardır; taşlar ikinci ve üçüncü sıraya dizilir ve <strong>tüm kareler</strong> kullanılır. Açık taşlar yukarı doğru ilerler ve oyunu sen açarsın; koyu taşlar aşağı iner. Bir taş yalnızca <strong>ileri ya da yana</strong> birer kare gider; geriye ve çapraza gitmez.</p>
+    <p><strong>Yemek zorunludur.</strong> Yanındaki rakip taşın hemen ardı boşsa onun üstünden atlayarak yersin; bunu ileri ve yana yapabilirsin. Aynı hamlede peş peşe yiyebilirsin, yenen taş hemen tahtadan kalkar. Birden çok yeme yolu varsa <strong>en çok taşı yediren yol seçilmek zorundadır</strong>; tahtada yeme gücü olan taşlar köşelerindeki “!” işaretiyle gösterilir. Çok duraklı yolda her durağa sırayla dokun; durak numaraları nokta üstünde görünür. Son hedefe doğrudan dokunmak ya da taşı sürükleyip bırakmak da olur.</p>
+    <p>Bir taş karşı tarafın son sırasına ulaşınca <strong>dama</strong> olur ve üstünde sodyum bir taç belirir. Dama dört yöne istediği kadar uzağa gider, uzaktan yer ve atladığı taşın ardındaki boş karelerden dilediğine iner; yeme sırasında yön değiştirebilir ama geri dönemez. Rakibin hiç taşı ya da oynayacak hamlesi kalmazsa kazanırsın. Yeme ve taş hamlesi olmadan kırk hamle geçerse, aynı konum üçüncü kez oluşursa ya da tahtada yalnızca birer dama kalırsa oyun berabere biter.</p>
+    <p>Bilgisayara karşı üç seviye var: Kolay ara sıra hata yapar, Orta kısa hesap yapar, Zor derin arar ve bir hamlesi iki saniyeyi geçmez. <strong>Geri al</strong> son hamleni ve bilgisayarın cevabını geri alır, <strong>İpucu</strong> oynayabileceğin iyi bir taşı gösterir. <strong>Günün Bulmacası</strong> her gün herkese aynıdır: verilen konumda iki hamlede rakibi taşsız ya da hamlesiz bırakmanı ister; serin üst üste çözdüğün gün sayısıdır. Yarım kalan oyunun ve istatistiklerin yalnızca bu cihazda saklanır; oyun internetsiz de çalışır.</p>
+
+    <!-- BENZER:BASLA -->
+    <section class="benzer" aria-labelledby="benzer-baslik">
+      <h2 id="benzer-baslik">Benzer oyunlar</h2>
+      <ul class="benzer-izgara">
+        <li><a class="oyun-karti" href="../okey/" aria-label="Okey, Masa oyunu, 2D, No. 015">
+          <div class="kapak"><img src="../okey/kapak.svg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="damga-kart" aria-hidden="true">No. 015</span><span class="damga-kart boyut" aria-hidden="true">2D</span></div>
+          <div class="metin"><span class="kategori">Masa oyunu</span><h3>Okey</h3><p class="aciklama">Üç bilgisayar rakibe karşı klasik okey: gösterge, sahte okey, per ve seri kurma, çifte gitme. Üç zorluk, 3 ya da 5 elli maç ve her gün aynı dağıtımlı günün eli.</p></div>
+        </a></li>
+        <li><a class="oyun-karti" href="../pasyans/" aria-label="Pasyans, Masa oyunu, 2D, No. 013">
+          <div class="kapak"><img src="../pasyans/kapak.svg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="damga-kart" aria-hidden="true">No. 013</span><span class="damga-kart boyut" aria-hidden="true">2D</span></div>
+          <div class="metin"><span class="kategori">Masa oyunu</span><h3>Pasyans</h3><p class="aciklama">Klondike pasyans: 1 ya da 3 kart çekiliş, sürükle-bırak ve dokunarak taşıma, geri al, ipucu. Çözücüyle kazanılabilir doğrulanmış günün destesi ve istatistikler.</p></div>
+        </a></li>
+        <li><a class="oyun-karti" href="../tavla/" aria-label="Tavla, Masa oyunu, 2D, No. 005">
+          <div class="kapak"><img src="../tavla/kapak.svg" alt="" width="320" height="180" loading="lazy" decoding="async"><span class="damga-kart" aria-hidden="true">No. 005</span><span class="damga-kart boyut" aria-hidden="true">2D</span></div>
+          <div class="metin"><span class="kategori">Masa oyunu</span><h3>Tavla</h3><p class="aciklama">Bilgisayara karşı Türk usulü tavla: kapı, kırık, zorunlu hamle, toplama ve mars. Üç zorluk, 3 ya da 5 puanlık maç.</p></div>
+        </a></li>
+      </ul>
+    </section>
+    <!-- BENZER:BITIS -->
+  </main>
+
+  <dialog id="yeni-pencere" class="dama-pencere">
+    <h2>Yeni oyun</h2>
+    <fieldset class="secim">
+      <legend>Taşların</legend>
+      <div class="secim-dugmeleri" id="renk-secimi">
+        <button type="button" class="buton ikincil" data-renk="acik">Açık</button>
+        <button type="button" class="buton ikincil" data-renk="koyu">Koyu</button>
+        <button type="button" class="buton ikincil" data-renk="rastgele">Rastgele</button>
+      </div>
+    </fieldset>
+    <p class="pencere-not">Açık taşlar oyunu açar. Süren oyun bırakılır ve yeni oyun başlar.</p>
+    <div class="pencere-eylemler">
+      <button id="oyunu-baslat" class="buton" type="button">Oyunu başlat</button>
+      <form method="dialog"><button class="buton ikincil" type="submit">Vazgeç</button></form>
+    </div>
+  </dialog>
+
+  <dialog id="sonuc" class="dama-pencere sonuc-pencere">
+    <p id="sonuc-ust" class="pencere-ust">Oyun bitti</p>
+    <h2 id="sonuc-baslik">Kazandın</h2>
+    <p id="sonuc-metin" class="sonuc-metin"></p>
+    <p id="sonuc-ozet" class="sonuc-ozet"></p>
+    <div class="pencere-eylemler">
+      <button id="tekrar-oyna" class="buton" type="button">Tekrar oyna</button>
+      <form method="dialog"><button class="buton ikincil" type="submit">Tahtaya bak</button></form>
+    </div>
+  </dialog>
+
+  <dialog id="istatistik" class="dama-pencere">
+    <h2>İstatistikler</h2>
+    <div class="ist-sayilar">
+      <div><strong id="i-oyun">0</strong><span>Oynanan</span></div>
+      <div><strong id="i-kazan">0</strong><span>Kazandığın</span></div>
+      <div><strong id="i-bera">0</strong><span>Berabere</span></div>
+      <div><strong id="i-gseri">0</strong><span>Galibiyet serisi</span></div>
+      <div><strong id="i-seri">0</strong><span>Bulmaca serisi</span></div>
+      <div><strong id="i-bulmaca">0</strong><span>Çözülen bulmaca</span></div>
+    </div>
+    <form method="dialog"><button class="buton ikincil" type="submit">Kapat</button></form>
+  </dialog>
+
+  <script src="../../assets/js/depo.js"></script>
+  <script src="motor.js"></script>
+  <script src="bulmaca.js"></script>
+  <script src="oyun.js"></script>
+  <script src="../../assets/js/sw-kayit.js"></script>
+</body>
+</html>
