@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://omergocmen.github.io/her-gece-oyun/sitemap.xml
+Sitemap: https://hergeceoyun.netlify.app/sitemap.xml
