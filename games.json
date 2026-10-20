@@ -183,5 +183,21 @@
       "games/kayip-minareler/kapak.svg",
       "assets/vendor/three/three.module.min.js"
     ]
+  },
+  {
+    "slug": "yokus-asagi",
+    "ad": "Yokuş Aşağı",
+    "aciklama": "Gece İstanbul yokuşlarında sodyum ışıklı 3D pistte yuvarlanan top. Sağa sola yönlendir, kor bloklardan kaç, rampalardan uç; günlük pist ve sonsuz mod.",
+    "kategori": "Aksiyon",
+    "eklenme": "2026-10-20",
+    "gorsel": "games/yokus-asagi/kapak.svg",
+    "dosyalar": [
+      "games/yokus-asagi/",
+      "games/yokus-asagi/stil.css",
+      "games/yokus-asagi/mantik.js",
+      "games/yokus-asagi/oyun.js",
+      "games/yokus-asagi/kapak.svg",
+      "assets/vendor/three/three.module.min.js"
+    ]
   }
 ]
