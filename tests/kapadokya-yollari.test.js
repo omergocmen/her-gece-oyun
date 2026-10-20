@@ -265,7 +265,8 @@ test('three.js tek yerel kopyadan yüklenir ve önbellek listesindedir', () => {
   assert.match(sahne, /from '\.\.\/\.\.\/assets\/vendor\/three\/three\.module\.min\.js'/);
   const oyun = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'games.json'), 'utf8')).find((o) => o.slug === 'kapadokya-yollari');
   assert.ok(oyun.dosyalar.includes('assets/vendor/three/three.module.min.js'));
-  for (const ad of fs.readdirSync(KLASOR)) assert.ok(oyun.dosyalar.includes(`games/kapadokya-yollari/${ad === 'index.html' ? '' : ad}`), `${ad} önbellekte değil`);
+  // paylasim.png yalnızca sosyal ağlar içindir, bilerek önbelleğe alınmaz (#33).
+  for (const ad of fs.readdirSync(KLASOR).filter((d) => d !== 'paylasim.png')) assert.ok(oyun.dosyalar.includes(`games/kapadokya-yollari/${ad === 'index.html' ? '' : ad}`), `${ad} önbellekte değil`);
   // Toplam boyut ~1.5 MB bütçesinde
   const toplam = oyun.dosyalar.reduce((t, d) => t + fs.statSync(path.join(__dirname, '..', d.endsWith('/') ? d + 'index.html' : d)).size, 0);
   assert.ok(toplam < 1.5 * 1024 * 1024, `${toplam} bayt`);

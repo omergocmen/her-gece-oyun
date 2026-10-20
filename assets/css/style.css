@@ -356,3 +356,21 @@ h1, h2, h3 { line-height: 1.08; letter-spacing: -.015em; font-weight: 750; }
   .geri .uzun { display: none; }
   .geri { width: 40px; height: 40px; padding: 0; display: grid; place-items: center; font-size: 1.1rem; }
 }
+
+/* ---------- Oyun sayfası: Benzer oyunlar (statik, npm run seo üretir) ---------- */
+/* Ana sayfadaki oyun kartını kullanır. 390 px'de kartlar yatay (kapak solda), 600 px+ 3 sütun dikey. */
+.benzer { margin-top: 8px; }
+.benzer-izgara { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 12px; }
+.benzer-izgara > li { display: flex; min-width: 0; }
+@media (max-width: 599px) {
+  .benzer .oyun-karti { flex-direction: row; }
+  .benzer .oyun-karti .kapak { width: 42%; aspect-ratio: 16 / 10; align-self: stretch; }
+  .benzer .oyun-karti .kapak::after {
+    top: 0; left: auto; width: 24px; height: auto; background: linear-gradient(to right, rgba(27, 24, 21, 0), var(--kagit));
+  }
+  .benzer .oyun-karti .metin { justify-content: center; padding: 10px 12px; }
+  .benzer .oyun-karti h3 { font-size: 1.125rem; margin: 4px 0 0; }
+  .benzer .oyun-karti .aciklama { display: none; }
+  .benzer .damga-kart:not(.boyut) { display: none; }
+}
+@media (min-width: 600px) { .benzer-izgara { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; } }
