@@ -88,6 +88,7 @@
     "dosyalar": [
       "games/karsidan-karsiya/",
       "games/karsidan-karsiya/stil.css",
+      "assets/css/oyun-3d.css",
       "games/karsidan-karsiya/mantik.js",
       "games/karsidan-karsiya/oyun.js",
       "games/karsidan-karsiya/sahne.js",
@@ -144,6 +145,25 @@
       "games/kapadokya-yollari/ses.js",
       "games/kapadokya-yollari/oyun.js",
       "games/kapadokya-yollari/kapak.svg",
+      "assets/vendor/three/three.module.min.js"
+    ]
+  },
+  {
+    "slug": "marmaray-kosusu",
+    "ad": "Marmaray Koşusu",
+    "aciklama": "Gece Marmaray tünelinde 3D üç şeritli sonsuz koşu: gelen trenlerden kaç, bariyerden zıpla, tabelanın altından kay, İstanbulkart jetonu topla, Boğaz'a çık.",
+    "kategori": "Aksiyon",
+    "eklenme": "2026-10-20",
+    "gorsel": "games/marmaray-kosusu/kapak.svg",
+    "dosyalar": [
+      "games/marmaray-kosusu/",
+      "games/marmaray-kosusu/stil.css",
+      "assets/css/oyun-3d.css",
+      "games/marmaray-kosusu/mantik.js",
+      "games/marmaray-kosusu/oyun.js",
+      "games/marmaray-kosusu/sahne.js",
+      "games/marmaray-kosusu/ses.js",
+      "games/marmaray-kosusu/kapak.svg",
       "assets/vendor/three/three.module.min.js"
     ]
   }

@@ -1,0 +1,66 @@
+/* Marmaray Koşusu. Sahne, HUD, kaplamalar ve sonuç paneli: ../../assets/css/oyun-3d.css (ortak 3D oyun bileşeni).
+   Burada yalnızca bu oyuna özgü parçalar var. Renkler yalnızca DESIGN.md token'larından. */
+.marmaray-oyunu { max-width: 760px; }
+.marmaray-oyunu h1 { margin-bottom: 14px; }
+
+/* Çarpma: sahne 250 ms kor tonuna kayar. */
+.marmaray-oyunu .flas.yan { animation: kor-flas .25s ease-out; }
+
+.jeton-sayac { color: var(--sodyum); }
+.jeton-sayac.vur { animation: sayac-vur .22s ease-out; }
+@keyframes sayac-vur { 40% { transform: scale(1.12); } }
+
+/* Güçlendiriciler: ikon + sodyum halkada kalan süre */
+.guclar { display: flex; gap: 6px; margin-top: 6px; }
+.guc {
+  position: relative; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+  background: color-mix(in srgb, var(--murekkep) 72%, transparent); color: var(--krem);
+}
+.guc svg.halka { position: absolute; inset: 0; transform: rotate(-90deg); }
+.guc svg.halka circle { fill: none; stroke-width: 3; }
+.guc svg.halka .iz { stroke: var(--cizgi); }
+.guc svg.halka .kalan { stroke: var(--sodyum); stroke-linecap: round; }
+.guc .ikon { width: 20px; height: 20px; }
+.guc .x2 { font-size: .85rem; font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+.guc.bitiyor { animation: guc-yanip .3s steps(2) infinite; }
+@keyframes guc-yanip { 50% { opacity: .45; } }
+
+/* Toplanan jetonun HUD sayacına uçuşu */
+.ucanlar { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.ucan-jeton {
+  position: absolute; left: 0; top: 0; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%;
+  background: var(--krem); box-shadow: inset 0 0 0 3px var(--sodyum); opacity: 0; will-change: transform, opacity;
+}
+
+/* Günlük görev şeridi */
+.gorev {
+  display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;
+  margin: 0 16px 10px; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--cizgi);
+  background: color-mix(in srgb, var(--kagit) 88%, transparent); color: var(--krem); font-size: .88rem; font-weight: 650; text-align: center;
+}
+.gorev .etiket { font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--sodyum); }
+.gorev .tamam { color: var(--soluk); }
+.sonuc-gorev { margin: -8px 0 16px; font-size: .9rem; color: var(--soluk); }
+.sonuc-gorev b { color: var(--krem); font-variant-numeric: tabular-nums; }
+.sonuc-gorev.bitti b { color: var(--sodyum); }
+
+/* Güçlendirici duyurusu: tehlike değil ödül, bu yüzden sodyum zemin. HUD halkalarının altında. */
+.marmaray-oyunu .uyari.guc-uyari { top: 124px; background: var(--sodyum); color: var(--sodyum-koyu); }
+
+/* Başlangıç kaplaması bu oyunda görev satırı da taşıdığı için daha sıkı. */
+.marmaray-oyunu .baslangic { padding-top: 76px; }
+.marmaray-oyunu .kaydir-cizim { margin: 4px auto 2px; }
+.ipucu-alt .masa { display: none; }
+@media (max-width: 759px) {
+  .gorev { gap: 2px 6px; padding: 6px 10px; font-size: .8rem; line-height: 1.3; }
+  .gorev .etiket { flex-basis: 100%; font-size: .65rem; }
+}
+@media (min-width: 760px) {
+  .marmaray-oyunu .baslangic { padding-top: 64px; }
+  .marmaray-oyunu .kaydir-cizim { display: none; }
+  .ipucu-alt .masa { display: inline; }
+  .gorev { margin-bottom: 6px; padding: 6px 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .jeton-sayac.vur, .guc.bitiyor { animation: none; }
+}
