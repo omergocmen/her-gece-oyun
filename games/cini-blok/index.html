@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="site-kok" content="../../">
+  <!-- SEO:BASLA -->
+  <title>Çini Blok Oyna – Ücretsiz, İndirmeden | Her Gece Oyun</title>
+  <meta name="description" content="İznik motifli blok parçalarını 8×8 tahtaya sürükle, satır ve sütun doldurup kombo yap. Günlük meydan okuma ve sonsuz klasik mod. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <link rel="canonical" href="https://her-gece-oyun-a52g.vercel.app/games/cini-blok/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Her Gece Oyun">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:title" content="Çini Blok Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta property="og:description" content="İznik motifli blok parçalarını 8×8 tahtaya sürükle, satır ve sütun doldurup kombo yap. Günlük meydan okuma ve sonsuz klasik mod. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta property="og:url" content="https://her-gece-oyun-a52g.vercel.app/games/cini-blok/">
+  <meta property="og:image" content="https://her-gece-oyun-a52g.vercel.app/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Çini Blok Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta name="twitter:description" content="İznik motifli blok parçalarını 8×8 tahtaya sürükle, satır ve sütun doldurup kombo yap. Günlük meydan okuma ve sonsuz klasik mod. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta name="twitter:image" content="https://her-gece-oyun-a52g.vercel.app/assets/og.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Çini Blok","description":"İznik motifli blok parçalarını 8×8 tahtaya sürükle, satır ve sütun doldurup kombo yap. Günlük meydan okuma ve sonsuz klasik mod.","url":"https://her-gece-oyun-a52g.vercel.app/games/cini-blok/","image":"https://her-gece-oyun-a52g.vercel.app/assets/og.png","genre":"Bulmaca","inLanguage":"tr","datePublished":"2026-10-20","gamePlatform":"Web tarayıcısı","applicationCategory":"Game","operatingSystem":"Tüm işletim sistemleri","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"},"isPartOf":{"@type":"WebSite","name":"Her Gece Oyun","url":"https://her-gece-oyun-a52g.vercel.app/"}}</script>
+  <!-- SEO:BITIS -->
+  <meta name="theme-color" content="#110f0d">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="../../"><span>Her Gece <em>Oyun</em></span></a>
+    <div class="sag">
+      <button id="ses" class="ikon-buton" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <svg class="ses-acik" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor" stroke="none"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+        <svg class="ses-kapali" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor" stroke="none"/><path d="M16.5 9.5l5 5M21.5 9.5l-5 5"/></svg>
+      </button>
+      <button id="yeniden" class="ikon-buton" type="button" aria-label="Yeni oyun"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4v4.5h4.5"/></svg></button>
+      <a class="geri" href="../../" aria-label="Tüm oyunlar">←<span class="uzun"> Tüm oyunlar</span></a>
+    </div>
+  </header>
+  <main class="container oyun-sayfasi cini-oyunu">
+    <span class="ust-baslik">Bulmaca</span>
+    <h1>Çini Blok</h1>
+    <div class="mod-secimi" role="group" aria-label="Oyun modu">
+      <button type="button" class="buton ikincil" data-mod="klasik" aria-pressed="true">Klasik</button>
+      <button type="button" class="buton ikincil" data-mod="gunluk" aria-pressed="false">Günlük</button>
+      <span id="mod-bilgi" class="mod-bilgi"></span>
+    </div>
+
+    <section class="oyun-alani cini-alani" aria-label="Oyun alanı">
+      <div class="cini-hud">
+        <div class="skor-kutu">
+          <strong id="skor" class="skor" aria-live="off">0</strong>
+          <span class="en-iyi"><span id="en-iyi-etiket">En iyi</span> <b id="en-iyi">0</b></span>
+        </div>
+        <span id="seri-rozeti" class="seri-rozeti" hidden>Seri ×2</span>
+      </div>
+      <div class="oyun-govde">
+        <div id="tahta-kap" class="tahta-kap">
+          <div id="tahta" class="tahta" role="group" aria-label="8 × 8 çini tahtası"></div>
+          <div id="efektler" class="efektler" aria-hidden="true"></div>
+        </div>
+        <div id="tepsi" class="tepsi" aria-label="Yerleştirilecek parçalar"></div>
+      </div>
+      <p id="mesaj" class="cini-mesaj" role="status" aria-live="polite"></p>
+    </section>
+
+    <h2>Nasıl oynanır?</h2>
+    <p>Alttaki üç çini parçasından birini sürükleyip 8 × 8 tahtaya bırak. Dokunmatik ekranda parça parmağının biraz üstünde durur, böylece nereye koyduğunu görürsün; tahtadaki gölge parçanın oturacağı yeri, turuncu parlayan satır ve sütunlar da tamamlanacak çizgileri gösterir. Bir satırı ya da sütunu baştan sona doldurduğunda çiniler fırınlanıp kaybolur ve puan kazanırsın. Her konan kare 1 puandır; tek hamlede birden fazla çizgi temizlersen kombo çarpanı (2 çizgi ×2, 3 çizgi ×3) devreye girer, en geç her üç hamlede bir çizgi temizlemeye devam edersen seri çarpanı büyür. Tahtayı tamamen boşaltmak 300 puan kazandırır. Üç parçanın üçü de kullanılınca yenileri gelir. Parçalar döndürülemez; tepsideki parçalardan hiçbiri tahtaya sığmadığında oyun biter. Klasik modda en yüksek skorunu zorlarsın, oyun yarıda kalsa da kaldığın yerden devam eder. Günlük modda o gün herkes aynı parça dizisini aynı sırayla alır ve tek deneme hakkın vardır; bitince sonucunu kopyalayıp paylaşabilirsin. Klavyeyle oynamak için parçayı Tab ile seçip Enter'a bas, ok tuşlarıyla taşı, Enter ile bırak. En iyi skorun ve günlük sonuçların yalnızca bu cihazda saklanır; oyun internetsiz de çalışır.</p>
+  </main>
+
+  <dialog id="sonuc" class="cini-dialog" aria-labelledby="sonuc-baslik" tabindex="-1">
+    <span id="rekor-damga" class="rekor-damga" hidden>Yeni rekor</span>
+    <span id="sonuc-ust" class="sonuc-ust">Yer kalmadı</span>
+    <h2 id="sonuc-baslik">Oyun bitti</h2>
+    <div class="sonuc-sayilar">
+      <div><strong id="sonuc-puan">0</strong><span>Puan</span></div>
+      <div><strong id="sonuc-cizgi">0</strong><span>Çizgi</span></div>
+      <div><strong id="sonuc-en-iyi">0</strong><span>En iyi</span></div>
+    </div>
+    <p id="sonuc-not" class="sonuc-not"></p>
+    <div class="sonuc-eylemler">
+      <button id="paylas" class="buton" type="button" hidden>Sonucu kopyala</button>
+      <button id="tekrar" class="buton" type="button">Yeniden oyna</button>
+      <button id="klasik-oyna" class="buton ikincil" type="button" hidden>Klasik oyna</button>
+      <a id="tum-oyunlar" class="buton ikincil" href="../../">Tüm oyunlar</a>
+    </div>
+    <form method="dialog"><button class="metin-buton" type="submit">Tahtaya bak</button></form>
+  </dialog>
+
+  <dialog id="onay" class="cini-dialog kucuk" aria-labelledby="onay-baslik">
+    <h2 id="onay-baslik">Yeni oyun başlasın mı?</h2>
+    <p id="onay-metin" class="sonuc-not"></p>
+    <form method="dialog" class="sonuc-eylemler">
+      <button class="buton" type="submit" value="evet">Yeni oyun</button>
+      <button class="buton ikincil" type="submit" value="hayir">Vazgeç</button>
+    </form>
+  </dialog>
+
+  <script src="../../assets/js/depo.js"></script>
+  <script src="mantik.js"></script>
+  <script src="oyun.js"></script>
+  <script src="../../assets/js/sw-kayit.js"></script>
+</body>
+</html>
