@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="site-kok" content="../../">
+  <!-- SEO:BASLA -->
+  <title>Mini Golf Türkiye Oyna – Ücretsiz, İndirmeden | Her Gece Oyun</title>
+  <meta name="description" content="Kapadokya'dan Nemrut'a dokuz delikli 3D mini golf. Çek-bırak vuruş, sektiren peribacaları, Galata yokuşu, Kız Kulesi vapuru ve skor kartı. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <link rel="canonical" href="https://her-gece-oyun-a52g.vercel.app/games/mini-golf/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Her Gece Oyun">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:title" content="Mini Golf Türkiye Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta property="og:description" content="Kapadokya'dan Nemrut'a dokuz delikli 3D mini golf. Çek-bırak vuruş, sektiren peribacaları, Galata yokuşu, Kız Kulesi vapuru ve skor kartı. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta property="og:url" content="https://her-gece-oyun-a52g.vercel.app/games/mini-golf/">
+  <meta property="og:image" content="https://her-gece-oyun-a52g.vercel.app/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mini Golf Türkiye Oyna – Ücretsiz, İndirmeden | Her Gece Oyun">
+  <meta name="twitter:description" content="Kapadokya'dan Nemrut'a dokuz delikli 3D mini golf. Çek-bırak vuruş, sektiren peribacaları, Galata yokuşu, Kız Kulesi vapuru ve skor kartı. Ücretsiz, girişsiz ve internetsiz oynanır.">
+  <meta name="twitter:image" content="https://her-gece-oyun-a52g.vercel.app/assets/og.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Mini Golf Türkiye","description":"Kapadokya'dan Nemrut'a dokuz delikli 3D mini golf. Çek-bırak vuruş, sektiren peribacaları, Galata yokuşu, Kız Kulesi vapuru ve skor kartı.","url":"https://her-gece-oyun-a52g.vercel.app/games/mini-golf/","image":"https://her-gece-oyun-a52g.vercel.app/assets/og.png","genre":"Spor","inLanguage":"tr","datePublished":"2026-10-20","gamePlatform":"Web tarayıcısı","applicationCategory":"Game","operatingSystem":"Tüm işletim sistemleri","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"},"isPartOf":{"@type":"WebSite","name":"Her Gece Oyun","url":"https://her-gece-oyun-a52g.vercel.app/"}}</script>
+  <!-- SEO:BITIS -->
+  <meta name="theme-color" content="#110f0d">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="icon" href="../../assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="stil.css">
+  <script type="importmap">{ "imports": { "three": "../../assets/vendor/three/three.module.min.js" } }</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="../../"><span>Her Gece <em>Oyun</em></span></a>
+    <div class="sag">
+      <a class="geri" href="../../" aria-label="Tüm oyunlar">←<span class="uzun"> Tüm oyunlar</span></a>
+    </div>
+  </header>
+  <main class="container oyun-sayfasi golf-oyunu">
+    <span class="ust-baslik">Spor · 3D</span>
+    <h1>Mini Golf Türkiye</h1>
+    <nav class="parkur-haritasi" aria-label="Parkur haritası">
+      <ol id="harita"></ol>
+    </nav>
+
+    <section class="oyun-alani golf-alani">
+      <div id="sahne" class="golf-sahne">
+        <div class="golf-hud">
+          <div class="hud-sol">
+            <span id="hud-delik" class="hud-etiket">Delik 1/9 · Par 2</span>
+            <strong id="hud-yer" class="hud-yer">Kapadokya</strong>
+          </div>
+          <div class="hud-sag">
+            <strong id="hud-vurus" class="hud-vurus">0</strong>
+            <span class="hud-etiket">vuruş</span>
+          </div>
+        </div>
+        <div class="hud-dugmeler">
+          <button id="kamera" class="ikon-buton" type="button" aria-label="Üstten görünüm" aria-pressed="false"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/></svg></button>
+          <button id="ses" class="ikon-buton" type="button" aria-label="Sesi kapat" aria-pressed="true"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path class="ses-dalga" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/><path class="ses-kapali" d="M17 9l5 6M22 9l-5 6"/></svg></button>
+          <button id="menu" class="ikon-buton" type="button" aria-label="Menü"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+        </div>
+        <div id="ceza" class="ceza-serit" aria-live="assertive"></div>
+        <div id="guc" class="guc-gostergesi" hidden><span id="guc-dolgu"></span></div>
+        <div id="kutlama" class="golf-kutlama" aria-live="polite"></div>
+        <p id="ipucu" class="golf-ipucu">Topa dokun, geri çek ve bırak</p>
+      </div>
+    </section>
+
+    <h2>Nasıl oynanır?</h2>
+    <p>Kapadokya'dan Nemrut'a dokuz delikli bir gece turu. Topa dokun, parmağını ya da fareni vurmak istediğin yönün tersine doğru geri çek ve bırak: ne kadar çekersen o kadar sert vurursun. Kesikli çizgi yönü, topun yanındaki çubuk gücü gösterir. Topun uzağında sürüklemek kamerayı topun çevresinde döndürür, katman düğmesi bütün deliği üstten gösterir. Her deliğin bir par değeri var: par'dan bir eksikte bitirmek Birdie, bir fazlası Bogey sayılır. Peribacaları, Efes sütunları ve Nemrut başları topu sektirir; Pamukkale'nin sığ suyu ve kum topu yavaşlatır; Galata yokuşunu çıkmak için güç gerekir. Kız Kulesi'nde suya düşen top bir ceza vuruşuyla son yerine döner; vapuru bekle, köprü olduğunda geç. Bir delikte en fazla on vuruş atabilirsin. Deliği bitirdikçe sıradaki açılır, en iyi skorların yalnızca bu cihazda saklanır.</p>
+  </main>
+
+  <dialog id="skor-karti" class="istatistik golf-dialog">
+    <h2 id="kart-baslik">Skor kartı</h2>
+    <div id="kart-tablolar" class="kart-tablolar"></div>
+    <p id="kart-not" class="ayar-not"></p>
+    <div class="ist-eylemler">
+      <button id="yeniden" class="buton" type="button">Yeniden oyna</button>
+      <button id="haritaya" class="buton ikincil" type="button">Parkur haritası</button>
+    </div>
+    <form method="dialog"><button class="buton ikincil kapat" type="submit">Kapat</button></form>
+  </dialog>
+
+  <dialog id="menu-dialog" class="istatistik golf-dialog">
+    <h2>Menü</h2>
+    <div class="menu-eylemler">
+      <button id="delik-bastan" class="buton ikincil" type="button">Deliği baştan başlat</button>
+      <button id="kart-ac" class="buton ikincil" type="button">Skor kartı</button>
+      <button id="tur-bastan" class="buton ikincil" type="button">Turu 1. delikten başlat</button>
+    </div>
+    <form method="dialog"><button class="buton" type="submit">Kapat</button></form>
+  </dialog>
+
+  <script src="../../assets/js/depo.js"></script>
+  <script src="fizik.js"></script>
+  <script src="parkur.js"></script>
+  <script type="module" src="oyun.js"></script>
+  <script src="../../assets/js/sw-kayit.js"></script>
+</body>
+</html>
