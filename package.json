@@ -3,7 +3,9 @@
   "private": true,
   "description": "Her gece yeni bir tarayıcı oyununun eklendiği Türkçe oyun sitesi",
   "scripts": {
+    "seo": "node scripts/seo-olustur.js",
     "precache": "node scripts/precache-olustur.js",
+    "build": "npm run seo && npm run precache",
     "test": "node --test tests/*.test.js"
   }
 }
