@@ -24,6 +24,7 @@
     "gorsel": "games/sayi-tahmin/kapak.svg",
     "dosyalar": [
       "games/sayi-tahmin/",
+      "games/sayi-tahmin/stil.css",
       "games/sayi-tahmin/oyun.js",
       "games/sayi-tahmin/kapak.svg"
     ]

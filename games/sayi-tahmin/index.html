@@ -21,26 +21,34 @@
   <meta name="twitter:image" content="https://hergeceoyun.netlify.app/assets/og.png">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Sayı Tahmin","description":"1 ile 100 arasında aklımdan tuttuğum sayıyı en az denemede bul.","url":"https://hergeceoyun.netlify.app/games/sayi-tahmin/","image":"https://hergeceoyun.netlify.app/assets/og.png","genre":"Bulmaca","inLanguage":"tr","datePublished":"2026-10-20","gamePlatform":"Web tarayıcısı","applicationCategory":"Game","operatingSystem":"Tüm işletim sistemleri","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"},"isPartOf":{"@type":"WebSite","name":"Her Gece Oyun","url":"https://hergeceoyun.netlify.app/"}}</script>
   <!-- SEO:BITIS -->
-  <meta name="theme-color" content="#141836">
+  <meta name="theme-color" content="#110f0d">
   <link rel="manifest" href="../../manifest.webmanifest">
   <link rel="icon" href="../../assets/icons/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="stil.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="logo" href="../../">🌙 Her Gece Oyun</a>
+    <a class="logo" href="../../"><span>Her Gece <em>Oyun</em></span></a>
+    <a class="geri" href="../../" aria-label="Tüm oyunlar">←<span class="uzun"> Tüm oyunlar</span></a>
   </header>
-  <main class="container">
+  <main class="container oyun-sayfasi sayi-oyunu">
+    <span class="ust-baslik">Bulmaca</span>
     <h1>Sayı Tahmin</h1>
     <section class="oyun-alani">
-      <form id="tahmin-formu">
+      <div class="aralik" aria-hidden="true">
+        <span id="alt-sinir">1</span>
+        <div class="aralik-cubuk"><div id="aralik-dolgu" class="aralik-dolgu"></div></div>
+        <span id="ust-sinir">100</span>
+      </div>
+      <p id="mesaj" class="sayi-mesaj" aria-live="polite">Aklımdan 1 ile 100 arasında bir sayı tuttum.</p>
+      <form id="tahmin-formu" class="tahmin-formu">
         <label for="tahmin">Tahminin (1-100):</label>
         <input id="tahmin" type="number" min="1" max="100" inputmode="numeric" required>
         <button class="buton" type="submit">Tahmin et</button>
       </form>
-      <p id="mesaj" aria-live="polite">Aklımdan 1 ile 100 arasında bir sayı tuttum.</p>
-      <p id="rekor"></p>
       <button id="yeniden" class="buton" type="button" hidden>Yeniden oyna</button>
+      <p class="sayi-alt"><span id="deneme-sayisi">0 deneme</span><span id="rekor"></span></p>
     </section>
     <h2>Nasıl oynanır?</h2>
     <p>Oyun 1 ile 100 arasında rastgele bir sayı seçer. Her tahmininden sonra gizli sayının daha büyük mü yoksa daha küçük mü olduğunu söyler. Sayıyı ne kadar az denemede bulursan o kadar iyi; en iyi skorun bu cihazda saklanır.</p>

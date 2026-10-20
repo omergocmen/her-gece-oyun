@@ -13,6 +13,8 @@ const KABUK = [
   'games.json',
   'manifest.webmanifest',
   'assets/css/style.css',
+  'assets/fonts/bricolage-latin.woff2',
+  'assets/fonts/bricolage-latin-ext.woff2',
   'assets/js/katalog.js',
   'assets/js/depo.js',
   'assets/js/main.js',

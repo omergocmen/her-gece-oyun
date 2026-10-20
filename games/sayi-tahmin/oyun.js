@@ -4,7 +4,20 @@
   var mesaj = document.getElementById('mesaj');
   var rekor = document.getElementById('rekor');
   var yeniden = document.getElementById('yeniden');
-  var gizli, deneme;
+  var denemeSayisi = document.getElementById('deneme-sayisi');
+  var altSinir = document.getElementById('alt-sinir');
+  var ustSinir = document.getElementById('ust-sinir');
+  var dolgu = document.getElementById('aralik-dolgu');
+  var gizli, deneme, alt, ust;
+
+  // Kalan olası aralığı çubukta gösterir; her tahmin çubuğu daraltır.
+  function araligiCiz() {
+    altSinir.textContent = alt;
+    ustSinir.textContent = ust;
+    dolgu.style.left = (alt - 1) + '%';
+    dolgu.style.width = (ust - alt + 1) + '%';
+    denemeSayisi.textContent = deneme + ' deneme';
+  }
 
   function rekoruGoster() {
     var enIyi = Depo.oku('sayi-tahmin:rekor', null);
@@ -14,6 +27,9 @@
   function basla() {
     gizli = Math.floor(Math.random() * 100) + 1;
     deneme = 0;
+    alt = 1;
+    ust = 100;
+    araligiCiz();
     mesaj.textContent = 'Aklımdan 1 ile 100 arasında bir sayı tuttum.';
     form.hidden = false;
     yeniden.hidden = true;
@@ -30,6 +46,10 @@
       return;
     }
     deneme++;
+    if (sayi < gizli) alt = Math.max(alt, sayi + 1);
+    else if (sayi > gizli) ust = Math.min(ust, sayi - 1);
+    else alt = ust = sayi;
+    araligiCiz();
     if (sayi === gizli) {
       mesaj.textContent = 'Tebrikler! ' + deneme + ' denemede buldun.';
       var enIyi = Depo.oku('sayi-tahmin:rekor', null);

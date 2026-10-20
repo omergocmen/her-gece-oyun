@@ -20,25 +20,41 @@
   <meta name="twitter:image" content="https://hergeceoyun.netlify.app/assets/og.png">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Her Gece Oyun","url":"https://hergeceoyun.netlify.app/","inLanguage":"tr","description":"Her gece yeni bir ücretsiz tarayıcı oyunu. Üye olmadan, indirmeden ve internet olmadan oynayın.","hasPart":[{"@type":"VideoGame","name":"Günün Kelimesi","url":"https://hergeceoyun.netlify.app/games/gunun-kelimesi/"},{"@type":"VideoGame","name":"Sayı Tahmin","url":"https://hergeceoyun.netlify.app/games/sayi-tahmin/"}]}</script>
   <!-- SEO:BITIS -->
-  <meta name="theme-color" content="#141836">
+  <meta name="theme-color" content="#110f0d">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="logo" href="./">🌙 Her Gece Oyun</a>
-    <span id="baglanti" class="baglanti" hidden>Çevrimdışı</span>
+  <header class="kunye">
+    <div class="ust-serit">
+      <span id="tarih">Gece baskısı</span>
+      <span id="baglanti" class="baglanti" hidden>Çevrimdışısın, oyunlar yine de açılır</span>
+      <span>Sayı <b id="sayi">—</b></span>
+    </div>
+    <h1 class="bayrak"><a href="./">Her Gece <em>Oyun</em></a></h1>
+    <p class="slogan">Her gece yeni bir tarayıcı oyunu. Üyelik yok, indirme yok, internet şart değil.</p>
   </header>
   <main class="container">
     <section id="bu-gece" class="bu-gece" aria-live="polite"></section>
-    <h2>Tüm oyunlar</h2>
-    <ul id="oyun-listesi" class="oyun-listesi"></ul>
+    <section class="arsiv" aria-labelledby="arsiv-baslik">
+      <div class="bolum-baslik">
+        <h2 id="arsiv-baslik">Arşiv</h2>
+        <span id="oyun-sayisi"></span>
+      </div>
+      <ol id="oyun-listesi" class="oyun-listesi"></ol>
+    </section>
     <noscript><p>Oyunları görmek için JavaScript'i açın.</p></noscript>
   </main>
   <footer class="site-footer">
-    <p>Tüm oyunlar ücretsizdir, giriş gerektirmez ve bir kez açıldıktan sonra internetsiz oynanır.</p>
+    <ul class="sozler">
+      <li>Ücretsiz</li>
+      <li>Girişsiz</li>
+      <li>İnternetsiz</li>
+    </ul>
+    <p>Bir oyunu bir kez açman yeter, sonra internet olmadan da oynarsın. İlerlemen yalnızca bu cihazda saklanır.</p>
   </footer>
   <script src="assets/js/katalog.js"></script>
   <script src="assets/js/main.js"></script>

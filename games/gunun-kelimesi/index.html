@@ -21,7 +21,7 @@
   <meta name="twitter:image" content="https://hergeceoyun.netlify.app/assets/og.png">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Günün Kelimesi","description":"Beş harfli Türkçe kelimeyi altı tahminde bul. Her gün yeni bir kelime, Türkçe klavye ve serbest mod.","url":"https://hergeceoyun.netlify.app/games/gunun-kelimesi/","image":"https://hergeceoyun.netlify.app/assets/og.png","genre":"Kelime","inLanguage":"tr","datePublished":"2026-10-20","gamePlatform":"Web tarayıcısı","applicationCategory":"Game","operatingSystem":"Tüm işletim sistemleri","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"},"isPartOf":{"@type":"WebSite","name":"Her Gece Oyun","url":"https://hergeceoyun.netlify.app/"}}</script>
   <!-- SEO:BITIS -->
-  <meta name="theme-color" content="#141836">
+  <meta name="theme-color" content="#110f0d">
   <link rel="manifest" href="../../manifest.webmanifest">
   <link rel="icon" href="../../assets/icons/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../../assets/css/style.css">
@@ -29,10 +29,14 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="logo" href="../../">🌙 Her Gece Oyun</a>
-    <button id="istatistik-ac" class="ikon-buton" type="button" aria-label="İstatistikler">📊</button>
+    <a class="logo" href="../../"><span>Her Gece <em>Oyun</em></span></a>
+    <div class="sag">
+      <button id="istatistik-ac" class="ikon-buton" type="button" aria-label="İstatistikler"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4 20h3V11H4zm6.5 0h3V4h-3zM17 20h3v-6h-3z"/></svg></button>
+      <a class="geri" href="../../" aria-label="Tüm oyunlar">←<span class="uzun"> Tüm oyunlar</span></a>
+    </div>
   </header>
-  <main class="container kelime-oyunu">
+  <main class="container oyun-sayfasi kelime-oyunu">
+    <span class="ust-baslik">Kelime</span>
     <h1>Günün Kelimesi <span id="mod-etiketi" class="mod-etiketi"></span></h1>
     <p id="mesaj" class="kelime-mesaj" role="status" aria-live="polite"></p>
     <div id="izgara" class="izgara" aria-label="Tahmin tablosu"></div>

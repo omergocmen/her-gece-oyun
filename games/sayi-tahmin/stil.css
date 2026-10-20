@@ -1,0 +1,8 @@
+.sayi-oyunu { max-width: 640px; }
+.aralik { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--soluk); }
+.aralik-cubuk { position: relative; height: 10px; border-radius: 999px; background: var(--murekkep); border: 1px solid var(--cizgi); overflow: hidden; }
+.aralik-dolgu { position: absolute; top: 0; bottom: 0; left: 0; width: 100%; background: var(--sodyum); border-radius: 999px; transition: left .45s cubic-bezier(.2, .8, .2, 1), width .45s cubic-bezier(.2, .8, .2, 1); }
+.sayi-mesaj { min-height: 3.2em; margin: 20px 0 16px; font-size: clamp(1.2rem, 4vw, 1.5rem); font-weight: 700; line-height: 1.3; }
+.tahmin-formu { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.tahmin-formu label { flex-basis: 100%; font-size: .85rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--soluk); }
+.sayi-alt { display: flex; justify-content: space-between; gap: 12px; margin: 20px 0 0; padding-top: 14px; border-top: 1px solid var(--cizgi); color: var(--soluk); font-size: .9rem; font-variant-numeric: tabular-nums; }
